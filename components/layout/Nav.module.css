@@ -8,10 +8,14 @@
   padding: 0 10%;
 }
 
-.logo {
+.header .logo {
   font-size: 2rem;
   color: white;
   font-weight: bold;
+}
+
+.header .logo:hover {
+  color: #fcb8d2;
 }
 
 .header ul {

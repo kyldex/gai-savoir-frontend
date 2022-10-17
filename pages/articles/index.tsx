@@ -1,9 +1,17 @@
-import type { NextPage } from 'next';
+import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
 import styles from './index.module.css';
 
-const Articles: NextPage = () => {
+import Article from '../../data/Article';
+
+import ARTICLES_MOCK from '../../data/articlesMock';
+
+interface Props {
+  articles: Article[];
+}
+
+const Articles: NextPage<Props> = ({ articles }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -16,16 +24,23 @@ const Articles: NextPage = () => {
 
       <div className={styles.list}>
         <ul>
-          <li>
-            <Link href="/articles/hello">Hello</Link>
-          </li>
-          <li>
-            <Link href="/articles/world">World</Link>
-          </li>
+          {articles.map((article) => (
+            <li key={article.id}>
+              <Link href={`/articles/${article.slug}`}>{article.title}</Link>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
   );
+};
+
+export const getStaticProps: GetStaticProps = async () => {
+  return {
+    props: {
+      articles: ARTICLES_MOCK
+    }
+  };
 };
 
 export default Articles;

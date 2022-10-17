@@ -24,6 +24,12 @@
   text-decoration: underline;
 }
 
+.authorInfo {
+  margin-top: 2rem;
+  font-style: italic;
+  color: #aaa5a7;
+}
+
 .description {
   margin: 4rem 0;
   line-height: 1.5;
