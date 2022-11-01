@@ -14,18 +14,18 @@ const Article: NextPage<Props> = ({ article }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{article.title}</title>
-        <meta name="description" content={article.metaDescription} />
+        <title>{article.attributes.title}</title>
+        <meta name="description" content={article.attributes.excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className={styles.title}>{article.title}</h1>
+      <h1 className={styles.title}>{article.attributes.title}</h1>
 
       <div className={styles.authorInfo}>
-        {article.authorId}, le {article.date}
+        {article.attributes.author}, le {article.attributes.publishedAt}
       </div>
 
-      <p className={styles.description}>{article.description}</p>
+      <p className={styles.content}>{article.attributes.content}</p>
     </div>
   );
 };
@@ -34,7 +34,7 @@ const Article: NextPage<Props> = ({ article }) => {
 export const getStaticPaths: GetStaticPaths = async () => {
   // Get the paths we want to pre-render based on articles.
   const paths = ARTICLES_MOCK.map((article) => ({
-    params: { slug: article.slug }
+    params: { slug: article.attributes.slug }
   }));
 
   // We'll pre-render only these paths at build time.
@@ -48,7 +48,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // If the route is like /articles/evenement-decembre, then params.slug is evenement-decembre.
   const article = ARTICLES_MOCK.find((article) => {
     if (params) {
-      return article.slug === params.slug;
+      return article.attributes.slug === params.slug;
     }
   });
 

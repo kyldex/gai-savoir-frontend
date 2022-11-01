@@ -4,8 +4,7 @@ import Link from 'next/link';
 import styles from './index.module.css';
 
 import Article from '../../data/Article';
-
-import ARTICLES_MOCK from '../../data/articlesMock';
+import ArticlesData from '../../data/ArticlesData';
 
 interface Props {
   articles: Article[];
@@ -26,7 +25,9 @@ const Articles: NextPage<Props> = ({ articles }) => {
         <ul>
           {articles.map((article) => (
             <li key={article.id}>
-              <Link href={`/articles/${article.slug}`}>{article.title}</Link>
+              <Link href={`/articles/${article.attributes.slug}`}>
+                {article.attributes.title}
+              </Link>
             </li>
           ))}
         </ul>
@@ -36,9 +37,12 @@ const Articles: NextPage<Props> = ({ articles }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles`);
+  const articles: ArticlesData = await res.json();
+
   return {
     props: {
-      articles: ARTICLES_MOCK
+      articles: articles.data
     }
   };
 };
