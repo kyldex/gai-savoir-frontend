@@ -2,15 +2,22 @@ import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import styles from './[slug].module.css';
 
-import Article from '../../data/Article';
-
-import ARTICLES_MOCK from '../../data/articlesMock';
+import Article from '../../types/Article';
+import { ArticlesData, ArticleData } from '../../types/ArticlesData';
 
 interface Props {
   article: Article;
 }
 
 const Article: NextPage<Props> = ({ article }) => {
+  if (article.id === 'not_found') {
+    return (
+      <p className={styles.content}>
+        Désolé, nous n&apos;avons pas pu trouver cet article.
+      </p>
+    );
+  }
+
   return (
     <div className={styles.container}>
       <Head>
@@ -22,7 +29,7 @@ const Article: NextPage<Props> = ({ article }) => {
       <h1 className={styles.title}>{article.attributes.title}</h1>
 
       <div className={styles.authorInfo}>
-        {article.attributes.author}, le {article.attributes.publishedAt}
+        {article.attributes.author}, le {article.attributes.published}
       </div>
 
       <p className={styles.content}>{article.attributes.content}</p>
@@ -30,10 +37,12 @@ const Article: NextPage<Props> = ({ article }) => {
   );
 };
 
-// This function gets called at build time.
 export const getStaticPaths: GetStaticPaths = async () => {
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles`);
+  const articles: ArticlesData = await res.json();
+
   // Get the paths we want to pre-render based on articles.
-  const paths = ARTICLES_MOCK.map((article) => ({
+  const paths = articles.data.map((article) => ({
     params: { slug: article.attributes.slug }
   }));
 
@@ -42,18 +51,19 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-// This also gets called at build time.
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  // params contains the article `slug`.
-  // If the route is like /articles/evenement-decembre, then params.slug is evenement-decembre.
-  const article = ARTICLES_MOCK.find((article) => {
-    if (params) {
-      return article.attributes.slug === params.slug;
-    }
-  });
+  if (params) {
+    const { slug } = params;
+    const res = await fetch(
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?filters\\[Slug\\][$eq]=${slug}`
+    );
+    const article: ArticleData = await res.json();
 
-  // Pass article data to the page via props.
-  return { props: { article } };
+    // Pass article data to the page via props.
+    return { props: { article: article.data[0] } };
+  }
+
+  return { props: { article: { id: 'not_found' } } };
 };
 
 export default Article;

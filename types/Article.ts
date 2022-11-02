@@ -2,10 +2,11 @@ export default interface Article {
   id: string;
   attributes: {
     title: string;
-    slug: string;
+    published: string;
     content: string;
     excerpt: string;
+    comments?: string;
     author: string;
-    publishedAt: string;
+    slug: string;
   }
 }

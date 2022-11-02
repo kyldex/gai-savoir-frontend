@@ -3,8 +3,8 @@ import Head from 'next/head';
 import Link from 'next/link';
 import styles from './index.module.css';
 
-import Article from '../../data/Article';
-import ArticlesData from '../../data/ArticlesData';
+import Article from '../../types/Article';
+import { ArticlesData } from '../../types/ArticlesData';
 
 interface Props {
   articles: Article[];
