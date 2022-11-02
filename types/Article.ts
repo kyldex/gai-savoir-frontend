@@ -1,4 +1,4 @@
-import Comment from "./Comment";
+import Comment from './Comment';
 
 export default interface Article {
   id: string;
@@ -11,5 +11,5 @@ export default interface Article {
     comments?: Comment[];
     author: string;
     slug: string;
-  }
+  };
 }
