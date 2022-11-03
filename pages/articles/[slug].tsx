@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   if (params) {
     const { slug } = params;
     const res = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?filters\\[Slug\\][$eq]=${slug}`
+      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?filters[slug][$eq]=${slug}`
     );
     const article: ArticleData = await res.json();
 

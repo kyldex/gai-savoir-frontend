@@ -36,7 +36,19 @@ const ARTICLES_DATA_MOCK: ArticlesData = {
         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         published: '2022-11-04',
         author: 'philo85',
-        slug: 'art-a-t-il-une-utilite'
+        slug: 'l-art-a-t-il-une-utilite'
+      }
+    },
+    {
+      id: '1013',
+      attributes: {
+        title: "Comment réconciler le singulier et le collectif ?",
+        content:
+          'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum ac auctor nisi. In hac habitasse platea dictumst. Phasellus tempus auctor maximus. Vestibulum fringilla sem vitae libero faucibus, porttitor commodo dui volutpat. Quisque est dolor, vehicula dictum pharetra ac, pellentesque et quam.',
+        excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+        published: '2022-11-14',
+        author: 'jeanne90',
+        slug: 'comment-reconciler-le-singulier-et-le-collectif'
       }
     }
   ],
