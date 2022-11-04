@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 0 2rem;
+  max-width: 1200px;
 }
 
 .title {
@@ -35,4 +35,12 @@
   line-height: 1.5;
   font-size: 1.5rem;
   text-align: center;
+}
+
+.content p {
+  text-align: left;
+}
+
+.content p:first-child {
+ text-align: center;
 }

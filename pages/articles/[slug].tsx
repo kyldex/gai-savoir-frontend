@@ -1,5 +1,7 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
+
 import styles from './[slug].module.css';
 
 import Article from '../../types/Article';
@@ -32,7 +34,9 @@ const Article: NextPage<Props> = ({ article }) => {
         {article.attributes.author}, le {article.attributes.published}
       </div>
 
-      <p className={styles.content}>{article.attributes.content}</p>
+      <ReactMarkdown className={styles.content}>
+        {article.attributes.content}
+      </ReactMarkdown>
     </div>
   );
 };
