@@ -15,6 +15,9 @@ const Nav = () => {
           <li>
             <Link href="/articles">Articles</Link>
           </li>
+          <li>
+            <Link href="/questionnaire">Questionnaire</Link>
+          </li>
         </ul>
       </nav>
     </header>

@@ -1,8 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Survey from '../../components/survey';
 import styles from './index.module.css';
 
-const Survey: NextPage = () => {
+const SurveyPage: NextPage = () => {
   return (
     <div className={styles.container}>
       <Head>
@@ -13,10 +14,13 @@ const Survey: NextPage = () => {
 
       <h1 className={styles.title}>Questionnaire</h1>
 
-      <div className={styles.list}>
-      </div>
+      <p className={styles.description}>
+        Prenez quelques minutes pour répondre au questionnaire !
+      </p>
+
+      <Survey />
     </div>
   );
 };
 
-export default Survey;
+export default SurveyPage;
