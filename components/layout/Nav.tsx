@@ -18,6 +18,9 @@ const Nav = () => {
           <li>
             <Link href="/questionnaire">Questionnaire</Link>
           </li>
+          <li>
+            <Link href="/contact">Contact</Link>
+          </li>
         </ul>
       </nav>
     </header>
