@@ -1,6 +1,5 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Image from 'next/image';
 import styles from './index.module.css';
 
 const Home: NextPage = () => {
@@ -15,8 +14,11 @@ const Home: NextPage = () => {
       <h1 className={styles.title}>Bienvenue sur le site du Gai Savoir</h1>
 
       <p className={styles.description}>
-        Get started by editing{' '}
-        <code className={styles.code}>pages/index.tsx</code>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris
+        consequat magna non felis volutpat, a pharetra justo commodo. Ut in
+        sodales velit, ac feugiat magna. Duis placerat, nisl a molestie
+        sollicitudin, risus massa elementum lectus, sed sodales justo eros quis
+        velit. Phasellus nec pharetra lorem, sit amet consectetur diam. Quisque.
       </p>
     </div>
   );
