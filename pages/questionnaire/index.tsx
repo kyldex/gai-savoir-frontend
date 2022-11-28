@@ -15,7 +15,7 @@ const SurveyPage: NextPage = () => {
       <h1 className={styles.title}>Questionnaire</h1>
 
       <p className={styles.description}>
-        Prenez quelques minutes pour répondre au questionnaire !
+        Prenez quelques minutes pour répondre au questionnaire ! Toutes vos réponses restent anonymes.
       </p>
 
       <Survey />
