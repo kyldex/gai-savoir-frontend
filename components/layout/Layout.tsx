@@ -1,6 +1,6 @@
 import Nav from './Nav';
 import Footer from './Footer';
-import styles from './Layout.module.css';
+import styles from './Layout.module.scss';
 
 interface Props {
   children: React.ReactNode;
@@ -8,11 +8,11 @@ interface Props {
 
 const Layout: React.FC<Props> = ({ children }) => {
   return (
-    <>
+    <div className={styles.page}>
       <Nav />
       <main className={styles.main}>{children}</main>
       <Footer />
-    </>
+    </div>
   );
 };
 
