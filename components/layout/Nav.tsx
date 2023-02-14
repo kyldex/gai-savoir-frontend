@@ -4,8 +4,8 @@ import styles from './Nav.module.scss';
 const Nav = () => {
   return (
     <header className={styles.header}>
-      <Link href="/">
-        <a className={styles.logo}>Gai Savoir</a>
+      <Link href="/" className={styles.logo}>
+        Gai Savoir
       </Link>
       <nav>
         <ul>
