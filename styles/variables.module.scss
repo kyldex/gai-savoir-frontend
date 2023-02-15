@@ -1,5 +1,19 @@
 $primary-color-blue: #221760;
-$color-purple: #7467EF;
+$color-purple: #7467ef;
+$color-yellow: #e8bc3f;
+$color-green-1: #498055;
+$color-green-2: #7a6d31;
+$color-red: #743150;
+$color-orange: #ff7c54;
+
+// Mobile first.
+// Based on https://material-ui.com/customization/breakpoints/
+$breakpoints: (
+  sm: 600px, // small (tablets)
+  md: 960px, // medium (iPad pro)
+  lg: 1280px, // large (desktop)
+  xl: 1920px // extra-large (desktop xl)
+);
 
 :export {
   primaryBlueColor: $primary-color-blue;
