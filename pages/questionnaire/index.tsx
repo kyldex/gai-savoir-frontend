@@ -18,7 +18,7 @@ const SurveyPage: NextPage = () => {
         Prenez quelques minutes pour répondre au questionnaire ! Toutes vos réponses restent anonymes.
       </p>
 
-      <Survey />
+      {/* <Survey /> */}
     </div>
   );
 };
