@@ -1,0 +1,25 @@
+@import 'variables.module';
+
+@mixin media-query-sm {
+  @media screen and (min-width: map-get($breakpoints, sm)) {
+    @content;
+  }
+}
+
+@mixin media-query-md {
+  @media screen and (min-width: map-get($breakpoints, md)) {
+    @content;
+  }
+}
+
+@mixin media-query-lg {
+  @media screen and (min-width: map-get($breakpoints, lg)) {
+    @content;
+  }
+}
+
+@mixin media-query-xl {
+  @media screen and (min-width: map-get($breakpoints, xl)) {
+    @content;
+  }
+}
