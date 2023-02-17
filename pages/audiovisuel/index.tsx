@@ -1,6 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from './index.module.css';
+import styles from './index.module.scss';
 
 const Audiovisuel: NextPage = () => {
   return (
@@ -11,9 +11,11 @@ const Audiovisuel: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className={styles.title}>Production Audiovisuelle</h1>
+      <h2>Production audiovisuelle</h2>
 
-      <p className={styles.description}>1ère vidéo très bientôt !</p>
+      <div className={styles.description}>
+        <p className={styles.descriptionPart}>1ère vidéo très bientôt !</p>
+      </div>
     </div>
   );
 };
