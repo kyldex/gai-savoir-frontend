@@ -1,6 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import styles from './index.module.css';
+
+import styles from './index.module.scss';
 
 const Evenements: NextPage = () => {
   return (
@@ -11,9 +12,11 @@ const Evenements: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className={styles.title}>Les évènements du Gai Savoir</h1>
+      <h2>Les évènements</h2>
 
-      <p className={styles.description}>Textes</p>
+      <div className={styles.description}>
+        <p className={styles.descriptionPart}>Disours</p>
+      </div>
     </div>
   );
 };
