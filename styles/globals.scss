@@ -1,5 +1,26 @@
 @import './variables.module';
 
+@font-face {
+  font-family: 'VercettiRegular';
+  src: url('../assets/fonts/Vercetti-Regular.woff2') format('woff2'),
+       url('../assets/fonts/Vercetti-Regular.woff') format('woff'),
+       url('../assets/fonts/Vercetti-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AkrobatThin';
+  src: url('../assets/fonts/Akrobat-Thin.woff2') format('woff2'),
+       url('../assets/fonts/Akrobat-Thin.woff') format('woff'),
+       url('../assets/fonts/Akrobat-Thin.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'AkrobatBlack';
+  src: url('../assets/fonts/Akrobat-Black.woff2') format('woff2'),
+       url('../assets/fonts/Akrobat-Black.woff') format('woff'),
+       url('../assets/fonts/Akrobat-Black.ttf') format('truetype');
+}
+
 *,
 ::before,
 ::after {
@@ -10,8 +31,7 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: $body-main;
   font-size: 1rem;
   color: $primary-color-blue;
 }
@@ -30,6 +50,13 @@ h6,
 p {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+h2 {
+  font-family: $heading-main;
+  font-size: 2rem;
+  color: $color-purple;
+  line-height: 1;
 }
 
 /* @media (prefers-color-scheme: dark) {

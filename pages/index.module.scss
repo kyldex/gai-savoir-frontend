@@ -1,20 +1,38 @@
+@import '../styles/variables.module';
+
 .container {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  padding: 2rem 2rem 0;
-}
+  align-items: stretch;
+  margin: 110px 5% 0;
 
-.slogan {
-  font-size: 2rem;
-  // line-height: 1.15;
-  text-align: center;
-}
+  // .slogan {
+  //   margin-top: 2rem;
+  //   font-size: 2rem;
+  //   // line-height: 1.15;
+  //   text-align: center;
+  // }
 
-.description {
-  margin: 4rem 0;
-  font-size: 1rem;
-  // line-height: 1.5;
-  text-align: justify;
+  .blueRectangle {
+    width: 45%;
+    max-height: 400px;
+    background-color: $primary-color-blue;
+  }
+
+  .avantPropos {
+    padding-left: 76px;
+    width: 55%;
+
+    .description {
+      margin-top: 1.2rem;
+      font-size: 0.875rem;
+      text-align: justify;
+    }
+
+    .descriptionPart {
+      margin-top: 1rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
 }
