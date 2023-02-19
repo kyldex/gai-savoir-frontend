@@ -5,7 +5,7 @@ import ReactMarkdown from 'react-markdown';
 import styles from './[slug].module.css';
 
 import Article from '../../types/Article';
-import { ArticlesData, ArticleData } from '../../types/ArticlesData';
+import { ArticlesData, ArticleDataBySlug } from '../../types/ArticlesData';
 
 interface Props {
   article: Article;
@@ -61,7 +61,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?filters[slug][$eq]=${slug}`
     );
-    const article: ArticleData = await res.json();
+    const article: ArticleDataBySlug = await res.json();
 
     // Pass article data to the page via props.
     return { props: { article: article.data[0] } };

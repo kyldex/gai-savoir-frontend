@@ -13,7 +13,13 @@ export interface ArticlesData {
 }
 
 // If fetched with Strapi slug filters, data is an array.
-export interface ArticleData {
+export interface ArticleDataById {
+  data: Article;
+  meta: {};
+}
+
+// If fetched with Strapi slug filters, data is an array.
+export interface ArticleDataBySlug {
   data: [Article];
   meta: {
     pagination: {
