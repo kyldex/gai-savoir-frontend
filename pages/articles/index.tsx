@@ -1,7 +1,8 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
 import Link from 'next/link';
-import styles from './index.module.css';
+
+import styles from './index.module.scss';
 
 import Article from '../../types/Article';
 import { ArticlesData } from '../../types/ArticlesData';
@@ -19,7 +20,7 @@ const Articles: NextPage<Props> = ({ articles }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className={styles.title}>Nos articles</h1>
+      <h2>Nos articles</h2>
 
       <div className={styles.list}>
         <ul>

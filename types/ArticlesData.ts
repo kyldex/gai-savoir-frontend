@@ -1,6 +1,6 @@
 import Article from './Article';
 
-export interface ArticlesData {
+export type ArticlesData = {
   data: Article[];
   meta: {
     pagination: {
@@ -10,16 +10,16 @@ export interface ArticlesData {
       total: number;
     };
   };
-}
+};
 
 // If fetched with Strapi slug filters, data is an array.
-export interface ArticleDataById {
+export type ArticleDataById = {
   data: Article;
   meta: {};
-}
+};
 
 // If fetched with Strapi slug filters, data is an array.
-export interface ArticleDataBySlug {
+export type ArticleDataBySlug = {
   data: [Article];
   meta: {
     pagination: {
@@ -29,4 +29,4 @@ export interface ArticleDataBySlug {
       total: number;
     };
   };
-}
+};

@@ -1,0 +1,23 @@
+.container {
+  margin: 60px 5% 0;
+
+  .authorInfo {
+    margin-top: 2rem;
+    font-size: 0.75rem;
+    font-style: italic;
+    color: #aaa5a7;
+  }
+
+  .content {
+    margin-top: 1.2rem;
+    font-size: 0.875rem;
+    text-align: justify;
+
+    p {
+      margin-top: 1rem;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}

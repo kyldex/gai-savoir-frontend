@@ -2,24 +2,17 @@ import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 
-import styles from './[slug].module.css';
+import styles from './[slug].module.scss';
 
 import Article from '../../types/Article';
 import { ArticlesData, ArticleDataBySlug } from '../../types/ArticlesData';
 
 interface Props {
   article: Article;
+  preview: boolean;
 }
 
-const Article: NextPage<Props> = ({ article }) => {
-  if (article.id === 'not_found') {
-    return (
-      <p className={styles.content}>
-        Désolé, nous n&apos;avons pas pu trouver cet article.
-      </p>
-    );
-  }
-
+const Article: NextPage<Props> = ({ article, preview }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -28,7 +21,9 @@ const Article: NextPage<Props> = ({ article }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h1 className={styles.title}>{article.attributes.title}</h1>
+      {preview && <div>I'm in preview mode !</div>}
+
+      <h2 className={styles.title}>{article.attributes.title}</h2>
 
       <div className={styles.authorInfo}>
         {article.attributes.author}, le {article.attributes.published}
@@ -55,19 +50,24 @@ export const getStaticPaths: GetStaticPaths = async () => {
   return { paths, fallback: false };
 };
 
-export const getStaticProps: GetStaticProps = async ({ params }) => {
-  if (params) {
-    const { slug } = params;
-    const res = await fetch(
-      `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?filters[slug][$eq]=${slug}`
-    );
-    const article: ArticleDataBySlug = await res.json();
-
-    // Pass article data to the page via props.
-    return { props: { article: article.data[0] } };
+export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
+  const slug = params?.slug;
+  if (!slug) {
+    throw new Error('Article not found');
   }
 
-  return { props: { article: { id: 'not_found' } } };
+  // getStaticProps will be called at request time if
+  // preview mode is on, at build time otherwise.
+  const isInPreviewMode = preview ? true : false;
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?${
+      isInPreviewMode ? 'publicationState=preview&' : ''
+    }filters[slug][$eq]=${slug}`
+  );
+  const articleData: ArticleDataBySlug = await res.json();
+
+  // Pass article data to the page via props.
+  return { props: { article: articleData.data[0], preview: isInPreviewMode } };
 };
 
 export default Article;
