@@ -21,7 +21,7 @@ const Article: NextPage<Props> = ({ article, preview }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {preview && <div>I'm in preview mode !</div>}
+      {preview && <div>I&apos;m in preview mode !</div>}
 
       <h2 className={styles.title}>{article.attributes.title}</h2>
 
