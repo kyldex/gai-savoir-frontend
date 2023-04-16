@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import Nav from './Nav';
 import Footer from './Footer';
 import styles from './Layout.module.scss';
@@ -8,23 +8,21 @@ interface Props {
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const headerHeight = useRef(176); // default value
+  const [headerHeight, setHeaderHeight] = useState(77); // default value
 
   useLayoutEffect(() => {
     const headerElement = document.querySelector('header') as HTMLDivElement;
     if (headerElement) {
-      headerHeight.current = headerElement.offsetHeight;
-      console.log(headerHeight);
+      setHeaderHeight(headerElement.offsetHeight);
     }
+
+    return () => console.log('cleanup');
   }, []);
 
   return (
     <div className={styles.page}>
       <Nav />
-      <main
-        className={styles.main}
-        style={{ paddingTop: `${headerHeight.current}px` }}
-      >
+      <main className={styles.main} style={{ paddingTop: `${headerHeight}px` }}>
         {children}
       </main>
       <Footer />
