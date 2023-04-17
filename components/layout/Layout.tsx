@@ -15,8 +15,6 @@ const Layout: React.FC<Props> = ({ children }) => {
     if (headerElement) {
       setHeaderHeight(headerElement.offsetHeight);
     }
-
-    return () => console.log('cleanup');
   }, []);
 
   return (
