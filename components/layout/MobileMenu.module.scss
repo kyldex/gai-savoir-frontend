@@ -1,0 +1,17 @@
+.mobileMenuBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .mobileMenuBarLogo {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  ul.mobileMenu {
+    display: none;
+    list-style: none;
+  }
+}

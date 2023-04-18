@@ -1,8 +1,24 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
+
 import styles from './index.module.scss';
 
+import { useDeviceContext } from '../context/DeviceContext';
+
+import logo from '../assets/img/gai_savoir_logo.svg';
+import echelle from '../assets/img/echelle.svg';
+import etoile from '../assets/img/etoile.svg';
+import interrogation from '../assets/img/interrogation.svg';
+import jaune from '../assets/img/jaune.svg';
+import kiosque from '../assets/img/kiosque.svg';
+import megaphone from '../assets/img/megaphone.svg';
+import pont from '../assets/img/pont.svg';
+import crayon from '../assets/img/crayon.svg';
+
 const Home: NextPage = () => {
+  const { isDesktop } = useDeviceContext();
+
   return (
     <div className={styles.container}>
       <Head>
@@ -20,7 +36,19 @@ const Home: NextPage = () => {
         prêtre mais vous avez la parole quand même&quot;
       </div> */}
 
-      <div className={styles.blueRectangle} />
+      {/* Test */}
+      <div className={styles.test}>
+        <Image src={logo} width={200} alt="" />
+        <Image src={echelle} width={300} alt="" />
+        <Image src={etoile} width={300} alt="" />
+        <Image src={interrogation} width={40} alt="" />
+        <Image src={jaune} width={100} alt="" />
+        <Image src={kiosque} width={40} alt="" />
+        <Image src={echelle} width={300} alt="" />
+        <Image src={megaphone} width={300} alt="" />
+        <Image src={pont} width={300} alt="" />
+        <Image src={crayon} width={300} alt="" />
+      </div>
 
       <div className={styles.avantPropos}>
         <h2>AVANT-PROPOS</h2>

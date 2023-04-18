@@ -1,6 +1,6 @@
 /**
  * Breakpoints values (in pixels) used in the app.
- * Must be the same as those defined in variables.module.scss
+ * Must be the same as those defined in styles/variables.scss
  * Mobile first.
  * Based on https://material-ui.com/customization/breakpoints/
  */

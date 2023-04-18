@@ -1,5 +1,6 @@
 import { useDeviceContext } from '../../context/DeviceContext';
 import DesktopMenu from './DesktopMenu';
+import MobileMenu from './MobileMenu';
 
 import styles from './Nav.module.scss';
 
@@ -8,7 +9,9 @@ const Nav = () => {
 
   return (
     <header className={styles.header}>
-      <nav>{isDesktop ? <DesktopMenu /> : <div>Hello mobile menu</div>}</nav>
+      <nav role="navigation" aria-label="Menu principal">
+        {isDesktop ? <DesktopMenu /> : <MobileMenu />}
+      </nav>
     </header>
   );
 };
