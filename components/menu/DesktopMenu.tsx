@@ -12,13 +12,13 @@ const DesktopMenu = () => {
         <Link href="/audiovisuel">PRODUCTION AUDIOVISUELLE</Link>
       </li>
       <li>
-        <Link href="/textes">IDÉES</Link>
+        <Link href="/idees">IDÉES</Link>
       </li>
       <li>
-        <Link href="/textes">CONTRIBUTEURS</Link>
+        <Link href="/idees">CONTRIBUTEURS</Link>
       </li>
       <li>
-        <Link href="/textes">OBSERVATOIRE DES PERCEPTIONS</Link>
+        <Link href="/idees">OBSERVATOIRE DES PERCEPTIONS</Link>
       </li>
       <li>
         <Link href="/apropos">À PROPOS</Link>

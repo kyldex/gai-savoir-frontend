@@ -4,45 +4,45 @@ import ReactMarkdown from 'react-markdown';
 
 import styles from './[slug].module.scss';
 
-import Article from '../../types/Article';
-import { ArticlesData, ArticleDataBySlug } from '../../types/ArticlesData';
+import Idea from '../../types/Idea';
+import { IdeasData, IdeaDataBySlug } from '../../types/IdeasData';
 
 interface Props {
-  article: Article;
+  idea: Idea;
   preview: boolean;
 }
 
-const Article: NextPage<Props> = ({ article, preview }) => {
+const Idea: NextPage<Props> = ({ idea, preview }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{article.attributes.title}</title>
-        <meta name="description" content={article.attributes.excerpt} />
+        <title>{idea.attributes.title}</title>
+        <meta name="description" content={idea.attributes.excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       {preview && <div>I&apos;m in preview mode !</div>}
 
-      <h2 className={styles.title}>{article.attributes.title}</h2>
+      <h2 className={styles.title}>{idea.attributes.title}</h2>
 
       <div className={styles.authorInfo}>
-        {article.attributes.author}, le {article.attributes.published}
+        {idea.attributes.author}, le {idea.attributes.published}
       </div>
 
       <ReactMarkdown className={styles.content}>
-        {article.attributes.content}
+        {idea.attributes.content}
       </ReactMarkdown>
     </div>
   );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles`);
-  const articles: ArticlesData = await res.json();
+  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas`);
+  const ideas: IdeasData = await res.json();
 
-  // Get the paths we want to pre-render based on articles.
-  const paths = articles.data.map((article) => ({
-    params: { slug: article.attributes.slug }
+  // Get the paths we want to pre-render based on ideas.
+  const paths = ideas.data.map((idea) => ({
+    params: { slug: idea.attributes.slug }
   }));
 
   // We'll pre-render only these paths at build time.
@@ -53,21 +53,21 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
   const slug = params?.slug;
   if (!slug) {
-    throw new Error('Article not found');
+    throw new Error('Idea not found');
   }
 
   // getStaticProps will be called at request time if
   // preview mode is on, at build time otherwise.
   const isInPreviewMode = preview ? true : false;
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?${
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?${
       isInPreviewMode ? 'publicationState=preview&' : ''
     }filters[slug][$eq]=${slug}`
   );
-  const articleData: ArticleDataBySlug = await res.json();
+  const articleData: IdeaDataBySlug = await res.json();
 
-  // Pass article data to the page via props.
-  return { props: { article: articleData.data[0], preview: isInPreviewMode } };
+  // Pass idea data to the page via props.
+  return { props: { idea: articleData.data[0], preview: isInPreviewMode } };
 };
 
-export default Article;
+export default Idea;

@@ -38,17 +38,17 @@ const MobileMenuBar: FC<Props> = ({ toggleMenuIsOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href="/textes" onClick={toggleMenuIsOpen}>
+                <Link href="/idees" onClick={toggleMenuIsOpen}>
                   IDÉES
                 </Link>
               </li>
               <li>
-                <Link href="/textes" onClick={toggleMenuIsOpen}>
+                <Link href="/idees" onClick={toggleMenuIsOpen}>
                   CONTRIBUTEURS
                 </Link>
               </li>
               <li>
-                <Link href="/textes" onClick={toggleMenuIsOpen}>
+                <Link href="/idees" onClick={toggleMenuIsOpen}>
                   OBSERVATOIRE DES PERCEPTIONS
                 </Link>
               </li>

@@ -1,11 +1,12 @@
 import type { NextApiRequest, NextApiResponse } from 'next';
 
-import { ArticleDataBySlug } from '../../types/ArticlesData';
+import { IdeaDataBySlug } from '../../types/IdeasData';
 
 type Data = {
   message: string;
 };
 
+// Currently only for strapi /ideas endpoint
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse<Data>
@@ -23,18 +24,18 @@ export default async function handler(
     return res.status(401).json({ message: 'Invalid token' });
   }
 
-  // If the article is not found, send a 404-Not Found response.
+  // If the idea is not found, send a 404-Not Found response.
   const slugResponse = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/articles?publicationState=preview&filters[slug][$eq]=${slug}`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?publicationState=preview&filters[slug][$eq]=${slug}`
   );
-  const articleData: ArticleDataBySlug = await slugResponse.json();
-  const article = articleData.data[0];
-  if (!article) {
-    return res.status(404).json({ message: 'Article not found' });
+  const ideaData: IdeaDataBySlug = await slugResponse.json();
+  const idea = ideaData.data[0];
+  if (!idea) {
+    return res.status(404).json({ message: 'Idea not found' });
   }
 
   // Enable Preview Mode by setting the cookies.
   res.setPreviewData({});
-  // Redirect to the path of the article slug.
-  res.redirect(307, `/articles/${article.attributes.slug}`);
+  // Redirect to the path of the idea slug.
+  res.redirect(307, `/idees/${idea.attributes.slug}`);
 }
