@@ -3,17 +3,19 @@
 
 .header {
   position: fixed;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  z-index: 2;
   padding: 1.2rem 5% 1.2rem;
-  background-color: rgba($color: $primary-color-blue, $alpha: 0.8);
-  backdrop-filter: blur(10px);
-  // Safari
-  -webkit-backdrop-filter: blur(10px);
+  background-color: $primary-color-blue;
   @include media-query-lg {
     padding: 1.5rem 2% 0;
+    background-color: rgba($color: $primary-color-blue, $alpha: 0.8);
+    backdrop-filter: blur(10px);
+    // Safari
+    -webkit-backdrop-filter: blur(10px);
   }
 
   nav {

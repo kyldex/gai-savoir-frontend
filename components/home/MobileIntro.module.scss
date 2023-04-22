@@ -1,9 +1,24 @@
 @import '../../styles/variables';
 
 .slogan {
-  margin-top: 30px;
-  font-size: 2rem;
-  // line-height: 1.15;
+  font-family: $heading-main;
+  font-size: 1.5rem;
   text-align: center;
   color: $color-yellow;
+}
+
+.illustationsContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5 * $layout-unit-px;
+
+  .kiosque {
+    align-self: flex-end;
+    margin-right: 20%;
+  }
+
+  .interrogation {
+    margin-left: 20%;
+    transform: translateY(-8px);
+  }
 }
