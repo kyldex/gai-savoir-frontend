@@ -25,10 +25,11 @@ const Nav: FC<Props> = ({ setHeaderHeight }) => {
   const headerRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
 
   useEffect(() => {
-    if (headerRef.current) {
+    if (hasMounted && headerRef.current) {
+      console.log(headerRef.current.offsetHeight);
       setHeaderHeight(headerRef.current.offsetHeight);
     }
-  }, [setHeaderHeight]);
+  }, [hasMounted, setHeaderHeight]);
 
   // TODO: ok pour SEO ?
   if (!hasMounted) {

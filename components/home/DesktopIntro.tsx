@@ -9,13 +9,28 @@ import kiosque from '../../assets/img/kiosque.svg';
 const DesktopIntro = () => {
   return (
     <section>
-      <Image src={logo} width={200} alt="Logo Gai Savoir" />
-      <h1 className={styles.slogan}>
-        VOUS N&apos;ÊTES PAS CHEZ LE PSY, VOUS N&apos;ÊTES PAS CHEZ LE PRÊTRE
-        MAIS VOUS AVEZ LA PAROLE QUAND MÊME
-      </h1>
-      <Image src={kiosque} width={40} alt="" />
-      <Image src={interrogation} width={30} alt="" />
+      <Image
+        src={logo}
+        width={300}
+        className={styles.logo}
+        alt="Logo Gai Savoir"
+      />
+
+      <div className={styles.titleContainer}>
+        <h1 className={styles.slogan}>
+          VOUS N&apos;ÊTES PAS CHEZ LE PSY, VOUS N&apos;ÊTES PAS CHEZ LE PRÊTRE
+          <br />
+          MAIS VOUS AVEZ LA PAROLE QUAND MÊME
+        </h1>
+        <Image src={kiosque} width={80} className={styles.kiosque} alt="" />
+      </div>
+
+      <Image
+        src={interrogation}
+        width={60}
+        className={styles.interrogation}
+        alt=""
+      />
     </section>
   );
 };
