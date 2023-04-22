@@ -1,12 +1,21 @@
+@import '../../styles/variables';
+@import '../../styles/mixins.scss';
+
 .page {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-}
 
-.main {
-  flex-grow: 1;
-  padding-left: 3rem;
-  padding-right: 3rem;
-  padding-bottom: 2rem;
+  // padding-top is computed from component
+  .main {
+    flex-grow: 1;
+    padding-left: 3 * $layout-unit-px;
+    padding-right: 3 * $layout-unit-px;
+    padding-bottom: 2rem;
+    @include media-query-sm {
+      padding-left: 6 * $layout-unit-px;
+      padding-right: 6 * $layout-unit-px;
+      padding-bottom: 2rem;
+    }
+  }
 }

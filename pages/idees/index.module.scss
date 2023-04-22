@@ -1,7 +1,11 @@
-@import '../../styles/variables';
+@import '../../styles/variables.scss';
+@import '../../styles/mixins';
 
 .container {
-  margin: 60px 5% 0;
+  margin: 32px 0 0;
+  @include media-query-sm {
+    margin: 60px 5% 0;
+  }
 
   .title {
     font-family: $heading-main;
@@ -9,9 +13,8 @@
     color: $color-yellow;
   }
 
-  .description {
+  .list {
     margin-top: 1.2rem;
     font-size: 0.875rem;
-    text-align: justify;
   }
 }

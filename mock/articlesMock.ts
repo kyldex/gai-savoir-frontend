@@ -1,4 +1,4 @@
-import { ArticlesData } from '../types/ArticlesData';
+import { ArticlesData } from '../types/IdeasData';
 
 // To use for tests.
 const ARTICLES_DATA_MOCK: ArticlesData = {

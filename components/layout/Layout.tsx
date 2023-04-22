@@ -1,30 +1,21 @@
-import { useLayoutEffect, useRef } from 'react';
+import { useState } from 'react';
+
+import styles from './Layout.module.scss';
+
 import Nav from './Nav';
 import Footer from './Footer';
-import styles from './Layout.module.scss';
 
 interface Props {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<Props> = ({ children }) => {
-  const headerHeight = useRef(176); // default value
-
-  useLayoutEffect(() => {
-    const headerElement = document.querySelector('header') as HTMLDivElement;
-    if (headerElement) {
-      headerHeight.current = headerElement.offsetHeight;
-      console.log(headerHeight);
-    }
-  }, []);
+  const [headerHeight, setHeaderHeight] = useState(71); // default mobile value
 
   return (
     <div className={styles.page}>
-      <Nav />
-      <main
-        className={styles.main}
-        style={{ paddingTop: `${headerHeight.current}px` }}
-      >
+      <Nav setHeaderHeight={setHeaderHeight}/>
+      <main className={styles.main} style={{ paddingTop: `${headerHeight}px` }}>
         {children}
       </main>
       <Footer />

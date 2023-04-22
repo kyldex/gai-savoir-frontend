@@ -12,7 +12,7 @@ const Apropos: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2 className={styles.title}>À propos</h2>
+      <h1 className={styles.title}>À PROPOS</h1>
 
       <div className={styles.description}>
         <p className={styles.descriptionPart}>

@@ -1,4 +1,4 @@
-@import 'variables.module';
+@import 'variables';
 
 @mixin media-query-sm {
   @media screen and (min-width: map-get($breakpoints, sm)) {

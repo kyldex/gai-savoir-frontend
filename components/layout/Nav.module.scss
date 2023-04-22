@@ -1,103 +1,24 @@
-@import '../../styles/variables.module';
+@import '../../styles/variables';
+@import '../../styles/mixins';
 
 .header {
   position: fixed;
-  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 10%;
-  background-color: #fff;
-
-  ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    align-items: center;
+  width: 100%;
+  z-index: 2;
+  padding: 1.2rem 5% 1.2rem;
+  background-color: $primary-color-blue;
+  @include media-query-lg {
+    padding: 1.5rem 2% 0;
+    background-color: rgba($color: $primary-color-blue, $alpha: 0.8);
+    backdrop-filter: blur(10px);
+    // Safari
+    -webkit-backdrop-filter: blur(10px);
   }
 
-  li {
-    margin-left: 4.5rem;
-    &:first-child {
-      margin-left: 0;
-    }
-  }
-
-  a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: #000;
-    &:hover,
-    :active {
-      color: $color-purple;
-    }
-  }
-
-  a.logo {
-    display: block;
-    width: 350px;
-    font-family: $heading-logo;
-    font-size: 4.6rem;
-    color: #000;
-    font-weight: 900;
-    &:hover,
-    :active {
-      color: initial;
-    }
-
-    .logoPart {
-      line-height: 1.15;
-      text-align: center;
-    }
-
-    .logoSeparator {
-      height: 6px;
-      background-color: $primary-color-blue;
-    }
-
-    .logoLetter1 {
-      color: $color-yellow;
-    }
-
-    .logoLetter2 {
-      color: $color-green-2;
-
-    }
-
-    .logoLetter3 {
-      color: $color-purple;
-      
-    }
-
-    .logoLetter4 {
-      color: $color-red;
-      
-    }
-
-    .logoLetter5 {
-      color: $primary-color-blue;
-      
-    }
-
-    .logoLetter6 {
-      color: $color-orange;
-      
-    }
-
-    .logoLetter7 {
-      color: $color-yellow;
-      
-    }
-
-    .logoLetter8 {
-      color: $color-orange;
-      
-    }
-
-    .logoLetter9 {
-      color: $color-green-1;
-      
-    }
+  nav {
+    width: 100%;
   }
 }

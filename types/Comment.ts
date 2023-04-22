@@ -1,3 +1,4 @@
+// Currently not used
 export default interface Comment {
   id: number;
   attributes: {

@@ -1,4 +1,4 @@
-@import './variables.module';
+@import './variables';
 
 @font-face {
   font-family: 'VercettiRegular';
@@ -27,13 +27,29 @@
   box-sizing: border-box;
 }
 
+* {
+  margin: 0;
+}
+
 html,
 body {
   padding: 0;
-  margin: 0;
   font-family: $body-main;
   font-size: 1rem;
-  color: $primary-color-blue;
+  color: #fff;
+  background-color: $primary-color-blue;
+}
+
+h2 {
+  font-family: $heading-bold;
+  font-size: 2rem;
+  color: $color-yellow;
+  line-height: 1;
+}
+
+p {
+  font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 a {
@@ -41,23 +57,29 @@ a {
   text-decoration: none;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
-  margin-top: 0;
-  margin-bottom: 0;
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
 }
 
-h2 {
-  font-family: $heading-main;
-  font-size: 2rem;
-  color: $color-purple;
-  line-height: 1;
-}
+/**
+ * Remove the margin in Firefox and Safari.
+ * Change the font styles in all browsers.
+ */
+ button,
+ input,
+ optgroup,
+ select,
+ textarea {
+   font-family: inherit;
+   margin: 0;
+   padding: 0;
+ }
+
+ button {
+  background: none;
+  border: none;
+ }
 
 /* @media (prefers-color-scheme: dark) {
   html {

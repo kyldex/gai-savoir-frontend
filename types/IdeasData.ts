@@ -1,7 +1,7 @@
-import Article from './Article';
+import Idea from './Idea';
 
-export type ArticlesData = {
-  data: Article[];
+export type IdeasData = {
+  data: Idea[];
   meta: {
     pagination: {
       page: number;
@@ -12,15 +12,14 @@ export type ArticlesData = {
   };
 };
 
-// If fetched with Strapi slug filters, data is an array.
-export type ArticleDataById = {
-  data: Article;
+export type IdeaDataById = {
+  data: Idea;
   meta: {};
 };
 
 // If fetched with Strapi slug filters, data is an array.
-export type ArticleDataBySlug = {
-  data: [Article];
+export type IdeaDataBySlug = {
+  data: [Idea];
   meta: {
     pagination: {
       page: number;

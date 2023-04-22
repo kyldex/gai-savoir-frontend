@@ -1,42 +1,45 @@
-import Link from 'next/link';
+import {
+  Dispatch,
+  FC,
+  MutableRefObject,
+  SetStateAction,
+  useEffect,
+  useRef
+} from 'react';
+
 import styles from './Nav.module.scss';
 
-const Nav = () => {
+import { useDeviceContext } from '../../context/DeviceContext';
+import DesktopMenu from '../menu/DesktopMenu';
+import MobileMenuBar from '../menu/MobileMenuBar';
+
+import useHasMounted from '../../utils/hooks/useHasMounted';
+
+interface Props {
+  setHeaderHeight: Dispatch<SetStateAction<number>>;
+}
+
+const Nav: FC<Props> = ({ setHeaderHeight }) => {
+  const hasMounted = useHasMounted();
+  const { isDesktop } = useDeviceContext();
+  const headerRef: MutableRefObject<HTMLDivElement | null> = useRef(null);
+
+  useEffect(() => {
+    if (hasMounted && headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight);
+    }
+  }, [hasMounted, setHeaderHeight]);
+
+  // TODO: ok pour SEO ?
+  if (!hasMounted) {
+    return null;
+  }
+
+  // Client only
   return (
-    <header className={styles.header}>
-      <nav>
-        <ul>
-          <li>
-            <Link href="/apropos">À PROPOS</Link>
-          </li>
-          <li>
-            <Link href="/evenements">ÉVÈNEMENTS</Link>
-          </li>
-          <li>
-            <Link href="./" className={styles.logo}>
-              <div className={styles.logoPart}>
-                <span className={styles.logoLetter1}>G</span>
-                <span className={styles.logoLetter2}>A</span>
-                <span className={styles.logoLetter3}>I</span>
-              </div>
-              <div className={styles.logoSeparator} />
-              <div className={styles.logoPart}>
-                <span className={styles.logoLetter4}>S</span>
-                <span className={styles.logoLetter5}>A</span>
-                <span className={styles.logoLetter6}>V</span>
-                <span className={styles.logoLetter7}>O</span>
-                <span className={styles.logoLetter8}>I</span>
-                <span className={styles.logoLetter9}>R</span>
-              </div>
-            </Link>
-          </li>
-          <li>
-            <Link href="/audiovisuel">PRODUCTION AUDIOVISUELLE</Link>
-          </li>
-          <li>
-            <Link href="/textes">TEXTES</Link>
-          </li>
-        </ul>
+    <header className={styles.header} ref={headerRef}>
+      <nav role="navigation" aria-label="Menu principal">
+        {isDesktop ? <DesktopMenu /> : <MobileMenuBar />}
       </nav>
     </header>
   );
