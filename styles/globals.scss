@@ -40,16 +40,21 @@ body {
   background-color: $primary-color-blue;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
 h2 {
   font-family: $heading-main;
   font-size: 2rem;
   color: $color-purple;
   line-height: 1;
+}
+
+p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 img, picture, video, canvas, svg {

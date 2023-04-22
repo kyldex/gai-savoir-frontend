@@ -5,8 +5,6 @@
 
   .description {
     margin-top: 1.2rem;
-    font-size: 0.875rem;
-    text-align: justify;
 
     p {
       margin-top: 1rem;
@@ -15,11 +13,9 @@
       }
     }
 
-    // TODO: à remplacer par une autre font bold
+    // TODO: à améliorer avec d'autres techniques, notamment pour l'épaisseur
     strong {
-      font-family: $heading-logo;
-      font-size: 0.9375rem;
-      letter-spacing: 0.5px;
+      text-decoration: underline;
     }
   }
 }

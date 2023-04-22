@@ -1,3 +1,4 @@
+@import '../../styles/variables';
 @import '../../styles/mixins.scss';
 
 .page {
@@ -8,12 +9,12 @@
   // padding-top is computed from component
   .main {
     flex-grow: 1;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+    padding-left: 3 * $layout-unit-px;
+    padding-right: 3 * $layout-unit-px;
     padding-bottom: 2rem;
     @include media-query-sm {
-      padding-left: 3rem;
-      padding-right: 3rem;
+      padding-left: 6 * $layout-unit-px;
+      padding-right: 6 * $layout-unit-px;
       padding-bottom: 2rem;
     }
   }

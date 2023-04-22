@@ -26,7 +26,6 @@ const Nav: FC<Props> = ({ setHeaderHeight }) => {
 
   useEffect(() => {
     if (hasMounted && headerRef.current) {
-      console.log(headerRef.current.offsetHeight);
       setHeaderHeight(headerRef.current.offsetHeight);
     }
   }, [hasMounted, setHeaderHeight]);
