@@ -1,0 +1,55 @@
+@import '../../styles/variables.scss';
+
+.container {
+  .titleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .allPosts {
+    display: flex;
+    align-items: center;
+
+    .allPostsLink {
+      margin-right: 0.5rem;
+      font-family: $heading-main;
+      font-size: 1.2rem;
+      color: $color-yellow;
+    }
+
+    .triangle {
+      width: 0;
+      height: 0;
+      border-top: 0.8rem solid transparent;
+      border-left: 1.3rem solid #{$color-yellow};
+      border-bottom: 0.8rem solid transparent;
+    }
+  }
+
+  .carouselContainer {
+    margin-top: 32px;
+  }
+
+  .slide {
+    display: block;
+    max-width: 250px;
+
+    .purpleRectangle {
+      height: 250px;
+      background-color: $color-purple
+    }
+
+    .cardTitle {
+      margin-top: 0.5rem;
+      font-family: $heading-main;
+      font-size: 1.5rem;
+    }
+
+    .cardExcerpt {
+      margin-top: 0.5rem;
+      font-size: 0.8rem;
+      color: $color-green-2;
+    }
+  }
+}

@@ -20,7 +20,7 @@ const Articles: NextPage<Props> = ({ ideas }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2>IDÉES</h2>
+      <h2 className={styles.title}>IDÉES</h2>
 
       <div className={styles.list}>
         <ul>

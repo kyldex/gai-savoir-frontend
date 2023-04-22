@@ -29,7 +29,7 @@ const MobileMenuBar = () => {
         <Image src={hamburgerBtnIcon} width={32} alt="" aria-hidden="true" />
       </button>
 
-      <Link href="./" className={styles.mobileMenuBarLogo}>
+      <Link href="/" className={styles.mobileMenuBarLogo}>
         <Image
           src={textLogo}
           width={120}

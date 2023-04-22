@@ -9,7 +9,7 @@ const DesktopMenu = () => {
         <Link href="/evenements">ÉVÈNEMENTS</Link>
       </li>
       <li>
-        <Link href="/audiovisuel">PRODUCTION AUDIOVISUELLE</Link>
+        <Link href="/production-audiovisuelle">PRODUCTION AUDIOVISUELLE</Link>
       </li>
       <li>
         <Link href="/idees">IDÉES</Link>
