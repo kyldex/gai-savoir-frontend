@@ -4,6 +4,8 @@ import ReactMarkdown from 'react-markdown';
 
 import styles from './[slug].module.scss';
 
+import HomePageLink from '../../components/common/HomePageLink';
+
 import Idea from '../../types/Idea';
 import { IdeasData, IdeaDataBySlug } from '../../types/IdeasData';
 
@@ -22,6 +24,8 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
       </Head>
 
       {preview && <div>I&apos;m in preview mode !</div>}
+
+      <HomePageLink />
 
       <h2 className={styles.title}>{idea.attributes.title}</h2>
 

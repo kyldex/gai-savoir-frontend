@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 
+import HomePageLink from '../../components/common/HomePageLink';
+
 import Idea from '../../types/Idea';
 import { IdeasData } from '../../types/IdeasData';
 
@@ -19,6 +21,8 @@ const Articles: NextPage<Props> = ({ ideas }) => {
         <meta name="description" content="Idées du Gai Savoir" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <HomePageLink />
 
       <h2 className={styles.title}>IDÉES</h2>
 
