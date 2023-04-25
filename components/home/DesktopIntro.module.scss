@@ -1,7 +1,25 @@
 @import '../../styles/variables';
 
-.logo {
-  margin: 0 auto;
+.title {
+  position: relative;
+  display: flex;
+  justify-content: center;
+
+  // For SEO and accessibility
+  // https://stackoverflow.com/a/65257530
+  .visuallyHidden {
+    position: absolute;
+    border: 0;
+    padding: 0;
+    margin: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+    // Added line to stop words getting smushed together (as they go onto seperate
+    // lines and some screen readers do not understand line feeds as a space)
+    white-space: nowrap;
+  }
 }
 
 .titleContainer {

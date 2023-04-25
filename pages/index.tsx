@@ -28,7 +28,6 @@ const Home: NextPage<Props> = ({ ideas }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* TODO: Client only. Custom layout shift ? + pas de h1 dans le html initial */}
       {hasMounted ? <Intro /> : null}
 
       <div className={styles.contentCarouselCardsContainer}>

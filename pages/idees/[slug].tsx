@@ -27,7 +27,7 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
 
       <HomePageLink />
 
-      <h2 className={styles.title}>{idea.attributes.title}</h2>
+      <h1 className={styles.title}>{idea.attributes.title}</h1>
 
       <div className={styles.authorInfo}>
         {idea.attributes.author}, le {idea.attributes.published}

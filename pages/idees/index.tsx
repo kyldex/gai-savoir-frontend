@@ -24,7 +24,7 @@ const Articles: NextPage<Props> = ({ ideas }) => {
 
       <HomePageLink />
 
-      <h2 className={styles.title}>IDÉES</h2>
+      <h1 className={styles.title}>IDÉES</h1>
 
       <div className={styles.list}>
         <ul>

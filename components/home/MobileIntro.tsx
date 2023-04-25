@@ -8,10 +8,10 @@ import kiosque from '../../assets/img/kiosque.svg';
 const MobileIntro = () => {
   return (
     <section>
-      <h1 className={styles.slogan}>
+      <p className={styles.slogan}>
         VOUS N&apos;ÊTES PAS CHEZ LE PSY, VOUS N&apos;ÊTES PAS CHEZ LE PRÊTRE
         MAIS VOUS AVEZ LA PAROLE QUAND MÊME
-      </h1>
+      </p>
       <div className={styles.illustationsContainer}>
         <Image src={kiosque} width={40} className={styles.kiosque} alt="" />
         <Image
