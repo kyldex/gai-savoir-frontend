@@ -8,7 +8,7 @@ import MegaphoneIcon from './MegaphoneIcon';
 import logo from '../../assets/img/gai_savoir_logo.svg';
 import whiteStar from '../../assets/img/star_white.svg';
 import kiosque from '../../assets/img/kiosque.svg';
-import yellow_dot from '../../assets/img/yellow_dot.svg';
+import dot_yellow from '../../assets/img/dot_yellow.svg';
 import bridge from '../../assets/img/bridge.svg';
 import interrogation from '../../assets/img/interrogation.svg';
 
@@ -42,7 +42,7 @@ const DesktopIntro = () => {
 
       <div className={styles.desktopIntroContainer2}>
         <Image
-          src={yellow_dot}
+          src={dot_yellow}
           width={30}
           className={styles.yellowDot}
           alt=""

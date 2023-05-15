@@ -1,7 +1,10 @@
 import { FC } from 'react';
 import Link from 'next/link';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+
 import 'swiper/css';
+import "swiper/css/navigation";
 
 import styles from './ContentCarouselCards.module.scss';
 
@@ -21,7 +24,7 @@ const ContentCarouselCards: FC<Props> = ({ title, allPostsURL, cardsData }) => {
   const hasMounted = useHasMounted();
 
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.titleContainer}>
         <h2>{title}</h2>
         <div className={styles.allPosts}>
@@ -35,9 +38,11 @@ const ContentCarouselCards: FC<Props> = ({ title, allPostsURL, cardsData }) => {
       {hasMounted ? (
         <div className={styles.carouselContainer}>
           <Swiper
+            navigation={true}
+            modules={[Navigation]}
             slidesPerView={isMobile ? 1 : 3}
             centeredSlides={isMobile ? true : false}
-            spaceBetween={8}
+            // spaceBetween={8}
           >
             {cardsData.map((idea) => (
               <SwiperSlide key={idea.id}>
@@ -58,7 +63,7 @@ const ContentCarouselCards: FC<Props> = ({ title, allPostsURL, cardsData }) => {
           </Swiper>
         </div>
       ) : null}
-    </div>
+    </section>
   );
 };
 
