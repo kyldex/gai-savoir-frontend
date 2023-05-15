@@ -13,8 +13,85 @@
     margin-top: 10 * $layout-unit-px;
   }
 
-  .contentCarouselCardsContainer {
-    max-width: 1200px;
-    margin: 40px auto 0;
+  .illustrationsContainer1 {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 250px;
+
+    .illustrationContainer {
+      flex-basis: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dotOrange {
+      transform: translate(-16px, 16px);
+    }
+
+    .flower {
+      transform: translate(-32px, -16px);
+    }
+
+    .clock {
+      transform: translate(8px, -32px);
+    }
+  }
+
+  .illustrationsContainer2 {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 250px;
+
+    .illustrationContainer {
+      flex-basis: 25%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .sunglasses {
+      transform: translate(8px, -40px);
+    }
+
+    .pencil {
+      transform: translate(16px, 40px);
+    }
+
+    .dotBurgundy {
+      transform: translate(64px, -32px);
+    }
+
+    .exclamation {
+      transform: translateX(64px);
+    }
+  }
+
+  .illustrationsContainer3 {
+    display: flex;
+    margin: 0 auto;
+    max-width: 1000px;
+    height: 250px;
+
+    .illustrationContainer {
+      flex-basis: 33.33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .faces {
+      transform: translate(-8px, 16px);
+    }
+
+    .bird {
+      transform: translate(64px, -32px);
+    }
+
+    .coffeemaker {
+      transform: translate(80px, -16px);
+    }
   }
 }

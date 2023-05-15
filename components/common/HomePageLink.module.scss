@@ -1,0 +1,20 @@
+@import '../../styles/variables';
+
+.homePageLink {
+  display: flex;
+  align-items: center;
+
+  .triangle {
+    margin-right: 0.5rem;
+    width: 0;
+    height: 0;
+    border-top: 0.6rem solid transparent;
+    border-right: 1.1rem solid #{$color-green-2};
+    border-bottom: 0.6rem solid transparent;
+  }
+
+  .homePageLinkText {
+    font-size: 0.875rem;
+    color: $color-green-2;
+  }
+}

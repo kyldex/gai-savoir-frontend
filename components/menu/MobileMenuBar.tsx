@@ -30,19 +30,17 @@ const MobileMenuBar = () => {
       </button>
 
       <Link href="/" className={styles.mobileMenuBarLogo}>
-        <Image
-          src={textLogo}
-          width={120}
-          className={styles.mobileMenuLogoText}
-          alt=""
-          aria-hidden="true"
-        />
-        <Image
-          src={birdLogo}
-          width={30}
-          alt=""
-          aria-hidden="true"
-        />
+        <h1 className={styles.title}>
+          <span className={styles.visuallyHidden}>Gai Savoir</span>
+          <Image
+            src={textLogo}
+            width={120}
+            className={styles.mobileMenuLogoText}
+            alt=""
+            aria-hidden="true"
+          />
+          <Image src={birdLogo} width={30} alt="" aria-hidden="true" />
+        </h1>
       </Link>
 
       <Link href="https://www.instagram.com/gai_savoir_/" target="_blank">

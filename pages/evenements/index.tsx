@@ -12,7 +12,7 @@ const Evenements: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2 className={styles.title}>LES ÉVÈVENEMENTS</h2>
+      <h1 className={styles.title}>LES ÉVÈVENEMENTS</h1>
 
       <div className={styles.description}>
         <p className={styles.descriptionPart}>Disours</p>

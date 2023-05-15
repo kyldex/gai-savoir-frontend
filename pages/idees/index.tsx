@@ -4,6 +4,8 @@ import Link from 'next/link';
 
 import styles from './index.module.scss';
 
+import HomePageLink from '../../components/common/HomePageLink';
+
 import Idea from '../../types/Idea';
 import { IdeasData } from '../../types/IdeasData';
 
@@ -20,7 +22,9 @@ const Articles: NextPage<Props> = ({ ideas }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <h2 className={styles.title}>IDÉES</h2>
+      <HomePageLink />
+
+      <h1 className={styles.title}>IDÉES</h1>
 
       <div className={styles.list}>
         <ul>

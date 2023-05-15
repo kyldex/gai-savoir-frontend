@@ -1,0 +1,49 @@
+svg {
+  .cls1 {
+    stroke: #e8bc3f;
+    stroke-width: 7px;
+    animation-duration: 2s;
+    animation-name: megaphone_opacity;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes megaphone_opacity {
+    from {
+      opacity: 1;
+    }
+    45% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    55% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+    }
+    65% {
+      opacity: 0;
+    }
+    70% {
+      opacity: 1;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  .cls2 {
+    fill: #17b389;
+  }
+  .cls3 {
+    fill: #7467ef;
+  }
+  .cls4 {
+    fill: none;
+    stroke-miterlimit: 10;
+    stroke: #7467ef;
+    stroke-width: 14px;
+  }
+}
