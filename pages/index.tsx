@@ -28,6 +28,7 @@ const Home: NextPage<Props> = ({ ideas }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      {/* Client only */}
       {hasMounted ? <Intro /> : null}
 
       <div className={styles.contentCarouselCardsContainer}>

@@ -1,48 +1,117 @@
 @import '../../styles/variables';
 
-.title {
-  position: relative;
-  display: flex;
-  justify-content: center;
+.desktopIntroContainer1 {
+  margin: auto;
+  max-width: 1120px;
 
-  // For SEO and accessibility
-  // https://stackoverflow.com/a/65257530
-  .visuallyHidden {
-    position: absolute;
-    border: 0;
-    padding: 0;
-    margin: 0;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    clip-path: inset(50%);
-    // Added line to stop words getting smushed together (as they go onto seperate
-    // lines and some screen readers do not understand line feeds as a space)
-    white-space: nowrap;
+  .title {
+    position: relative;
+    display: flex;
+    justify-content: center;
+
+    // For SEO and accessibility
+    // https://stackoverflow.com/a/65257530
+    .visuallyHidden {
+      position: absolute;
+      border: 0;
+      padding: 0;
+      margin: 0;
+      height: 1px;
+      width: 1px;
+      overflow: hidden;
+      clip-path: inset(50%);
+      // Added line to stop words getting smushed together (as they go onto seperate
+      // lines and some screen readers do not understand line feeds as a space)
+      white-space: nowrap;
+    }
+  }
+
+  .sloganContainer {
+    position: relative;
+
+    .ladderDesktop {
+      position: absolute;
+      top: -95px;
+      left: 0;
+      width: 160px;
+    }
+
+    .whiteStar {
+      position: absolute;
+      top: -135px;
+      right: 12%;
+      animation-duration: 750ms;
+      animation-name: scale_white_star;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .slogan {
+      margin-top: 9 * $layout-unit-px;
+      font-family: $heading-main;
+      font-size: 1.8rem;
+      line-height: 1.5;
+      text-align: center;
+      color: $color-yellow;
+    }
+
+    .kiosque {
+      position: absolute;
+      top: -60px;
+      right: 0;
+    }
   }
 }
 
-.titleContainer {
+.desktopIntroContainer2 {
   position: relative;
+  margin: auto;
+  max-width: 1200px;
+  min-height: 400px;
 
-  .slogan {
-    margin-top: 9 * $layout-unit-px;
-    font-family: $heading-main;
-    font-size: 1.8rem;
-    line-height: 1.5;
-    text-align: center;
-    color: $color-yellow;
+  .yellowDot {
+    position: absolute;
+    top: 20 * $layout-unit-px;
+    left: 0;
   }
 
-  .kiosque {
+  .bridge {
     position: absolute;
-    top: -60px;
-    right: 7%;
+    top: 17 * $layout-unit-px;
+    left: 8%;
+  }
+
+  .megaphone {
+    position: absolute;
+    top: 15 * $layout-unit-px;
+    right: 14%;
+    width: 220px;
+    transform: rotateZ(-12deg);
+  }
+
+  .interrogation {
+    position: absolute;
+    top: 300px;
+    left: 30%;
+  }
+
+  .whiteStar {
+    position: absolute;
+    top: 230px;
+    right: 40%;
+    animation-duration: 750ms;
+    animation-name: scale_white_star;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-delay: 300ms;
   }
 }
 
-.interrogation {
-  margin-top: 8 * $layout-unit-px;
-  margin-left: 10%;
-  transform: translateY(-30px);
+@keyframes scale_white_star {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(0.9);
+  }
 }
