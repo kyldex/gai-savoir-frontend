@@ -8,6 +8,7 @@ import HomePageLink from '../../components/common/HomePageLink';
 
 import Idea from '../../types/Idea';
 import { IdeasData, IdeaDataBySlug } from '../../types/IdeasData';
+import formatDate from '../../utils/date';
 
 interface Props {
   idea: Idea;
@@ -30,7 +31,7 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
       <h1 className={styles.title}>{idea.attributes.title}</h1>
 
       <div className={styles.authorInfo}>
-        {idea.attributes.author}, le {idea.attributes.published}
+        {idea.attributes.author}, le {formatDate(idea.attributes.published)}
       </div>
 
       <ReactMarkdown className={styles.content}>

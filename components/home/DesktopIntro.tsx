@@ -6,11 +6,12 @@ import LadderDesktopIcon from './LadderDesktopIcon';
 import MegaphoneIcon from './MegaphoneIcon';
 
 import logo from '../../assets/img/gai_savoir_logo.svg';
-import whiteStar from '../../assets/img/star_white.svg';
-import kiosque from '../../assets/img/kiosque.svg';
+import whiteStar from '../../assets/img/home/star_white.svg';
+import kiosque from '../../assets/img/home/kiosque.svg';
 import dot_yellow from '../../assets/img/dot_yellow.svg';
-import bridge from '../../assets/img/bridge.svg';
-import interrogation from '../../assets/img/interrogation.svg';
+import bridge from '../../assets/img/home/bridge.svg';
+import target from '../../assets/img/home/target.svg';
+import interrogation from '../../assets/img/home/interrogation.svg';
 
 const DesktopIntro = () => {
   return (
@@ -57,7 +58,7 @@ const DesktopIntro = () => {
           className={styles.interrogation}
           alt=""
         />
-        <Image src={whiteStar} width={95} className={styles.whiteStar} alt="" />
+        <Image src={target} width={85} className={styles.target} alt="" />
       </div>
     </section>
   );

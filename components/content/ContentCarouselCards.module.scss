@@ -14,9 +14,14 @@
     align-items: center;
   }
 
+  h2 {
+    margin-left: 42px;
+  }
+
   .allPosts {
     display: flex;
     align-items: center;
+    margin-right: 42px;
 
     .allPostsLink {
       margin-right: 0.5rem;
@@ -42,6 +47,9 @@
     display: block;
     max-width: 250px;
     margin: auto;
+    // &.events {
+    //   max-width: 100px;
+    // }
 
     .purpleRectangle {
       height: 250px;

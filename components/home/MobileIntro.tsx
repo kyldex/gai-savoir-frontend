@@ -2,8 +2,8 @@ import Image from 'next/image';
 
 import styles from './MobileIntro.module.scss';
 
-import interrogation from '../../assets/img/interrogation.svg';
-import kiosque from '../../assets/img/kiosque.svg';
+import interrogation from '../../assets/img/home/interrogation.svg';
+import kiosque from '../../assets/img/home/kiosque.svg';
 
 const MobileIntro = () => {
   return (
