@@ -7,5 +7,12 @@ export default interface Idea {
     excerpt: string;
     author: string;
     slug: string;
+    card_image: {
+      data?: {
+        attributes : {
+          url: string;
+        }
+      }
+    };
   };
 }

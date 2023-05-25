@@ -45,6 +45,14 @@
       animation-iteration-count: infinite;
       animation-direction: alternate;
     }
+    @keyframes scale_white_star {
+      from {
+        transform: scale(1);
+      }
+      to {
+        transform: scale(0.9);
+      }
+    }
 
     .slogan {
       margin-top: 9 * $layout-unit-px;
@@ -95,23 +103,9 @@
     left: 35%;
   }
 
-  .whiteStar {
+  .target {
     position: absolute;
     top: 230px;
     right: 40%;
-    animation-duration: 750ms;
-    animation-name: scale_white_star;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-    animation-delay: 300ms;
-  }
-}
-
-@keyframes scale_white_star {
-  from {
-    transform: scale(1);
-  }
-  to {
-    transform: scale(0.9);
   }
 }

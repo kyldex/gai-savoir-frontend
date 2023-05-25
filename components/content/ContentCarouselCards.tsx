@@ -1,10 +1,11 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
 import 'swiper/css';
-import "swiper/css/navigation";
+import 'swiper/css/navigation';
 
 import styles from './ContentCarouselCards.module.scss';
 
@@ -14,14 +15,43 @@ import useHasMounted from '../../utils/hooks/useHasMounted';
 import Idea from '../../types/Idea';
 
 interface Props {
-  title: string;
-  allPostsURL: string;
+  type: 'events' | 'audiovisual' | 'ideas';
   cardsData: Idea[];
 }
 
-const ContentCarouselCards: FC<Props> = ({ title, allPostsURL, cardsData }) => {
+const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
   const { isMobile } = useDeviceContext();
   const hasMounted = useHasMounted();
+
+  const getInfo = () => {
+    let title = '';
+    let allPostsURL = '/';
+    let cssSlide = '';
+
+    switch (type) {
+      case 'events':
+        title = 'ÉVÈNEMENTS';
+        allPostsURL = '/evenements';
+        cssSlide = 'events';
+        break;
+      case 'audiovisual':
+        title = 'PRODUCTION AUDIOVISUELLE';
+        allPostsURL = '/production-audiovisuelle';
+        cssSlide = 'audiovisual';
+        break;
+      case 'ideas':
+        title = 'IDÉES';
+        allPostsURL = '/idees';
+        cssSlide = 'ideas';
+        break;
+      default:
+        console.error('unknown type for carousel cards');
+    }
+
+    return { title, allPostsURL, cssSlide };
+  };
+
+  const { title, allPostsURL, cssSlide } = getInfo();
 
   return (
     <section className={styles.container}>
@@ -48,9 +78,19 @@ const ContentCarouselCards: FC<Props> = ({ title, allPostsURL, cardsData }) => {
               <SwiperSlide key={idea.id}>
                 <Link
                   href={`/idees/${idea.attributes.slug}`}
-                  className={styles.slide}
+                  className={`${styles.slide} ${styles[cssSlide]}`}
                 >
-                  <div className={styles.purpleRectangle} />
+                  {idea.attributes.card_image.data ? (
+                    <Image
+                      src={idea.attributes.card_image.data.attributes.url}
+                      alt=""
+                      width={250}
+                      height={250}
+                      className={styles.cardImage}
+                    />
+                  ) : (
+                    <div className={styles.purpleRectangle} />
+                  )}
                   <div className={styles.cardTitle}>
                     {idea.attributes.title}
                   </div>

@@ -20,22 +20,14 @@
     height: 250px;
 
     .illustrationContainer {
-      flex-basis: 25%;
+      flex-basis: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .dotOrange {
-      transform: translate(-16px, 16px);
-    }
-
     .flower {
-      transform: translate(-32px, -16px);
-    }
-
-    .clock {
-      transform: translate(8px, -32px);
+      transform: translate(16px, -16px);
     }
   }
 
@@ -46,26 +38,18 @@
     height: 250px;
 
     .illustrationContainer {
-      flex-basis: 25%;
+      flex-basis: 50%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
 
-    .sunglasses {
-      transform: translate(8px, -40px);
-    }
-
     .pencil {
-      transform: translate(16px, 40px);
-    }
-
-    .dotBurgundy {
-      transform: translate(64px, -32px);
+      transform: translateX(48px);
     }
 
     .exclamation {
-      transform: translateX(64px);
+      transform: translateX(80px);
     }
   }
 
@@ -82,16 +66,16 @@
       align-items: center;
     }
 
-    .faces {
-      transform: translate(-8px, 16px);
-    }
-
     .bird {
-      transform: translate(64px, -32px);
+      transform: translate(24px, -32px);
     }
 
     .coffeemaker {
-      transform: translate(80px, -16px);
+      transform: translate(48px, 16px);
+    }
+
+    .clock {
+      transform: translate(-40px, -16px);
     }
   }
 }

@@ -11,16 +11,16 @@ import useHasMounted from '../utils/hooks/useHasMounted';
 import Idea from '../types/Idea';
 import { IdeasData } from '../types/IdeasData';
 import dotOrange from '../assets/img/dot_orange.svg';
-import flower from '../assets/img/flower.svg';
-import clock from '../assets/img/clock.svg';
-import papers from '../assets/img/papers.svg';
-import sunglasses from '../assets/img/sunglasses.svg';
-import dotBurgundy from '../assets/img/dot_burgundy.svg';
-import pencil from '../assets/img/pencil.svg';
-import exclamation from '../assets/img/exclamation.svg';
-import faces from '../assets/img/faces.svg';
-import bird from '../assets/img/bird.svg';
-import coffeemaker from '../assets/img/coffeemaker.svg';
+import flower from '../assets/img/home/flower.svg';
+import clock from '../assets/img/home/clock.svg';
+import papers from '../assets/img/home/papers.svg';
+import sunglasses from '../assets/img/home/sunglasses.svg';
+import dotBurgundy from '../assets/img/home/dot_burgundy.svg';
+import pencil from '../assets/img/home/pencil.svg';
+import exclamation from '../assets/img/home/exclamation.svg';
+import faces from '../assets/img/home/faces.svg';
+import bird from '../assets/img/home/bird.svg';
+import coffeemaker from '../assets/img/home/coffeemaker.svg';
 
 interface Props {
   ideas: Idea[];
@@ -43,57 +43,24 @@ const Home: NextPage<Props> = ({ ideas }) => {
       {/* Client only */}
       {hasMounted ? <Intro /> : null}
 
-      <ContentCarouselCards
-        title="ÉVÈNEMENTS"
-        allPostsURL="/evenements"
-        cardsData={ideas}
-      />
+      <div style={{ marginTop: '56px' }}>
+        <ContentCarouselCards type="events" cardsData={ideas} />
+      </div>
 
       <div className={styles.illustrationsContainer1}>
         <div className={styles.illustrationContainer}>
-          <Image
-            src={dotOrange}
-            width={80}
-            className={styles.dotOrange}
-            alt=""
-          />
+          <Image src={flower} width={65} className={styles.flower} alt="" />
         </div>
         <div className={styles.illustrationContainer}>
-          <Image src={flower} width={80} className={styles.flower} alt="" />
-        </div>
-        <div className={styles.illustrationContainer}>
-          <Image src={clock} width={80} className={styles.clock} alt="" />
-        </div>
-        <div className={styles.illustrationContainer}>
-          <Image src={papers} width={100} className={styles.papers} alt="" />
+          <Image src={papers} width={85} className={styles.papers} alt="" />
         </div>
       </div>
 
-      <ContentCarouselCards
-        title="PRODUCTION AUDIOVISUELLE"
-        allPostsURL="/production-audiovisuelle"
-        cardsData={ideas}
-      />
+      <ContentCarouselCards type="audiovisual" cardsData={ideas} />
 
       <div className={styles.illustrationsContainer2}>
         <div className={styles.illustrationContainer}>
-          <Image
-            src={sunglasses}
-            width={200}
-            className={styles.sunglasses}
-            alt=""
-          />
-        </div>
-        <div className={styles.illustrationContainer}>
           <Image src={pencil} width={250} className={styles.pencil} alt="" />
-        </div>
-        <div className={styles.illustrationContainer}>
-          <Image
-            src={dotBurgundy}
-            width={70}
-            className={styles.dotBurgundy}
-            alt=""
-          />
         </div>
         <div className={styles.illustrationContainer}>
           <Image
@@ -105,24 +72,20 @@ const Home: NextPage<Props> = ({ ideas }) => {
         </div>
       </div>
 
-      <ContentCarouselCards
-        title="IDÉES"
-        allPostsURL="/idees"
-        cardsData={ideas}
-      />
+      <ContentCarouselCards type="ideas" cardsData={ideas} />
 
       <div className={styles.illustrationsContainer3}>
-        <div className={styles.illustrationContainer}>
-          <Image src={faces} width={180} className={styles.faces} alt="" />
-        </div>
         <div className={styles.illustrationContainer}>
           <Image src={bird} width={180} className={styles.bird} alt="" />
         </div>
         <div className={styles.illustrationContainer}>
+          <Image src={coffeemaker} width={120} className={styles.coffeemaker} alt="" />
+        </div>
+        <div className={styles.illustrationContainer}>
           <Image
-            src={coffeemaker}
-            width={140}
-            className={styles.coffeemaker}
+            src={clock}
+            width={65}
+            className={styles.clock}
             alt=""
           />
         </div>
@@ -132,7 +95,9 @@ const Home: NextPage<Props> = ({ ideas }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?populate=*&sort=publishedAt`
+  );
   const ideas: IdeasData = await res.json();
 
   return {
