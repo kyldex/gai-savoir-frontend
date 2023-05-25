@@ -12,7 +12,10 @@ const ARTICLES_DATA_MOCK: IdeasData = {
         published: '2022-11-02',
         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         author: 'jean90',
-        slug: 'l-amour-est-il-une-valeur-ringarde'
+        slug: 'l-amour-est-il-une-valeur-ringarde',
+        card_image: {
+          data: null
+        }
       }
     },
     {
@@ -24,7 +27,10 @@ const ARTICLES_DATA_MOCK: IdeasData = {
         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         published: '2022-11-04',
         author: 'jeanne90',
-        slug: 'peut-on-reellement-vivre-ensemble'
+        slug: 'peut-on-reellement-vivre-ensemble',
+        card_image: {
+          data: null
+        }
       }
     },
     {
@@ -36,7 +42,10 @@ const ARTICLES_DATA_MOCK: IdeasData = {
         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         published: '2022-11-04',
         author: 'philo85',
-        slug: 'l-art-a-t-il-une-utilite'
+        slug: 'l-art-a-t-il-une-utilite',
+        card_image: {
+          data: null
+        }
       }
     },
     {
@@ -48,7 +57,10 @@ const ARTICLES_DATA_MOCK: IdeasData = {
         excerpt: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit.',
         published: '2022-11-14',
         author: 'jeanne90',
-        slug: 'comment-reconciler-le-singulier-et-le-collectif'
+        slug: 'comment-reconciler-le-singulier-et-le-collectif',
+        card_image: {
+          data: null
+        }
       }
     }
   ],
