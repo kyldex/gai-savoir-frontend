@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
@@ -79,7 +80,17 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
                   href={`/idees/${idea.attributes.slug}`}
                   className={`${styles.slide} ${styles[cssSlide]}`}
                 >
-                  <div className={styles.purpleRectangle} />
+                  {idea.attributes.card_image.data ? (
+                    <Image
+                      src={idea.attributes.card_image.data.attributes.url}
+                      alt=""
+                      width={250}
+                      height={250}
+                      className={styles.cardImage}
+                    />
+                  ) : (
+                    <div className={styles.purpleRectangle} />
+                  )}
                   <div className={styles.cardTitle}>
                     {idea.attributes.title}
                   </div>
