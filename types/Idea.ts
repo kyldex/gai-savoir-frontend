@@ -8,11 +8,11 @@ export default interface Idea {
     author: string;
     slug: string;
     card_image: {
-      data?: {
+      data: {
         attributes : {
           url: string;
         }
-      }
+      } | null
     };
   };
 }
