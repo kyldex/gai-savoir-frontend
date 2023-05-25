@@ -34,9 +34,13 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
         {idea.attributes.author}, le {formatDate(idea.attributes.published)}
       </div>
 
-      <ReactMarkdown className={styles.content}>
-        {idea.attributes.content}
-      </ReactMarkdown>
+      <div className={styles.contentContainer}>
+        <div className={styles.content}>
+          <ReactMarkdown>{idea.attributes.content}</ReactMarkdown>
+        </div>
+        <div className={styles.greenBackground} />
+        <div className={styles.purpleBackground} />
+      </div>
     </div>
   );
 };
