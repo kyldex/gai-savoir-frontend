@@ -17,7 +17,10 @@
     display: flex;
     margin: 0 auto;
     max-width: 1000px;
-    height: 250px;
+    height: 200px;
+    @include media-query-sm {
+      height: 250px;
+    }
 
     .illustrationContainer {
       flex-basis: 50%;
@@ -35,7 +38,10 @@
     display: flex;
     margin: 0 auto;
     max-width: 1000px;
-    height: 250px;
+    height: 200px;
+    @include media-query-sm {
+      height: 250px;
+    }
 
     .illustrationContainer {
       flex-basis: 50%;
@@ -45,11 +51,17 @@
     }
 
     .pencil {
-      transform: translateX(48px);
+      transform: translateX(8px);
+      @include media-query-sm {
+        transform: translateX(48px);
+      }
     }
 
     .exclamation {
-      transform: translateX(80px);
+      transform: translateX(40px);
+      @include media-query-sm {
+        transform: translateX(80px);
+      }
     }
   }
 
@@ -57,7 +69,10 @@
     display: flex;
     margin: 0 auto;
     max-width: 1000px;
-    height: 250px;
+    height: 200px;
+    @include media-query-sm {
+      height: 250px;
+    }
 
     .illustrationContainer {
       flex-basis: 33.33%;
@@ -75,7 +90,10 @@
     }
 
     .clock {
-      transform: translate(-40px, -16px);
+      transform: translate(8px, -32px);
+      @include media-query-sm {
+        transform: translate(-40px, -16px);
+      }
     }
   }
 }
