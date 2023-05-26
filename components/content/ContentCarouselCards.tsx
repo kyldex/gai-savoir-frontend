@@ -12,11 +12,12 @@ import styles from './ContentCarouselCards.module.scss';
 import { useDeviceContext } from '../../context/DeviceContext';
 
 import useHasMounted from '../../utils/hooks/useHasMounted';
-import Idea from '../../types/Idea';
+import type Idea from '../../types/Idea';
+import type { Audiovisual } from '../../assets/data/audiovisualType';
 
 interface Props {
   type: 'events' | 'audiovisual' | 'ideas';
-  cardsData: Idea[];
+  cardsData: Idea[] | Audiovisual[];
 }
 
 const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
@@ -27,31 +28,35 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
     let title = '';
     let allPostsURL = '/';
     let cssSlide = '';
+    let catergorySlugPart = '';
 
     switch (type) {
       case 'events':
         title = 'ÉVÈNEMENTS';
         allPostsURL = '/evenements';
         cssSlide = 'events';
+        catergorySlugPart = 'idees';
         break;
       case 'audiovisual':
         title = 'PRODUCTION AUDIOVISUELLE';
         allPostsURL = '/production-audiovisuelle';
         cssSlide = 'audiovisual';
+        catergorySlugPart = 'production-audiovisuelle';
         break;
       case 'ideas':
         title = 'IDÉES';
         allPostsURL = '/idees';
         cssSlide = 'ideas';
+        catergorySlugPart = 'idees';
         break;
       default:
         console.error('unknown type for carousel cards');
     }
 
-    return { title, allPostsURL, cssSlide };
+    return { title, allPostsURL, cssSlide, catergorySlugPart };
   };
 
-  const { title, allPostsURL, cssSlide } = getInfo();
+  const { title, allPostsURL, cssSlide, catergorySlugPart } = getInfo();
 
   return (
     <section className={styles.container}>
@@ -77,7 +82,7 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
             {cardsData.map((idea) => (
               <SwiperSlide key={idea.id}>
                 <Link
-                  href={`/idees/${idea.attributes.slug}`}
+                  href={`/${catergorySlugPart}/${idea.attributes.slug}`}
                   className={`${styles.slide} ${styles[cssSlide]}`}
                 >
                   {idea.attributes.card_image.data ? (
@@ -85,7 +90,12 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
                       src={idea.attributes.card_image.data.attributes.url}
                       alt=""
                       width={250}
-                      height={250}
+                      height={
+                        (type === 'events' && 250) ||
+                        (type === 'audiovisual' && 200) ||
+                        (type === 'ideas' && 250) ||
+                        250
+                      }
                       className={styles.cardImage}
                     />
                   ) : (
