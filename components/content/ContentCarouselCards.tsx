@@ -14,10 +14,11 @@ import { useDeviceContext } from '../../context/DeviceContext';
 import useHasMounted from '../../utils/hooks/useHasMounted';
 import type Idea from '../../types/Idea';
 import type { Audiovisual } from '../../assets/data/audiovisualType';
+import type { Event } from '../../assets/data/eventType';
 
 interface Props {
   type: 'events' | 'audiovisual' | 'ideas';
-  cardsData: Idea[] | Audiovisual[];
+  cardsData: Idea[] | Audiovisual[] | Event[];
 }
 
 const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
@@ -35,7 +36,7 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
         title = 'ÉVÈNEMENTS';
         allPostsURL = '/evenements';
         cssSlide = 'events';
-        catergorySlugPart = 'idees';
+        catergorySlugPart = 'evenements';
         break;
       case 'audiovisual':
         title = 'PRODUCTION AUDIOVISUELLE';
