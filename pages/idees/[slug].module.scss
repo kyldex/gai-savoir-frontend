@@ -12,10 +12,13 @@
   .title {
     margin-top: 3rem;
     font-family: $heading-bold;
-    font-size: 3.2rem;
+    font-size: 2.7rem;
     text-transform: uppercase;
     text-align: center;
     color: $color-green-1;
+    @include media-query-sm {
+      font-size: 3.2rem;
+    }
   }
 
   .authorInfo {
@@ -33,18 +36,24 @@
     position: relative;
     z-index: 3;
     margin-top: 12 * $layout-unit-rem;
-    padding: 3rem 4.5rem 5rem;
+    padding: 2.5rem 1.5rem 3rem;
     background-color: #fff;
     border-radius: 24px;
+    @include media-query-sm {
+      padding: 3rem 4.5rem 5rem;
+    }
 
     h2 {
       margin-top: 4rem;
       margin-bottom: 3rem;
       font-family: $heading-bold;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       text-transform: uppercase;
       text-align: center;
       color: $color-orange;
+      @include media-query-sm {
+        font-size: 1.8rem;
+      }
       &:first-child {
         margin-top: 0;
       }
@@ -52,10 +61,13 @@
 
     p {
       margin-top: 1.5rem;
-      font-size: 1.2rem;
-      line-height: 1.4;
+      font-size: 1rem;
+      line-height: 1.2;
       text-align: justify;
       color: $primary-color-blue;
+      @include media-query-sm {
+        font-size: 1.2rem;
+      }
       &:first-child {
         margin-top: 0;
       }
@@ -75,15 +87,19 @@
 
   .greenBackground {
     position: absolute;
-    top: -28px;
+    top: -20px;
     left: 8px;
     width: 100%;
     height: 100%;
     background-color: $color-green-1;
     border-radius: 24px;
+    @include media-query-sm {
+      top: -28px;
+    }
   }
 
   .purpleBackground {
+    display: none;
     position: absolute;
     top: -28px;
     left: 16px;
@@ -93,5 +109,8 @@
     border-radius: 24px;
     transform-origin: center center;
     transform: rotate(3deg);
+    @include media-query-sm {
+      display: block;
+    }
   }
 }
