@@ -8,6 +8,7 @@ import Intro from '../components/home/Intro';
 import ContentCarouselCards from '../components/content/ContentCarouselCards';
 
 import useHasMounted from '../utils/hooks/useHasMounted';
+import audiovisualData from '../assets/data/audiovisual';
 import Idea from '../types/Idea';
 import { IdeasData } from '../types/IdeasData';
 import dotOrange from '../assets/img/dot_orange.svg';
@@ -56,7 +57,7 @@ const Home: NextPage<Props> = ({ ideas }) => {
         </div>
       </div>
 
-      <ContentCarouselCards type="audiovisual" cardsData={ideas} />
+      <ContentCarouselCards type="audiovisual" cardsData={audiovisualData} />
 
       <div className={styles.illustrationsContainer2}>
         <div className={styles.illustrationContainer}>

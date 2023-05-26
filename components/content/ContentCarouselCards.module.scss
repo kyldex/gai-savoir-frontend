@@ -1,4 +1,5 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
+@import '../../styles//mixins';
 
 .container {
   // Override Swiper Navigation custom properties
@@ -9,33 +10,54 @@
   margin: 0 auto;
 
   .titleContainer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include media-query-sm {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   h2 {
-    margin-left: 42px;
+    margin-left: 32px;
+    font-size: 2rem;
+    @include media-query-sm {
+      margin-left: 42px;
+      font-size: 2.5rem;
+    }
   }
 
   .allPosts {
     display: flex;
     align-items: center;
-    margin-right: 42px;
+    margin-top: 0.5rem;
+    margin-left: 32px;
+    @include media-query-sm {
+      margin-top: 0; 
+      margin-left: 0;
+      margin-right: 42px;
+    }
 
     .allPostsLink {
       margin-right: 0.5rem;
       font-family: $heading-main;
-      font-size: 1.2rem;
+      font-size: 1rem;
       color: $color-yellow;
+    }
+    @include media-query-sm {
+      font-size: 1.2rem;
     }
 
     .triangle {
       width: 0;
       height: 0;
-      border-top: 0.8rem solid transparent;
-      border-left: 1.3rem solid #{$color-yellow};
-      border-bottom: 0.8rem solid transparent;
+      border-top: 0.6rem solid transparent;
+      border-left: 1.1rem solid #{$color-yellow};
+      border-bottom: 0.6rem solid transparent;
+      @include media-query-sm {
+        border-top: 0.8rem solid transparent;
+        border-left: 1.3rem solid #{$color-yellow};
+        border-bottom: 0.8rem solid transparent;
+      }
     }
   }
 
