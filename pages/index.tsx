@@ -75,23 +75,6 @@ const Home: NextPage<Props> = ({ ideas }) => {
       </div>
 
       <ContentCarouselCards type="ideas" cardsData={ideas} />
-
-      <div className={styles.illustrationsContainer3}>
-        <div className={styles.illustrationContainer}>
-          <Image src={bird} width={180} className={styles.bird} alt="" />
-        </div>
-        <div className={styles.illustrationContainer}>
-          <Image
-            src={coffeemaker}
-            width={120}
-            className={styles.coffeemaker}
-            alt=""
-          />
-        </div>
-        <div className={styles.illustrationContainer}>
-          <Image src={clock} width={65} className={styles.clock} alt="" />
-        </div>
-      </div>
     </div>
   );
 };

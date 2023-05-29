@@ -8,7 +8,6 @@ import HomePageLink from '../../components/common/HomePageLink';
 
 import eventsData from '../../assets/data/event';
 import type { Event, EventData } from '../../assets/data/eventType';
-import formatDate from '../../utils/date';
 
 interface Props {
   event: Event;
@@ -30,12 +29,14 @@ const Event: NextPage<Props> = ({ event, preview }) => {
 
       <h1 className={styles.title}>{event.attributes.title}</h1>
 
-      <div className={styles.publicationDate}>
-        Publié le {formatDate(event.attributes.published)}
-      </div>
+      <div className={styles.excerpt}>{event.attributes.excerpt}</div>
 
       <div className={styles.imgContainer}>
-        <Image src={event.attributes.mainImgUrl} width={500} height={622} alt="" />
+        <Image
+          src={event.attributes.mainImgUrl}
+          fill
+          alt=""
+        />
       </div>
 
       <div className={styles.content}>

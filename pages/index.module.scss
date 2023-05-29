@@ -5,12 +5,14 @@
   margin-top: 5 * $layout-unit-px;
   @include media-query-sm {
     margin-top: 8 * $layout-unit-px;
+    margin-bottom: 5 * $layout-unit-px;
   }
   @include media-query-md {
     margin-top: 10 * $layout-unit-px;
   }
   @include media-query-lg {
     margin-top: 10 * $layout-unit-px;
+    margin-bottom: 8 * $layout-unit-px;
   }
 
   .illustrationsContainer1 {
@@ -58,38 +60,6 @@
       transform: translateX(40px);
       @include media-query-sm {
         transform: translateX(80px);
-      }
-    }
-  }
-
-  .illustrationsContainer3 {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1000px;
-    height: 200px;
-    @include media-query-sm {
-      height: 250px;
-    }
-
-    .illustrationContainer {
-      flex-basis: 33.33%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .bird {
-      transform: translate(24px, -32px);
-    }
-
-    .coffeemaker {
-      transform: translate(48px, 16px);
-    }
-
-    .clock {
-      transform: translate(8px, -32px);
-      @include media-query-sm {
-        transform: translate(-40px, -16px);
       }
     }
   }

@@ -75,23 +75,11 @@
   position: relative;
   margin: auto;
   max-width: 1200px;
-  min-height: 400px;
-
-  .yellowDot {
-    position: absolute;
-    top: 20 * $layout-unit-px;
-    left: 0;
-  }
-
-  .bridge {
-    position: absolute;
-    top: 17 * $layout-unit-px;
-    left: 8%;
-  }
+  min-height: 220px;
 
   .megaphone {
     position: absolute;
-    top: 15 * $layout-unit-px;
+    top: 13 * $layout-unit-px;
     right: 14%;
     width: 220px;
     transform: rotateZ(-12deg);
@@ -99,13 +87,7 @@
 
   .interrogation {
     position: absolute;
-    top: 300px;
+    top: 84px;
     left: 35%;
-  }
-
-  .target {
-    position: absolute;
-    top: 230px;
-    right: 40%;
   }
 }
