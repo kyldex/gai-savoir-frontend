@@ -91,21 +91,19 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
             <SwiperSlide key={idea.id}>
               <Link
                 href={`/${catergorySlugPart}/${idea.attributes.slug}`}
-                className={`${styles.slide} ${styles[cssSlide]}`}
+                className={styles.slideLink}
               >
                 {idea.attributes.card_image.data ? (
-                  <Image
-                    src={idea.attributes.card_image.data.attributes.url}
-                    alt=""
-                    width={250}
-                    height={
-                      (type === 'events' && 250) ||
-                      (type === 'audiovisual' && 200) ||
-                      (type === 'ideas' && 250) ||
-                      250
-                    }
-                    className={styles.cardImage}
-                  />
+                  <div
+                    className={`${styles.cardImageContainer} ${styles[cssSlide]}`}
+                  >
+                    <Image
+                      src={idea.attributes.card_image.data.attributes.url}
+                      fill
+                      className={`${styles.cardImage} ${styles[cssSlide]}`}
+                      alt=""
+                    />
+                  </div>
                 ) : (
                   <div className={styles.purpleRectangle} />
                 )}
