@@ -81,15 +81,15 @@ const Home: NextPage<Props> = ({ ideas }) => {
           <Image src={bird} width={180} className={styles.bird} alt="" />
         </div>
         <div className={styles.illustrationContainer}>
-          <Image src={coffeemaker} width={120} className={styles.coffeemaker} alt="" />
-        </div>
-        <div className={styles.illustrationContainer}>
           <Image
-            src={clock}
-            width={65}
-            className={styles.clock}
+            src={coffeemaker}
+            width={120}
+            className={styles.coffeemaker}
             alt=""
           />
+        </div>
+        <div className={styles.illustrationContainer}>
+          <Image src={clock} width={65} className={styles.clock} alt="" />
         </div>
       </div>
     </div>
@@ -98,7 +98,7 @@ const Home: NextPage<Props> = ({ ideas }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?populate=*&sort=publishedAt`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?populate=*&sort=publishedAt%3Adesc`
   );
   const ideas: IdeasData = await res.json();
 
