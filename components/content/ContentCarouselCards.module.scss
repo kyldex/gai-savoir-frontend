@@ -32,7 +32,7 @@
     margin-top: 0.5rem;
     margin-left: 32px;
     @include media-query-sm {
-      margin-top: 0; 
+      margin-top: 0;
       margin-left: 0;
       margin-right: 42px;
     }
@@ -42,9 +42,9 @@
       font-family: $heading-main;
       font-size: 1rem;
       color: $color-yellow;
-    }
-    @include media-query-sm {
-      font-size: 1.2rem;
+      @include media-query-sm {
+        font-size: 1.2rem;
+      }
     }
 
     .triangle {
@@ -65,13 +65,30 @@
     margin-top: 32px;
   }
 
-  .slide {
+  .slideLink {
     display: block;
     max-width: 250px;
     margin: auto;
-    // &.events {
-    //   max-width: 100px;
-    // }
+
+    .cardImageContainer {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      &.events {
+        height: 312px;
+        @include media-query-sm {
+          height: 285px;
+        }
+      }
+    }
+
+    .cardImage {
+      object-fit: cover;
+      &.events {
+        object-fit: contain;
+        object-position: left;
+      }
+    }
 
     .purpleRectangle {
       height: 250px;

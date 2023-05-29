@@ -2,6 +2,27 @@ import type { EventData } from './eventType';
 
 const eventsData: EventData = [
   {
+    id: '2',
+    attributes: {
+      title: 'Combien coûte la liberté ?',
+      excerpt: 'Le 25 mai 2023 au 360 Music Factory',
+      published: '2023-05-10',
+      content: [
+        'La liberté fait partie de ces concepts qui écrasent le réel de leur symbolique. Iconique, elle renvoie tant à notre puissance (un monde de possibles) qu’à notre impuissance (dans la difficulté à y accéder, à la vivre). La liberté est désir ultime, idéal mais également source de frustration, de souffrance ou de colère dès lors que le réel se met en travers de notre volonté d’être libre.',
+        'Transfuge de classe, liberté sexuelle, révolte politique, séparations, processus créatif, …peu importe le visage que prend cette quête, cet évènement est une proposition pour faire de la liberté non seulement un concept, une exigence, mais une pratique traversée par la vie. Ce qui signifie la dédramatiser : intégrer dans le récit de l’acte de liberté toute la part de doute, d’ambivalence, de peur mais aussi d’échec, d’insatisfaction, de solitude. D’humanité, donc.'
+      ],
+      mainImgUrl: 'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1685115606/event-gai-savoir-liberte_kjj3d2.jpg',
+      card_image: {
+        data: {
+          attributes: {
+            url: 'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1685115606/event-gai-savoir-liberte_kjj3d2.jpg'
+          }
+        }
+      },
+      slug: 'exode-quetin-jagorel-video'
+    }
+  },
+  {
     id: '1',
     attributes: {
       title: "L'Amour est-il devenu une valeur ringarde?",
@@ -21,27 +42,6 @@ const eventsData: EventData = [
         }
       },
       slug: 'amour-est-il-valeur-ringarde-evenement'
-    }
-  },
-  {
-    id: '2',
-    attributes: {
-      title: 'Combien coûte la liberté ?',
-      excerpt: 'Le 25 mai 2023 au 360 Music Factory',
-      published: '2023-05-10',
-      content: [
-        'La liberté fait partie de ces concepts qui écrasent le réel de leur symbolique. Iconique, elle renvoie tant à notre puissance (un monde de possibles) qu’à notre impuissance (dans la difficulté à y accéder, à la vivre). La liberté est désir ultime, idéal mais également source de frustration, de souffrance ou de colère dès lors que le réel se met en travers de notre volonté d’être libre.',
-        'Transfuge de classe, liberté sexuelle, révolte politique, séparations, processus créatif, …peu importe le visage que prend cette quête, cet évènement est une proposition pour faire de la liberté non seulement un concept, une exigence, mais une pratique traversée par la vie. Ce qui signifie la dédramatiser : intégrer dans le récit de l’acte de liberté toute la part de doute, d’ambivalence, de peur mais aussi d’échec, d’insatisfaction, de solitude. D’humanité, donc.'
-      ],
-      mainImgUrl: 'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1685115606/event-gai-savoir-liberte_kjj3d2.jpg',
-      card_image: {
-        data: {
-          attributes: {
-            url: 'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1685115606/event-gai-savoir-liberte_kjj3d2.jpg'
-          }
-        }
-      },
-      slug: 'exode-quetin-jagorel-video'
     }
   }
 ];
