@@ -64,47 +64,4 @@
   .carouselContainer {
     margin-top: 32px;
   }
-
-  .slideLink {
-    display: block;
-    max-width: 250px;
-    margin: auto;
-
-    .cardImageContainer {
-      position: relative;
-      width: 250px;
-      height: 250px;
-      &.events {
-        height: 312px;
-        @include media-query-sm {
-          height: 285px;
-        }
-      }
-    }
-
-    .cardImage {
-      object-fit: cover;
-      &.events {
-        object-fit: contain;
-        object-position: left;
-      }
-    }
-
-    .purpleRectangle {
-      height: 250px;
-      background-color: $color-purple;
-    }
-
-    .cardTitle {
-      margin-top: 0.5rem;
-      font-family: $heading-main;
-      font-size: 1.5rem;
-    }
-
-    .cardExcerpt {
-      margin-top: 0.5rem;
-      font-size: 0.8rem;
-      color: $color-green-2;
-    }
-  }
 }

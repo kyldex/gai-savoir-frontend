@@ -42,14 +42,6 @@ const DesktopIntro = () => {
       </div>
 
       <div className={styles.desktopIntroContainer2}>
-        <Image
-          src={dot_yellow}
-          width={30}
-          className={styles.yellowDot}
-          alt=""
-        />
-        <Image src={bridge} width={350} className={styles.bridge} alt="" />
-
         <MegaphoneIcon className={styles.megaphone} />
 
         <Image
@@ -58,7 +50,6 @@ const DesktopIntro = () => {
           className={styles.interrogation}
           alt=""
         />
-        <Image src={target} width={85} className={styles.target} alt="" />
       </div>
     </section>
   );

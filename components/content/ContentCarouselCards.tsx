@@ -1,6 +1,5 @@
 import { FC } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 
@@ -8,6 +7,8 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 
 import styles from './ContentCarouselCards.module.scss';
+
+import ItemCard from '../common/ItemCard';
 
 import breakpoints from '../../utils/breakpoints';
 import type Idea from '../../types/Idea';
@@ -24,35 +25,32 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
     let title = '';
     let allPostsURL = '/';
     let cssSlide = '';
-    let catergorySlugPart = '';
+    let categorySlugPart = '';
 
     switch (type) {
       case 'events':
         title = 'ÉVÈNEMENTS';
         allPostsURL = '/evenements';
-        cssSlide = 'events';
-        catergorySlugPart = 'evenements';
+        categorySlugPart = 'evenements';
         break;
       case 'audiovisual':
         title = 'PRODUCTION AUDIOVISUELLE';
         allPostsURL = '/production-audiovisuelle';
-        cssSlide = 'audiovisual';
-        catergorySlugPart = 'production-audiovisuelle';
+        categorySlugPart = 'production-audiovisuelle';
         break;
       case 'ideas':
         title = 'IDÉES';
         allPostsURL = '/idees';
-        cssSlide = 'ideas';
-        catergorySlugPart = 'idees';
+        categorySlugPart = 'idees';
         break;
       default:
         console.error('unknown type for carousel cards');
     }
 
-    return { title, allPostsURL, cssSlide, catergorySlugPart };
+    return { title, allPostsURL, cssSlide, categorySlugPart };
   };
 
-  const { title, allPostsURL, cssSlide, catergorySlugPart } = getInfo();
+  const { title, allPostsURL, categorySlugPart } = getInfo();
 
   return (
     <section className={styles.container}>
@@ -87,31 +85,17 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
             }
           }}
         >
-          {cardsData.map((idea) => (
-            <SwiperSlide key={idea.id}>
-              <Link
-                href={`/${catergorySlugPart}/${idea.attributes.slug}`}
-                className={styles.slideLink}
-              >
-                {idea.attributes.card_image.data ? (
-                  <div
-                    className={`${styles.cardImageContainer} ${styles[cssSlide]}`}
-                  >
-                    <Image
-                      src={idea.attributes.card_image.data.attributes.url}
-                      fill
-                      className={`${styles.cardImage} ${styles[cssSlide]}`}
-                      alt=""
-                    />
-                  </div>
-                ) : (
-                  <div className={styles.purpleRectangle} />
-                )}
-                <div className={styles.cardTitle}>{idea.attributes.title}</div>
-                <div className={styles.cardExcerpt}>
-                  {idea.attributes.excerpt}
-                </div>
-              </Link>
+          {cardsData.map((item) => (
+            <SwiperSlide key={item.id}>
+              <ItemCard
+                type={type}
+                title={item.attributes.title}
+                excerpt={item.attributes.excerpt}
+                categorySlugPart={categorySlugPart}
+                slug={item.attributes.slug}
+                card_image={item.attributes.card_image}
+                isInsideCarousel
+              />
             </SwiperSlide>
           ))}
         </Swiper>

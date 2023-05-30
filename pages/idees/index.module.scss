@@ -1,21 +1,39 @@
-@import '../../styles/variables.scss';
+@import '../../styles/variables';
 @import '../../styles/mixins';
 
 .container {
-  margin: 32px 0 0;
+  margin: 32px auto 0;
+  max-width: 1000px;
   @include media-query-sm {
-    margin: 60px 5% 0;
+    margin: 48px auto 0;
   }
 
   .title {
-    margin-top: 1.5rem;
-    font-family: $heading-main;
-    font-size: 2.1rem;
-    color: $color-yellow;
+    margin-top: 4 * $layout-unit-px;
+    font-family: $heading-bold;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-green-1;
+    @include media-query-sm {
+      font-size: 2.7rem;
+      text-align: left;
+    }
   }
 
-  .list {
-    margin-top: 1.2rem;
-    font-size: 0.875rem;
+  .cardsContainer {
+    margin-top: 3 * $layout-unit-px ;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 32px 32px;
+    justify-items: center;
+    @include media-query-sm {
+      grid-template-columns: repeat(2, 1fr);
+      justify-items: start;
+      gap: 16px 32px;
+    }
+    @include media-query-sm {
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 }
