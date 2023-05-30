@@ -15,7 +15,7 @@ const DesktopMenu = () => {
         <Link href="/idees">IDÉES</Link>
       </li>
       <li>
-        <Link href="/idees">CONTRIBUTEURS</Link>
+        <Link href="/contributeurs">CONTRIBUTEURS</Link>
       </li>
       <li>
         <Link href="/observatoire-des-perceptions">

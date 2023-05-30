@@ -46,7 +46,7 @@ const MobileMenuBar: FC<Props> = ({ toggleMenuIsOpen }) => {
                 </Link>
               </li>
               <li>
-                <Link href="/idees" onClick={toggleMenuIsOpen}>
+                <Link href="/contributeurs" onClick={toggleMenuIsOpen}>
                   CONTRIBUTEURS
                 </Link>
               </li>

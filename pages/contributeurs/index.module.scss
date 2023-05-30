@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.container {
+  margin: 32px auto 0;
+  max-width: 1000px;
+  @include media-query-sm {
+    margin: 48px auto 0;
+  }
+
+  .title {
+    margin-top: 6 * $layout-unit-px;
+    font-family: $heading-bold;
+    font-size: 2.2rem;
+    text-transform: uppercase;
+    text-align: center;
+    color: $color-green-1;
+    @include media-query-sm {
+      font-size: 2.7rem;
+      text-align: left;
+    }
+  }
+
+  .description {
+    margin-top: 1.2rem;
+    text-align: justify;
+  }
+}
