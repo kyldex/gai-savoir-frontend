@@ -2,6 +2,28 @@ import type { AudiovisualData } from './audiovisualType';
 
 const audiovisualData: AudiovisualData = [
   {
+    id: '3',
+    attributes: {
+      title: 'Combien coûte la liberté ?',
+      excerpt:
+        'Ils ont entre 20 et 38 ans et ont répondu à nos questions sur la liberté.',
+      published: '2023-05-30',
+      content: [
+        'Ils ont entre 20 et 38 ans et ont répondu à nos questions sur la liberté : comment ils la définissent, quel est son prix selon eux et s’ils se sentent libres.',
+        'Avec Louis Colman Albertini, Julie-Anna George, Pauline Bertani, David, Leopoldine Philippe.'
+      ],
+      videoUrl: 'https://www.youtube.com/embed/UucgKKCUcVU',
+      card_image: {
+        data: {
+          attributes: {
+            url: 'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1685408322/video-combien-coute-la-liberte_mx7clt.png'
+          }
+        }
+      },
+      slug: 'combien-coute-la-liberte-video'
+    }
+  },
+  {
     id: '2',
     attributes: {
       title: "L'Exode",
