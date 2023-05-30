@@ -6,10 +6,10 @@ import styles from './MobileMenuBar.module.scss';
 
 import MobileMenu from './MobileMenu';
 
-import hamburgerBtnIcon from '../../assets/img/hamburger_button_285x227.png';
-import textLogo from '../../assets/img/logo_text_only.svg';
-import birdLogo from '../../assets/img/logo_bird.svg';
-import instagramLogo from '../../assets/img/instagram_410x410.png';
+import hamburgerBtnIcon from '../../assets/img/menu/hamburger_button_285x227.png';
+import textLogo from '../../assets/img/menu/logo_text_only.svg';
+import birdLogo from '../../assets/img/menu/logo_bird.svg';
+import instagramLogo from '../../assets/img/menu/instagram_410x410.png';
 
 const MobileMenuBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

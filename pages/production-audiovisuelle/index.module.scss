@@ -21,6 +21,17 @@
     }
   }
 
+  h2 {
+    margin-top: 2rem;
+    font-family: $heading-main;
+    font-size: 1.5rem;
+    text-align: center;
+    @include media-query-sm {
+      font-size: 2rem;
+      text-align: left;
+    }
+  }
+
   .cardsContainer {
     margin-top: 3 * $layout-unit-px ;
     display: grid;

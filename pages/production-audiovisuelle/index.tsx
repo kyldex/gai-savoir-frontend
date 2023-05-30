@@ -13,7 +13,10 @@ const Audiovisuel: NextPage = () => {
     <div className={styles.container}>
       <Head>
         <title>Production audiovisuelle</title>
-        <meta name="description" content="Production audiovisuelle du Gai Savoir" />
+        <meta
+          name="description"
+          content="Production audiovisuelle du Gai Savoir"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -21,18 +24,44 @@ const Audiovisuel: NextPage = () => {
 
       <h1 className={styles.title}>PRODUCTION AUDIOVISUELLE</h1>
 
+      <h2>LES PRODUCTIONS DU GAI SAVOIR</h2>
+
       <div className={styles.cardsContainer}>
-        {audiovisualData.map((audiovisual) => (
-          <ItemCard
-            key={audiovisual.id}
-            type="audiovisual"
-            title={audiovisual.attributes.title}
-            excerpt={audiovisual.attributes.excerpt}
-            categorySlugPart="production-audiovisuelle"
-            slug={audiovisual.attributes.slug}
-            card_image={audiovisual.attributes.card_image}
-          />
-        ))}
+        {audiovisualData.map((audiovisual) => {
+          if (audiovisual.attributes.gai_savoir_production) {
+            return (
+              <ItemCard
+                key={audiovisual.id}
+                type="audiovisual"
+                title={audiovisual.attributes.title}
+                excerpt={audiovisual.attributes.excerpt}
+                categorySlugPart="production-audiovisuelle"
+                slug={audiovisual.attributes.slug}
+                card_image={audiovisual.attributes.card_image}
+              />
+            );
+          }
+        })}
+      </div>
+
+      <h2>LES PRODUCTIONS DIFFUSÉES PAR LE GAI SAVOIR</h2>
+
+      <div className={styles.cardsContainer}>
+        {audiovisualData.map((audiovisual) => {
+          if (!audiovisual.attributes.gai_savoir_production) {
+            return (
+              <ItemCard
+                key={audiovisual.id}
+                type="audiovisual"
+                title={audiovisual.attributes.title}
+                excerpt={audiovisual.attributes.excerpt}
+                categorySlugPart="production-audiovisuelle"
+                slug={audiovisual.attributes.slug}
+                card_image={audiovisual.attributes.card_image}
+              />
+            );
+          }
+        })}
       </div>
     </div>
   );

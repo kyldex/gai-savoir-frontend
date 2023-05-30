@@ -3,6 +3,8 @@ import Head from 'next/head';
 
 import styles from './index.module.scss';
 
+import HomePageLink from '../../components/common/HomePageLink';
+
 const Apropos: NextPage = () => {
   return (
     <div className={styles.container}>
@@ -11,6 +13,8 @@ const Apropos: NextPage = () => {
         <meta name="description" content="À propos du Gai Savoir" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <HomePageLink />
 
       <h1 className={styles.title}>À PROPOS</h1>
 
