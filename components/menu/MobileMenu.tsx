@@ -5,7 +5,8 @@ import * as Dialog from '@radix-ui/react-dialog';
 
 import styles from './MobileMenu.module.scss';
 
-import closeIcon from '../../assets/img/close.png';
+import closeIcon from '../../assets/img/menu/close.png';
+import orangeStar from '../../assets/img/menu/star_orange.svg';
 
 interface Props {
   toggleMenuIsOpen: () => void;
@@ -26,7 +27,19 @@ const MobileMenuBar: FC<Props> = ({ toggleMenuIsOpen }) => {
               <Image src={closeIcon} width={32} alt="" aria-hidden="true" />
             </button>
 
+            <Image
+              src={orangeStar}
+              width={100}
+              className={styles.orangeStar}
+              alt=""
+            />
+
             <ul id="mobile-menu" className={styles.mobileMenu}>
+              <li>
+                <Link href="/" onClick={toggleMenuIsOpen}>
+                  ACCUEIL
+                </Link>
+              </li>
               <li>
                 <Link href="/evenements" onClick={toggleMenuIsOpen}>
                   ÉVÈNEMENTS
@@ -61,11 +74,6 @@ const MobileMenuBar: FC<Props> = ({ toggleMenuIsOpen }) => {
               <li>
                 <Link href="/apropos" onClick={toggleMenuIsOpen}>
                   À PROPOS
-                </Link>
-              </li>
-              <li>
-                <Link href="/" onClick={toggleMenuIsOpen}>
-                  HOME
                 </Link>
               </li>
             </ul>
