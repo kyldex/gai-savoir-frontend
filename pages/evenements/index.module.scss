@@ -29,6 +29,7 @@
     justify-items: center;
     @include media-query-sm {
       grid-template-columns: repeat(2, 1fr);
+      gap: 16px 8px;
       justify-items: start;
     }
     @include media-query-sm {

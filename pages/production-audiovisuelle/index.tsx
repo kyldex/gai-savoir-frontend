@@ -1,6 +1,12 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+
 import styles from './index.module.scss';
+
+import HomePageLink from '../../components/common/HomePageLink';
+import ItemCard from '../../components/common/ItemCard';
+
+import audiovisualData from '../../assets/data/audiovisual';
 
 const Audiovisuel: NextPage = () => {
   return (
@@ -11,10 +17,22 @@ const Audiovisuel: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <HomePageLink />
+
       <h1 className={styles.title}>PRODUCTION AUDIOVISUELLE</h1>
 
-      <div className={styles.description}>
-        <p className={styles.descriptionPart}>1ère vidéo très bientôt !</p>
+      <div className={styles.cardsContainer}>
+        {audiovisualData.map((audiovisual) => (
+          <ItemCard
+            key={audiovisual.id}
+            type="audiovisual"
+            title={audiovisual.attributes.title}
+            excerpt={audiovisual.attributes.excerpt}
+            categorySlugPart="production-audiovisuelle"
+            slug={audiovisual.attributes.slug}
+            card_image={audiovisual.attributes.card_image}
+          />
+        ))}
       </div>
     </div>
   );
