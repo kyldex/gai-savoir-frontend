@@ -3,6 +3,7 @@ export type Audiovisual = {
   attributes: {
     title: string;
     excerpt: string;
+    gai_savoir_production: boolean;
     card_image: {
       data: {
         attributes: {
