@@ -12,12 +12,12 @@ import ItemCard from '../common/ItemCard';
 
 import breakpoints from '../../utils/breakpoints';
 import type Idea from '../../types/Idea';
-import type { Audiovisual } from '../../assets/data/audiovisualType';
-import type { Event } from '../../assets/data/eventType';
+import type AudiovisualProduction from '../../types/AudiovisualProduction';
+import type { Event } from '../../data/eventType';
 
 interface Props {
   type: 'events' | 'audiovisual' | 'ideas';
-  cardsData: Idea[] | Audiovisual[] | Event[];
+  cardsData: Idea[] | AudiovisualProduction[] | Event[];
 }
 
 const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {

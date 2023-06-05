@@ -8,10 +8,12 @@ import Intro from '../components/home/Intro';
 import ContentCarouselCards from '../components/content/ContentCarouselCards';
 
 import useHasMounted from '../utils/hooks/useHasMounted';
-import audiovisualData from '../assets/data/audiovisual';
-import eventsData from '../assets/data/event';
-import Idea from '../types/Idea';
-import { IdeasData } from '../types/IdeasData';
+import eventsData from '../data/event';
+import type AudiovisualProduction from '../types/AudiovisualProduction';
+import type { AudiovisualProductionsData } from '../types/AudiovisualProductionsData';
+import type Idea from '../types/Idea';
+import type { IdeasData } from '../types/IdeasData';
+
 import dotOrange from '../assets/img/dot_orange.svg';
 import flower from '../assets/img/home/flower.svg';
 import clock from '../assets/img/home/clock.svg';
@@ -25,10 +27,11 @@ import bird from '../assets/img/home/bird.svg';
 import coffeemaker from '../assets/img/home/coffeemaker.svg';
 
 interface Props {
+  audiovisualProductions: AudiovisualProduction[];
   ideas: Idea[];
 }
 
-const Home: NextPage<Props> = ({ ideas }) => {
+const Home: NextPage<Props> = ({ audiovisualProductions, ideas }) => {
   const hasMounted = useHasMounted();
 
   return (
@@ -58,7 +61,10 @@ const Home: NextPage<Props> = ({ ideas }) => {
         </div>
       </div>
 
-      <ContentCarouselCards type="audiovisual" cardsData={audiovisualData} />
+      <ContentCarouselCards
+        type="audiovisual"
+        cardsData={audiovisualProductions}
+      />
 
       <div className={styles.illustrationsContainer2}>
         <div className={styles.illustrationContainer}>
@@ -80,13 +86,20 @@ const Home: NextPage<Props> = ({ ideas }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const res = await fetch(
+  const audiovisualProductionsRes = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/audiovisual-productions?populate=*&sort=publishedAt%3Adesc`
+  );
+  const audiovisualProductions: AudiovisualProductionsData =
+    await audiovisualProductionsRes.json();
+
+  const ideasRes = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?populate=*&sort=publishedAt%3Adesc`
   );
-  const ideas: IdeasData = await res.json();
+  const ideas: IdeasData = await ideasRes.json();
 
   return {
     props: {
+      audiovisualProductions: audiovisualProductions.data,
       ideas: ideas.data
     }
   };

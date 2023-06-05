@@ -1,4 +1,4 @@
-export default interface Idea {
+type Idea = {
   id: string;
   attributes: {
     title: string;
@@ -9,10 +9,12 @@ export default interface Idea {
     slug: string;
     card_image: {
       data: {
-        attributes : {
+        attributes: {
           url: string;
-        }
-      } | null
+        };
+      } | null;
     };
   };
-}
+};
+
+export default Idea;
