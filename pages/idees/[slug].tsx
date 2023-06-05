@@ -73,10 +73,10 @@ export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
       isInPreviewMode ? 'publicationState=preview&' : ''
     }filters[slug][$eq]=${slug}`
   );
-  const articleData: IdeaDataBySlug = await res.json();
+  const ideaData: IdeaDataBySlug = await res.json();
 
   // Pass idea data to the page via props.
-  return { props: { idea: articleData.data[0], preview: isInPreviewMode } };
+  return { props: { idea: ideaData.data[0], preview: isInPreviewMode } };
 };
 
 export default Idea;

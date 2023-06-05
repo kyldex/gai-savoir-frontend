@@ -1,28 +1,32 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
+import ReactMarkdown from 'react-markdown';
 
 import styles from './[slug].module.scss';
 
 import HomePageLink from '../../components/common/HomePageLink';
 
-import audiovisualData from '../../assets/data/audiovisual';
-import type {
-  Audiovisual,
-  AudiovisualData
-} from '../../assets/data/audiovisualType';
+import AudiovisualProduction from '../../types/AudiovisualProduction';
+import {
+  AudiovisualProductionsData,
+  AudiovisualProductionDataBySlug
+} from '../../types/AudiovisualProductionsData';
 import formatDate from '../../utils/date';
 
 interface Props {
-  audiovisual: Audiovisual;
+  audiovisualProduction: AudiovisualProduction;
   preview: boolean;
 }
 
-const Audiovisual: NextPage<Props> = ({ audiovisual, preview }) => {
+const Audiovisual: NextPage<Props> = ({ audiovisualProduction, preview }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{audiovisual.attributes.title}</title>
-        <meta name="description" content={audiovisual.attributes.excerpt} />
+        <title>{audiovisualProduction.attributes.title}</title>
+        <meta
+          name="description"
+          content={audiovisualProduction.attributes.excerpt}
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -30,17 +34,17 @@ const Audiovisual: NextPage<Props> = ({ audiovisual, preview }) => {
 
       <HomePageLink />
 
-      <h1 className={styles.title}>{audiovisual.attributes.title}</h1>
+      <h1 className={styles.title}>{audiovisualProduction.attributes.title}</h1>
 
       <div className={styles.publicationDate}>
-        Publié le {formatDate(audiovisual.attributes.published)}
+        Publié le {formatDate(audiovisualProduction.attributes.published)}
       </div>
 
       <div className={styles.iframeContainer}>
         <iframe
           width="800"
           height="450"
-          src={audiovisual.attributes.videoUrl}
+          src={audiovisualProduction.attributes.video_url}
           title="YouTube video player"
           // frameborder="0"
           allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -49,20 +53,22 @@ const Audiovisual: NextPage<Props> = ({ audiovisual, preview }) => {
       </div>
 
       <div className={styles.content}>
-        {audiovisual.attributes.content.map((contentPart, index) => (
-          <p key={index}>{contentPart}</p>
-        ))}
+        <ReactMarkdown>
+          {audiovisualProduction.attributes.content}
+        </ReactMarkdown>
       </div>
     </div>
   );
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const audiovisuals: AudiovisualData = audiovisualData;
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/audiovisual-productions`
+  );
+  const audiovisualProductions: AudiovisualProductionsData = await res.json();
 
-  // Get the paths we want to pre-render based on audiovisuals.
-  const paths = audiovisuals.map((audiovisual) => ({
-    params: { slug: audiovisual.attributes.slug }
+  const paths = audiovisualProductions.data.map((idea) => ({
+    params: { slug: idea.attributes.slug }
   }));
 
   // We'll pre-render only these paths at build time.
@@ -73,28 +79,26 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
   const slug = params?.slug;
   if (!slug) {
-    throw new Error('Audiovisual not found');
+    throw new Error('Audiovisual production not found');
   }
 
   // getStaticProps will be called at request time if
   // preview mode is on, at build time otherwise.
-  // const isInPreviewMode = preview ? true : false;
-  // const res = await fetch(
-  //   `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?${
-  //     isInPreviewMode ? 'publicationState=preview&' : ''
-  //   }filters[slug][$eq]=${slug}`
-  // );
-  // const articleData: IdeaDataBySlug = await res.json();
-
-  console.log(slug);
-
-  const audiovisualItem = audiovisualData.find(
-    (item) => item.attributes.slug === slug
+  const isInPreviewMode = preview ? true : false;
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/audiovisual-productions?${
+      isInPreviewMode ? 'publicationState=preview&' : ''
+    }filters[slug][$eq]=${slug}`
   );
-  const isInPreviewMode = false;
+  const audiovisualProductionData: AudiovisualProductionDataBySlug =
+    await res.json();
 
-  // Pass idea data to the page via props.
-  return { props: { audiovisual: audiovisualItem, preview: isInPreviewMode } };
+  return {
+    props: {
+      audiovisualProduction: audiovisualProductionData.data[0],
+      preview: isInPreviewMode
+    }
+  };
 };
 
 export default Audiovisual;

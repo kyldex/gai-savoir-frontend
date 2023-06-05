@@ -6,8 +6,8 @@ import styles from './[slug].module.scss';
 
 import HomePageLink from '../../components/common/HomePageLink';
 
-import eventsData from '../../assets/data/event';
-import type { Event, EventData } from '../../assets/data/eventType';
+import eventsData from '../../data/event';
+import type { Event, EventData } from '../../data/eventType';
 
 interface Props {
   event: Event;

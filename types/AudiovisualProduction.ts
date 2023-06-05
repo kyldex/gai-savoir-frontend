@@ -1,4 +1,4 @@
-export type Audiovisual = {
+type AudiovisualProduction = {
   id: string;
   attributes: {
     title: string;
@@ -12,10 +12,10 @@ export type Audiovisual = {
       };
     };
     published: string;
-    videoUrl: string;
-    content: string[];
+    video_url: string;
+    content: string;
     slug: string;
   };
 };
 
-export type AudiovisualData = Audiovisual[];
+export default AudiovisualProduction;

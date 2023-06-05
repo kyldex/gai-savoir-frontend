@@ -6,7 +6,7 @@ import styles from './index.module.scss';
 import HomePageLink from '../../components/common/HomePageLink';
 import ItemCard from '../../components/common/ItemCard';
 
-import eventsData from '../../assets/data/event';
+import eventsData from '../../data/event';
 
 const Evenements: NextPage = () => {
   return (

@@ -1,20 +1,19 @@
 import type { NextPage, GetStaticProps } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
 
 import styles from './index.module.scss';
 
 import HomePageLink from '../../components/common/HomePageLink';
 import ItemCard from '../../components/common/ItemCard';
 
-import Idea from '../../types/Idea';
-import { IdeasData } from '../../types/IdeasData';
+import type Idea from '../../types/Idea';
+import type { IdeasData } from '../../types/IdeasData';
 
 interface Props {
   ideas: Idea[];
 }
 
-const Articles: NextPage<Props> = ({ ideas }) => {
+const Ideas: NextPage<Props> = ({ ideas }) => {
   return (
     <div className={styles.container}>
       <Head>
@@ -57,4 +56,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default Articles;
+export default Ideas;
