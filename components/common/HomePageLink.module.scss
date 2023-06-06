@@ -5,16 +5,17 @@
   align-items: center;
 
   .triangle {
-    margin-right: 0.5rem;
+    margin-right: 0.8rem;
     width: 0;
     height: 0;
-    border-top: 0.6rem solid transparent;
-    border-right: 1.1rem solid #{$color-yellow};
-    border-bottom: 0.6rem solid transparent;
+    border-top: 0.9rem solid transparent;
+    border-right: 1.4rem solid #{$color-yellow};
+    border-bottom: 0.9rem solid transparent;
   }
 
   .homePageLinkText {
-    font-size: 0.875rem;
+    font-family: $heading-main;
+    font-size: 1.5rem;
     color: $color-yellow;
   }
 }

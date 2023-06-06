@@ -1,0 +1,68 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 200px;
+  @include media-query-md {
+    flex-direction: row;
+    align-items: flex-start;
+    max-width: 600px;
+    &.variant {
+      flex-direction: column;
+      align-items: center;
+      max-width: 200px;
+    }
+  }
+
+  .photoContainer {
+    position: relative;
+    margin: auto;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+    border-radius: 50%;
+    @include media-query-md {
+      margin-right: 48px;
+      &.variant {
+        margin: auto;
+      }
+    }
+
+    .photo {
+      object-fit: cover;
+      &.events {
+        object-fit: cover;
+      }
+    }
+  }
+
+  .textContainer {
+    text-align: center;
+    margin-top: 1rem;
+    @include media-query-md {
+      margin-top: 0;
+      max-width: 372px;
+      text-align: left;
+      &.variant {
+        margin-top: 1rem;
+        max-width: 100%;
+        text-align: center;
+      }
+    }
+
+    .name {
+      font-family: $heading-main;
+      color: $color-yellow;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+    }
+
+    .desciption {
+      margin-top: 1rem;
+      font-size: 1rem;
+    }
+  }
+}
