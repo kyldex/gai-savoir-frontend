@@ -15,31 +15,20 @@
     margin-bottom: 8 * $layout-unit-px;
   }
 
-  .illustrationsContainer1 {
-    display: flex;
-    margin: 0 auto;
-    max-width: 1000px;
-    height: 250px;
-
-    .illustrationContainer {
-      flex-basis: 50%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .flower {
-      transform: translate(16px, -16px);
+  .audiovisualContainer {
+    margin-top: 40px;
+    @include media-query-sm {
+      margin-top: 100px;
     }
   }
 
-  .illustrationsContainer2 {
+  .illustrationsContainer {
     display: flex;
     margin: 0 auto;
     max-width: 1000px;
     height: 150px;
     @include media-query-sm {
-      height: 250px;
+      height: 200px;
     }
 
     .illustrationContainer {

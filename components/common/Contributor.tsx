@@ -7,7 +7,7 @@ interface Props {
   firstname: string;
   lastname: string;
   desciption: string;
-  imageUrl: string;
+  imageUrl?: string;
   variant?: boolean;
 }
 
@@ -27,7 +27,11 @@ const Contributor: FC<Props> = ({
           variant ? ` ${styles.variant}` : ''
         }`}
       >
-        <Image src={imageUrl} fill className={styles.photo} alt="" />
+        {imageUrl ? (
+          <Image src={imageUrl} fill className={styles.photo} alt="" />
+        ) : (
+          <div className={styles.noPhoto} />
+        )}
       </div>
 
       <div
