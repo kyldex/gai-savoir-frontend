@@ -17,12 +17,56 @@
     color: $color-green-1;
     @include media-query-sm {
       font-size: 2.7rem;
-      text-align: left;
     }
   }
 
-  .description {
-    margin-top: 1.2rem;
-    text-align: justify;
+  .illustationsContainer {
+    display: flex;
+    justify-content: center;
+    margin: 3 * $layout-unit-px auto 0;
+    max-width: 500px;
+    @include media-query-sm {
+      justify-content: space-between;
+    }
+
+    .whiteStar {
+      display: none;
+      @include media-query-sm {
+        display: block;
+      }
+    }
+  }
+
+  .contributors {
+    margin: 6 * $layout-unit-px auto 6 * $layout-unit-px;
+    max-width: 700px;
+    @include media-query-sm {
+      margin: 10 * $layout-unit-px auto 6 * $layout-unit-px;
+    }
+
+    .letterContainer {
+      margin-top: 3rem;
+      &:first-child {
+        margin-top: 0;
+      }
+
+      .letter {
+        font-family: $heading-bold;
+        font-size: 1.7rem;
+        text-transform: uppercase;
+        text-align: center;
+        color: $color-green-1;
+        @include media-query-sm {
+          text-align: left;
+          font-size: 2.2rem;
+        }
+      }
+
+      .contributorContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 1.5rem;
+      }
+    }
   }
 }

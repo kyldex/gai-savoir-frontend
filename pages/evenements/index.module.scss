@@ -32,7 +32,7 @@
       gap: 16px 8px;
       justify-items: start;
     }
-    @include media-query-sm {
+    @include media-query-md {
       grid-template-columns: repeat(3, 1fr);
     }
   }

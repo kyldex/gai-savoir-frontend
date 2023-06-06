@@ -15,9 +15,7 @@ import type Idea from '../types/Idea';
 import type { IdeasData } from '../types/IdeasData';
 
 import dotOrange from '../assets/img/dot_orange.svg';
-import flower from '../assets/img/home/flower.svg';
 import clock from '../assets/img/home/clock.svg';
-import papers from '../assets/img/home/papers.svg';
 import sunglasses from '../assets/img/home/sunglasses.svg';
 import dotBurgundy from '../assets/img/home/dot_burgundy.svg';
 import pencil from '../assets/img/home/pencil.svg';
@@ -52,28 +50,21 @@ const Home: NextPage<Props> = ({ audiovisualProductions, ideas }) => {
         <ContentCarouselCards type="events" cardsData={eventsData} />
       </div>
 
-      <div className={styles.illustrationsContainer1}>
-        <div className={styles.illustrationContainer}>
-          <Image src={flower} width={65} className={styles.flower} alt="" />
-        </div>
-        <div className={styles.illustrationContainer}>
-          <Image src={papers} width={85} className={styles.papers} alt="" />
-        </div>
+      <div className={styles.audiovisualContainer}>
+        <ContentCarouselCards
+          type="audiovisual"
+          cardsData={audiovisualProductions}
+        />
       </div>
 
-      <ContentCarouselCards
-        type="audiovisual"
-        cardsData={audiovisualProductions}
-      />
-
-      <div className={styles.illustrationsContainer2}>
+      <div className={styles.illustrationsContainer}>
         <div className={styles.illustrationContainer}>
-          <Image src={pencil} width={250} className={styles.pencil} alt="" />
+          <Image src={pencil} width={220} className={styles.pencil} alt="" />
         </div>
         <div className={styles.illustrationContainer}>
           <Image
             src={exclamation}
-            width={70}
+            width={50}
             className={styles.exclamation}
             alt=""
           />

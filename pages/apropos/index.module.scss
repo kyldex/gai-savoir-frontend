@@ -17,19 +17,88 @@
     color: $color-green-1;
     @include media-query-sm {
       font-size: 2.7rem;
-      text-align: left;
     }
+  }
+
+  .megaphone {
+    margin: 4 * $layout-unit-rem auto 0;
   }
 
   .description {
-    margin-top: 1.2rem;
+    margin: auto;
+    max-width: 750px;
     text-align: justify;
+
+    .highlights {
+      margin-top: 10 * $layout-unit-rem;
+      font-family: $heading-main;
+      font-size: 1.7rem;
+      line-height: 1.2;
+      text-transform: uppercase;
+      text-align: center;
+      color: $color-orange;
+    }
+
+    .descriptionParts {
+      margin: 6 * $layout-unit-rem auto 0;
+      max-width: 600px;
+
+      .descriptionPart {
+        margin-top: 1rem;
+        &:first-child {
+          margin-top: 0;
+        }
+      }
+    }
   }
 
-  .descriptionPart {
-    margin-top: 1rem;
-    &:first-child {
-      margin-top: 0;
+  .teamTitle {
+    margin-top: 8 * $layout-unit-rem;
+    font-size: 1.7rem;
+    text-align: center;
+    color: $color-green-1;
+    @include media-query-sm {
+      margin-top: 12 * $layout-unit-rem;
+      font-size: 2.2rem;
     }
+  }
+
+  .team {
+    margin: 6 * $layout-unit-rem auto 0;
+    max-width: 750px;
+    @include media-query-sm {
+      margin: 10 * $layout-unit-rem auto 0;
+    }
+
+    .contributor1Container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .otherMembers {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin-top: 6 * $layout-unit-rem;
+      @include media-query-md {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-top: 8 * $layout-unit-rem;
+      }
+
+      .contributorContainer {
+        margin-top: 6 * $layout-unit-rem;
+        @include media-query-md {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+
+  .logo {
+    margin: 12 * $layout-unit-rem auto 6 * $layout-unit-rem;
   }
 }

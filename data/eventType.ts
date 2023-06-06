@@ -14,6 +14,12 @@ export type Event = {
     mainImgUrl: string;
     content: string[];
     slug: string;
+    speakers: {
+      firstname: string;
+      lastname: string;
+      description: string;
+      imageUrl?: string;
+    }[]
   };
 };
 
