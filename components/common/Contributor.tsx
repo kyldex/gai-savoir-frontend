@@ -6,7 +6,7 @@ import styles from './Contributor.module.scss';
 interface Props {
   firstname: string;
   lastname: string;
-  desciption: string;
+  description: string;
   imageUrl?: string;
   variant?: boolean;
 }
@@ -14,7 +14,7 @@ interface Props {
 const Contributor: FC<Props> = ({
   firstname,
   lastname,
-  desciption,
+  description,
   imageUrl,
   variant = false
 }) => {
@@ -50,7 +50,7 @@ const Contributor: FC<Props> = ({
             `${firstname} ${lastname}`
           )}
         </div>
-        <div className={styles.desciption}>{desciption}</div>
+        <div className={styles.description}>{description}</div>
       </div>
     </div>
   );

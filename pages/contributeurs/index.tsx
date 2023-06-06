@@ -35,7 +35,7 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Ariane"
               lastname="Ahmadi"
-              desciption="Fondatrice de la plateforme du Gai Savoir est conseillère en communication politique, corporate et en stratégie de marque. Elle s’est spécialisée sur la fabrique de l’authenticité et d’un parler juste."
+              description="Fondatrice de la plateforme du Gai Savoir est conseillère en communication politique, corporate et en stratégie de marque. Elle s’est spécialisée sur la fabrique de l’authenticité et d’un parler juste."
               imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686078456/ariane_ahmadi_photo_portrait_y0ed3h.png"
             />
           </div>
@@ -47,7 +47,7 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Quentin"
               lastname="Jagorel"
-              desciption="Quentin Jagorel a réalisé plusieurs fictions et documentaires. En 2020, il co-réalise avec Benjamin Rassat une série d'entretiens filmés avec l'historien Marc Ferro (Les Images de Marc). En 2022, il signe le documentaire 'Commue une personne', diffusé en février 2023 sur KTO TV."
+              description="Quentin Jagorel a réalisé plusieurs fictions et documentaires. En 2020, il co-réalise avec Benjamin Rassat une série d'entretiens filmés avec l'historien Marc Ferro (Les Images de Marc). En 2022, il signe le documentaire 'Commue une personne', diffusé en février 2023 sur KTO TV."
             />
           </div>
         </div>
@@ -58,7 +58,7 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Constance"
               lastname="Léculée"
-              desciption="Constance Léculée est psychiatre, notamment auprès de personnes détenues."
+              description="Constance Léculée est psychiatre, notamment auprès de personnes détenues."
             />
           </div>
         </div>
@@ -69,7 +69,7 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Aube"
               lastname="Richebourg"
-              desciption="Aube Richebourg, doctorante en sociologie et auteure d'une thèse sur l'Internet libre."
+              description="Aube Richebourg, doctorante en sociologie et auteure d'une thèse sur l'Internet libre."
             />
           </div>
         </div>
@@ -80,7 +80,7 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Ines"
               lastname="Weill"
-              desciption="Ines Weill Rochant est auteure, actrice et ingénieure culturelle. Elle a publié avec Kenza Aloui, Saenz Delacroix-Sadighiyan et Odelia Kammoun la BD Une nuit aux editions First."
+              description="Ines Weill Rochant est auteure, actrice et ingénieure culturelle. Elle a publié avec Kenza Aloui, Saenz Delacroix-Sadighiyan et Odelia Kammoun la BD Une nuit aux editions First."
             />
           </div>
         </div>

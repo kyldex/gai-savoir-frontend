@@ -103,7 +103,7 @@ const Apropos: NextPage = () => {
           <Contributor
             firstname="Ariane"
             lastname="Ahmadi"
-            desciption="Fondatrice de la plateforme du Gai Savoir est conseillère en communication politique, corporate et en stratégie de marque. Elle s’est spécialisée sur la fabrique de l’authenticité et d’un parler juste."
+            description="Fondatrice de la plateforme du Gai Savoir est conseillère en communication politique, corporate et en stratégie de marque. Elle s’est spécialisée sur la fabrique de l’authenticité et d’un parler juste."
             imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686078456/ariane_ahmadi_photo_portrait_y0ed3h.png"
           />
         </div>
@@ -112,7 +112,7 @@ const Apropos: NextPage = () => {
           <Contributor
             firstname="Marine"
             lastname="Brun-Franzetti"
-            desciption="Elle a écrit et réalisé plusieurs films documentaires et de courts-métrages. Actuellement doctorante en cinéma documentaire à l'université d’Aix-Marseille, elle partage également son savoir en enseignant dans diverses institutions académiques parisiennes."
+            description="Elle a écrit et réalisé plusieurs films documentaires et de courts-métrages. Actuellement doctorante en cinéma documentaire à l'université d’Aix-Marseille, elle partage également son savoir en enseignant dans diverses institutions académiques parisiennes."
             imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686078473/marine_brun_franzetti_photo_portrait_fzkwfi.jpg"
             variant
           />
@@ -120,7 +120,7 @@ const Apropos: NextPage = () => {
             <Contributor
               firstname="Florence"
               lastname="Mouget"
-              desciption="Artiste-autrice, illustratrice et motion designer."
+              description="Artiste-autrice, illustratrice et motion designer."
               imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686078473/florence_mouget_photo_portrait_tdw9a1.jpg"
               variant
             />
@@ -129,7 +129,7 @@ const Apropos: NextPage = () => {
             <Contributor
               firstname="Raphaël"
               lastname="Giagnorio"
-              desciption="Développeur informatique et musicien, il est en charge du pôle numérique du Gai Savoir."
+              description="Développeur informatique et compositeur, il est en charge du pôle numérique du Gai Savoir."
               imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686078474/raphael_giagnorio_portrait_ysd5lz.jpg"
               variant
             />

@@ -5,6 +5,7 @@ import Image from 'next/image';
 import styles from './[slug].module.scss';
 
 import HomePageLink from '../../components/common/HomePageLink';
+import Contributor from '../../components/common/Contributor';
 
 import eventsData from '../../data/event';
 import type { Event, EventData } from '../../data/eventType';
@@ -32,16 +33,28 @@ const Event: NextPage<Props> = ({ event, preview }) => {
       <div className={styles.excerpt}>{event.attributes.excerpt}</div>
 
       <div className={styles.imgContainer}>
-        <Image
-          src={event.attributes.mainImgUrl}
-          fill
-          alt=""
-        />
+        <Image src={event.attributes.mainImgUrl} fill alt="" />
       </div>
 
       <div className={styles.content}>
         {event.attributes.content.map((contentPart, index) => (
           <p key={index}>{contentPart}</p>
+        ))}
+      </div>
+
+      <h2 className={styles.teamTitle}>TABLE RONDE</h2>
+
+      <div className={styles.team}>
+        {event.attributes.speakers.map((speaker) => (
+          <div className={styles.contributorContainer} key={event.id}>
+            <Contributor
+              firstname={speaker.firstname}
+              lastname={speaker.lastname}
+              description={speaker.description}
+              imageUrl={speaker.imageUrl}
+              variant
+            />
+          </div>
         ))}
       </div>
     </div>
