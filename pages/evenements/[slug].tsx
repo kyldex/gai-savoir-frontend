@@ -32,8 +32,16 @@ const Event: NextPage<Props> = ({ event, preview }) => {
 
       <div className={styles.excerpt}>{event.attributes.excerpt}</div>
 
-      <div className={styles.imgContainer}>
-        <Image src={event.attributes.mainImgUrl} fill alt="" />
+      <div className={styles.iframeContainer}>
+        <iframe
+          width="800"
+          height="450"
+          src={event.attributes.mainVideoUrl}
+          title="YouTube video player"
+          // frameborder="0"
+          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          // allowfullscreen
+        ></iframe>
       </div>
 
       <div className={styles.content}>
