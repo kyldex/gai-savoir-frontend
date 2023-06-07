@@ -48,6 +48,7 @@ const ContributeursPage: NextPage = () => {
               firstname="Quentin"
               lastname="Jagorel"
               description="Quentin Jagorel a réalisé plusieurs fictions et documentaires. En 2020, il co-réalise avec Benjamin Rassat une série d'entretiens filmés avec l'historien Marc Ferro (Les Images de Marc). En 2022, il signe le documentaire 'Commue une personne', diffusé en février 2023 sur KTO TV."
+              imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686150808/quentin-jagorel_keeji3.jpg"
             />
           </div>
         </div>

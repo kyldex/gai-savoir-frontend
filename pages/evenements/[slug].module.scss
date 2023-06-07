@@ -28,20 +28,18 @@
     color: $color-orange;
   }
 
-  .imgContainer {
-    position: relative;
+  .iframeContainer {
     margin: 3rem auto 0;
-    width: 280px;
-    height: 280px;
-    padding: 0 1rem;
+    max-width: 800px;
+    display: flex;
+    justify-content: center;
     @include media-query-sm {
-      padding: 0;
-      width: 400px;
-      height: 400px;
+      font-size: 3.2rem;
     }
 
-    img {
-      object-fit: contain;
+    iframe {
+      max-width: 100%;
+      border: 0;
     }
   }
 

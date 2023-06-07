@@ -11,7 +11,7 @@ export type Event = {
       };
     };
     published: string;
-    mainImgUrl: string;
+    mainVideoUrl: string;
     content: string[];
     slug: string;
     speakers: {
