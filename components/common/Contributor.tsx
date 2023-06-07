@@ -9,6 +9,7 @@ interface Props {
   description: string;
   imageUrl?: string;
   variant?: boolean;
+  className?: string;
 }
 
 const Contributor: FC<Props> = ({
@@ -16,11 +17,14 @@ const Contributor: FC<Props> = ({
   lastname,
   description,
   imageUrl,
-  variant = false
+  variant = false,
+  className
 }) => {
   return (
     <div
-      className={`${styles.container}${variant ? ` ${styles.variant}` : ''}`}
+      className={`${styles.container}${variant ? ` ${styles.variant}` : ''}${
+        className ? ` ${className}` : ''
+      }`}
     >
       <div
         className={`${styles.photoContainer}${

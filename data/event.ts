@@ -34,7 +34,7 @@ const eventsData: EventData = [
           firstname: 'Raphaël',
           lastname: 'Liogier',
           description:
-            "Sociologue, philosophe, auteur de 'Khaos : la promesse trahie de la modernité', LLL (parution le 16 août)",
+            `Sociologue, philosophe, auteur de "Khaos : la promesse trahie de la modernité", LLL (parution le 16 août)`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093711/raphael-liogier_kppieb.jpg'
         },
@@ -50,7 +50,7 @@ const eventsData: EventData = [
           firstname: 'Esken',
           lastname: '',
           description:
-            "Auteur, compositeur, interprète rap/pop. Label 'jeunes génies'.",
+            `Auteur, compositeur, interprète rap/pop. Label "Jeunes génies".`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093704/esken_da4sgt.jpg'
         },
@@ -58,7 +58,7 @@ const eventsData: EventData = [
           firstname: 'Rose',
           lastname: '',
           description:
-            "Auteure, compositeure, interprète. Créatrice du podcast 'Contre-addictions'.",
+            `Auteure, compositeure, interprète. Créatrice du podcast "Contre-addictions".`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093711/rose_hipou1.jpg'
         }
@@ -91,7 +91,7 @@ const eventsData: EventData = [
           firstname: 'Mahaut',
           lastname: 'Chaudouet-Delmas',
           description:
-            "Rapporteuse pour le Haut Conseil à l'Egalité F/H et autrice de Demain ne peut être que féministe, éditions de l'Aube",
+            `Rapporteuse pour le Haut Conseil à l'Egalité F/H et autrice de "Demain ne peut être que féministe", éditions de l'Aube.`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094080/mahaut-photo_mbd3bu.jpg'
         },

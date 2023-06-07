@@ -29,17 +29,16 @@
   .sloganContainer {
     position: relative;
 
-    .ladderDesktop {
+    .kiosque {
       position: absolute;
-      top: -95px;
-      left: 0;
-      width: 160px;
+      top: -56px;
+      left: 3%;
     }
 
     .whiteStar {
       position: absolute;
-      top: -135px;
-      right: 12%;
+      top: -80px;
+      right: 4%;
       animation-duration: 750ms;
       animation-name: scale_white_star;
       animation-iteration-count: infinite;
@@ -56,8 +55,7 @@
 
     .slogan {
       margin-top: 9 * $layout-unit-px;
-      font-family: $heading-main;
-      font-size: 1.8rem;
+      font-size: 1.3rem;
       line-height: 1.5;
       text-align: center;
       color: $color-yellow;
@@ -80,7 +78,7 @@
   .megaphone {
     position: absolute;
     top: 13 * $layout-unit-px;
-    right: 14%;
+    right: 18%;
     width: 220px;
     transform: rotateZ(-12deg);
   }

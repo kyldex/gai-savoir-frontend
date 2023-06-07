@@ -35,7 +35,7 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Ariane"
               lastname="Ahmadi"
-              description="Fondatrice de la plateforme du Gai Savoir est conseillère en communication politique, corporate et en stratégie de marque. Elle s’est spécialisée sur la fabrique de l’authenticité et d’un parler juste."
+              description="Fondatrice de la plateforme du Gai Savoir, elle est conseillère en stratégie de communication, d'image et de marque pour le secteur politique, corporate, institutionnel et culturel. Elle a fondé le Gai Savoir pour sortir le débat d'idées de la tradition du salon. Elle s'est spécialisée sur la fabrique de l'authenticité, les liens entre pop'culture et storytelling collectif ainsi que la conception d'un parler juste."
               imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686078456/ariane_ahmadi_photo_portrait_y0ed3h.png"
             />
           </div>
@@ -58,7 +58,8 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Constance"
               lastname="Léculée"
-              description="Constance Léculée est psychiatre, notamment auprès de personnes détenues."
+              description="Psychiatre auprès de personnes détenues."
+              imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686148653/constance-leculee_rtl6dk.jpg"
             />
           </div>
         </div>
@@ -69,7 +70,8 @@ const ContributeursPage: NextPage = () => {
             <Contributor
               firstname="Aube"
               lastname="Richebourg"
-              description="Aube Richebourg, doctorante en sociologie et auteure d'une thèse sur l'Internet libre."
+              description="Elle est doctorante en sociologie et auteure d'une thèse sur l'Internet libre."
+              imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686148653/aube-richebourg_bmnsgp.jpg"
             />
           </div>
         </div>
@@ -79,8 +81,9 @@ const ContributeursPage: NextPage = () => {
           <div className={styles.contributorContainer}>
             <Contributor
               firstname="Ines"
-              lastname="Weill"
+              lastname="Weill Rochant"
               description="Ines Weill Rochant est auteure, actrice et ingénieure culturelle. Elle a publié avec Kenza Aloui, Saenz Delacroix-Sadighiyan et Odelia Kammoun la BD Une nuit aux editions First."
+              imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686148888/ines-weill-rochant-crop_bfjqj8.jpg"
             />
           </div>
         </div>

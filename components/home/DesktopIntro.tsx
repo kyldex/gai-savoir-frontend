@@ -2,7 +2,6 @@ import Image from 'next/image';
 
 import styles from './DesktopIntro.module.scss';
 
-import LadderDesktopIcon from './LadderDesktopIcon';
 import MegaphoneIcon from './MegaphoneIcon';
 
 import logo from '../../assets/img/gai_savoir_logo.svg';
@@ -23,7 +22,12 @@ const DesktopIntro = () => {
         </h1>
 
         <div className={styles.sloganContainer}>
-          <LadderDesktopIcon className={styles.ladderDesktop} />
+          <Image
+            src={kiosque}
+            width={80}
+            alt=""
+            className={styles.kiosque}
+          />
 
           <Image
             src={whiteStar}
@@ -37,7 +41,6 @@ const DesktopIntro = () => {
             <br />
             MAIS VOUS AVEZ LA PAROLE QUAND MÊME
           </p>
-          <Image src={kiosque} width={80} className={styles.kiosque} alt="" />
         </div>
       </div>
 
