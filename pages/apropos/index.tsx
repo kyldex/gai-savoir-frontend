@@ -133,6 +133,7 @@ const Apropos: NextPage = () => {
               firstname="Catherine"
               lastname="Ruggeri"
               description="Haut fonctionnaire au Ministère de la Culture, elle organise et évalue la mise en place de l'action publique culturelle. Depuis une dizaine d'années elle s'est spécialisée dans le secteur des industries culturelles et créatives, en particulier le secteur des musiques actuelles. Elle est trésorière de l'association."
+              imageUrl="https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686148654/catherine-ruggeri_g7vrel.jpg"
               className={styles.contributor}
             />
           </div>
