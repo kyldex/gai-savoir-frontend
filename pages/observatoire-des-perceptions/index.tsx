@@ -27,7 +27,7 @@ const SurveyPage: NextPage = () => {
         récolter les représentations des français et créer de la data autour du
         populaire.
         <br />
-        Stay tuned, publication pour très bientôt.
+        Stay tuned, ça arrive vite.
       </p>
 
       {/* <Survey /> */}
