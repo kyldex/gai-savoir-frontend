@@ -35,7 +35,7 @@ const Home: NextPage<Props> = ({ audiovisualProductions, ideas }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Gai Savoir Accueil</title>
+        <title>Gai Savoir</title>
         <meta
           name="description"
           content="Le Gai Savoir est une plateforme de contenus intellectuel, artistique et citoyen visant à se libérer de la logique de segmentation propres à la politique et aux industries culturelles et créatives."

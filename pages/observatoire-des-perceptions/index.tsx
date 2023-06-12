@@ -23,7 +23,11 @@ const SurveyPage: NextPage = () => {
       <h1 className={styles.title}>Observatoire des perceptions</h1>
 
       <p className={styles.description}>
-        Le premier questionnaire arrive très bientôt.
+        L&apos;observatoire des perceptions est un concept unique qui vise à
+        récolter les représentations des français et créer de la data autour du
+        populaire.
+        <br />
+        Stay tuned, ça arrive vite.
       </p>
 
       {/* <Survey /> */}

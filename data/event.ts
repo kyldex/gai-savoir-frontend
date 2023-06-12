@@ -11,8 +11,7 @@ const eventsData: EventData = [
         'La liberté fait partie de ces concepts qui écrasent le réel de leur symbolique. Iconique, elle renvoie tant à notre puissance (un monde de possibles) qu’à notre impuissance (dans la difficulté à y accéder, à la vivre). La liberté est désir ultime, idéal mais également source de frustration, de souffrance ou de colère dès lors que le réel se met en travers de notre volonté d’être libre.',
         'Transfuge de classe, liberté sexuelle, révolte politique, séparations, processus créatif, …peu importe le visage que prend cette quête, cet évènement est une proposition pour faire de la liberté non seulement un concept, une exigence, mais une pratique traversée par la vie. Ce qui signifie la dédramatiser : intégrer dans le récit de l’acte de liberté toute la part de doute, d’ambivalence, de peur mais aussi d’échec, d’insatisfaction, de solitude. D’humanité, donc.'
       ],
-      mainVideoUrl:
-        'https://www.youtube.com/embed/v0n1Kg_YDbc',
+      mainVideoUrl: 'https://www.youtube.com/embed/v0n1Kg_YDbc',
       card_image: {
         data: {
           attributes: {
@@ -33,8 +32,7 @@ const eventsData: EventData = [
         {
           firstname: 'Raphaël',
           lastname: 'Liogier',
-          description:
-            `Sociologue, philosophe, auteur de "Khaos : la promesse trahie de la modernité", LLL (parution le 16 août)`,
+          description: `Sociologue, philosophe, auteur de "Khaos : la promesse trahie de la modernité", LLL (parution le 16 août)`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093711/raphael-liogier_kppieb.jpg'
         },
@@ -49,16 +47,14 @@ const eventsData: EventData = [
         {
           firstname: 'Esken',
           lastname: '',
-          description:
-            `Auteur, compositeur, interprète rap/pop. Label "Jeunes génies".`,
+          description: `Auteur, compositeur, interprète rap/pop. Label "Jeunes génies".`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093704/esken_da4sgt.jpg'
         },
         {
           firstname: 'Rose',
           lastname: '',
-          description:
-            `Auteure, compositeure, interprète. Créatrice du podcast "Contre-addictions".`,
+          description: `Auteure, compositeure, interprète. Créatrice du podcast "Contre-addictions".`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093711/rose_hipou1.jpg'
         }
@@ -76,8 +72,7 @@ const eventsData: EventData = [
         "Parler d'amour, c'est parler de nous, de soi : de nos idéaux, de nos attentes. Mais aussi, du moment où ils se cognent à la réalité.",
         "L'Amour est-il devenu une valeur ringarde est le récit en discussion et en musique du risque d'amour, du courage de s'y abandonner et d'y renoncer. De cette quête sociale, politique et intime qui nous confronte à notre désir de puissance et à notre impuissance, notre désir d'absolu et l'humilité de notre condition, le besoin de sécurité et le désir de liberté."
       ],
-      mainVideoUrl:
-        'https://www.youtube.com/embed/gH-XYma5mTk',
+      mainVideoUrl: 'https://www.youtube.com/embed/gH-XYma5mTk',
       card_image: {
         data: {
           attributes: {
@@ -90,15 +85,15 @@ const eventsData: EventData = [
         {
           firstname: 'Mahaut',
           lastname: 'Chaudouet-Delmas',
-          description:
-            `Rapporteuse pour le Haut Conseil à l'Egalité F/H et autrice de "Demain ne peut être que féministe", éditions de l'Aube.`,
+          description: `Rapporteuse pour le Haut Conseil à l'Egalité F/H et autrice de "Demain ne peut être que féministe", éditions de l'Aube.`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094080/mahaut-photo_mbd3bu.jpg'
         },
         {
           firstname: 'Bolides boys',
           lastname: '',
-          description: 'Groupe de musique',
+          description:
+            'Groupe de musique. Leur dernier EP, Ruptures Futures, est disponible via ce lien : https://bfan.link/ruptures-futures.',
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094081/bolides_zl4l9t.png'
         },
@@ -117,6 +112,14 @@ const eventsData: EventData = [
             "Réalisatrice du Coeur Aux actes, co-fondatrice de l'assemblée des imaginaires citoyens.",
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094080/valerie-zoydo_ntogog.gif'
+        },
+        {
+          firstname: 'Bolivard',
+          lastname: '',
+          description:
+            'Musicien, dj et vidéaste. Son dernier album, M.Bolivard, a été publié sur le label Cookie records. Spotify : Bolivard.',
+          imageUrl:
+            'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686600038/bolivard_ygnk9x.jpg'
         }
       ]
     }
