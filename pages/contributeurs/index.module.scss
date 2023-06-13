@@ -56,7 +56,7 @@
         text-transform: uppercase;
         text-align: center;
         color: $color-green-1;
-        @include media-query-sm {
+        @include media-query-md {
           text-align: left;
           font-size: 2.2rem;
         }
@@ -65,7 +65,13 @@
       .contributorContainer {
         display: flex;
         justify-content: center;
-        margin-top: 1.5rem;
+        margin-top: 3rem;
+        @include media-query-md {
+          margin-top: 3.5rem;
+        }
+        &:first-child {
+          margin-top: 1.5rem;
+        }
       }
     }
   }
