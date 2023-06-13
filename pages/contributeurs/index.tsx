@@ -14,9 +14,9 @@ import contributorsData from '../../data/contributors';
 const ContributeursPage: NextPage = () => {
   const currentLetters = ['A', 'J', 'L', 'R', 'W'];
 
-  const filterByLastname = (letter: string) => {
+  const filterByLastName = (letter: string) => {
     const filteredContributors = contributorsData.filter((contributor) => {
-      return contributor.lastname.startsWith(letter);
+      return contributor.lastName.startsWith(letter);
     });
     return filteredContributors;
   };
@@ -43,14 +43,14 @@ const ContributeursPage: NextPage = () => {
           <div className={styles.letterContainer} key={letter}>
             <div className={styles.letter}>{letter}</div>
             <div>
-              {filterByLastname(letter).map((contributor) => (
+              {filterByLastName(letter).map((contributor) => (
                 <div
                   className={styles.contributorContainer}
                   key={contributor.id}
                 >
                   <Contributor
-                    firstname={contributor.firstname}
-                    lastname={contributor.lastname}
+                    firstName={contributor.firstName}
+                    lastName={contributor.lastName}
                     description={contributor.description}
                     imageUrl={contributor.imageUrl}
                   />

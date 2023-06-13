@@ -15,8 +15,8 @@ export type Event = {
     content: string[];
     slug: string;
     speakers: {
-      firstname: string;
-      lastname: string;
+      firstName: string;
+      lastName: string;
       description: string;
       imageUrl?: string;
     }[]
