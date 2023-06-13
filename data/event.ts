@@ -22,38 +22,38 @@ const eventsData: EventData = [
       slug: 'exode-quetin-jagorel-video',
       speakers: [
         {
-          firstname: 'Jessica',
-          lastname: 'Matoua',
+          firstName: 'Jessica',
+          lastName: 'Matoua',
           description:
             "Spécialiste des questions d'intelligence économique et co-fondatrice de NMW Ventures.",
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093696/jessica-matoua_slxmlb.jpg'
         },
         {
-          firstname: 'Raphaël',
-          lastname: 'Liogier',
+          firstName: 'Raphaël',
+          lastName: 'Liogier',
           description: `Sociologue, philosophe, auteur de "Khaos : la promesse trahie de la modernité", LLL (parution le 16 août)`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093711/raphael-liogier_kppieb.jpg'
         },
         {
-          firstname: 'Patrick',
-          lastname: 'Scheyder',
+          firstName: 'Patrick',
+          lastName: 'Scheyder',
           description:
             "Pianiste, auteur, concepteur de spectacles et co-fondateur de l'écologie culturelle.",
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093710/patrick-scheyder_f6id2j.jpg'
         },
         {
-          firstname: 'Esken',
-          lastname: '',
+          firstName: 'Esken',
+          lastName: '',
           description: `Auteur, compositeur, interprète rap/pop. Label "Jeunes génies".`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093704/esken_da4sgt.jpg'
         },
         {
-          firstname: 'Rose',
-          lastname: '',
+          firstName: 'Rose',
+          lastName: '',
           description: `Auteure, compositeure, interprète. Créatrice du podcast "Contre-addictions".`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686093711/rose_hipou1.jpg'
@@ -83,39 +83,39 @@ const eventsData: EventData = [
       slug: 'amour-est-il-valeur-ringarde-evenement',
       speakers: [
         {
-          firstname: 'Mahaut',
-          lastname: 'Chaudouet-Delmas',
+          firstName: 'Mahaut',
+          lastName: 'Chaudouet-Delmas',
           description: `Rapporteuse pour le Haut Conseil à l'Egalité F/H et autrice de "Demain ne peut être que féministe", éditions de l'Aube.`,
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094080/mahaut-photo_mbd3bu.jpg'
         },
         {
-          firstname: 'Bolides boys',
-          lastname: '',
+          firstName: 'Bolides boys',
+          lastName: '',
           description:
             'Groupe de musique. Leur dernier EP, Ruptures Futures, est disponible via ce lien : https://bfan.link/ruptures-futures.',
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094081/bolides_zl4l9t.png'
         },
         {
-          firstname: 'Philippe',
-          lastname: 'Lasry',
+          firstName: 'Philippe',
+          lastName: 'Lasry',
           description:
             'Scénariste et co-directeur du département scénario de la Femis.',
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094081/philippe-lasry_jn7wqv.png'
         },
         {
-          firstname: 'Valérie',
-          lastname: 'Zoydo',
+          firstName: 'Valérie',
+          lastName: 'Zoydo',
           description:
             "Réalisatrice du Coeur Aux actes, co-fondatrice de l'assemblée des imaginaires citoyens.",
           imageUrl:
             'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686094080/valerie-zoydo_ntogog.gif'
         },
         {
-          firstname: 'Bolivard',
-          lastname: '',
+          firstName: 'Bolivard',
+          lastName: '',
           description:
             'Musicien, dj et vidéaste. Son dernier album, M.Bolivard, a été publié sur le label Cookie records. Spotify : Bolivard.',
           imageUrl:

@@ -4,8 +4,8 @@ import Image from 'next/image';
 import styles from './Contributor.module.scss';
 
 interface Props {
-  firstname: string;
-  lastname: string;
+  firstName: string;
+  lastName: string;
   description: string;
   imageUrl?: string;
   variant?: boolean;
@@ -13,8 +13,8 @@ interface Props {
 }
 
 const Contributor: FC<Props> = ({
-  firstname,
-  lastname,
+  firstName,
+  lastName,
   description,
   imageUrl,
   variant = false,
@@ -46,12 +46,12 @@ const Contributor: FC<Props> = ({
         <div className={styles.name}>
           {variant ? (
             <div>
-              {firstname}
+              {firstName}
               <br />
-              {lastname}
+              {lastName}
             </div>
           ) : (
-            `${firstname} ${lastname}`
+            `${firstName} ${lastName}`
           )}
         </div>
         <div className={styles.description}>{description}</div>

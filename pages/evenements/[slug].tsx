@@ -56,8 +56,8 @@ const Event: NextPage<Props> = ({ event, preview }) => {
         {event.attributes.speakers.map((speaker) => (
           <div className={styles.contributorContainer} key={event.id}>
             <Contributor
-              firstname={speaker.firstname}
-              lastname={speaker.lastname}
+              firstName={speaker.firstName}
+              lastName={speaker.lastName}
               description={speaker.description}
               imageUrl={speaker.imageUrl}
               variant
