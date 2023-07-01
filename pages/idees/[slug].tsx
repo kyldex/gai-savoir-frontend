@@ -45,7 +45,8 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
         </div>
       ) : null}
 
-      {idea.attributes.content_new.length !== 0 ? (
+      {idea.attributes.content_new &&
+      idea.attributes.content_new.length !== 0 ? (
         <div className={styles.contentContainer}>
           {idea.attributes.content_new.map((component, index) => {
             if (component.__component === 'content.text') {

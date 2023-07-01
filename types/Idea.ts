@@ -46,8 +46,8 @@ type Idea = {
   attributes: {
     title: string;
     published: string;
-    content: string;
-    content_new: (TextComponent | ImageComponent)[];
+    content: string | null;
+    content_new: (TextComponent | ImageComponent)[] | null;
     excerpt: string;
     author: string;
     slug: string;
