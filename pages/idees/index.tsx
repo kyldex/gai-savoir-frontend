@@ -45,7 +45,7 @@ const Ideas: NextPage<Props> = ({ ideas }) => {
 
 export const getStaticProps: GetStaticProps = async () => {
   const res = await fetch(
-    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?populate=*&sort=publishedAt%3Adesc`
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?populate[0]=card_image&sort=publishedAt%3Adesc`
   );
   const ideas: IdeasData = await res.json();
 
