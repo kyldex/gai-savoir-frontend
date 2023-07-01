@@ -25,7 +25,7 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {preview && <div>I&apos;m in preview mode !</div>}
+      {preview && <div className={styles.previewMode}>PREVIEW MODE</div>}
 
       <HomePageLink />
 
