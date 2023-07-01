@@ -1,5 +1,6 @@
 import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
+import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 
 import styles from './[slug].module.scss';
@@ -34,13 +35,55 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
         {idea.attributes.author}, le {formatDate(idea.attributes.published)}
       </div>
 
-      <div className={styles.contentContainer}>
-        <div className={styles.content}>
-          <ReactMarkdown>{idea.attributes.content}</ReactMarkdown>
+      {idea.attributes.content ? (
+        <div className={styles.contentContainer}>
+          <div className={styles.content}>
+            <ReactMarkdown>{idea.attributes.content}</ReactMarkdown>
+          </div>
+          <div className={styles.greenBackground} />
+          <div className={styles.purpleBackground} />
         </div>
-        <div className={styles.greenBackground} />
-        <div className={styles.purpleBackground} />
-      </div>
+      ) : null}
+
+      {idea.attributes.content_new.length !== 0 ? (
+        <div className={styles.contentContainer}>
+          {idea.attributes.content_new.map((component, index) => {
+            if (component.__component === 'content.text') {
+              return (
+                <div className={`${styles.component}`} key={index}>
+                  <ReactMarkdown>{component.text}</ReactMarkdown>
+                </div>
+              );
+            }
+            if (component.__component === 'content.image') {
+              return (
+                <div className={styles.component} key={index}>
+                  <figure>
+                    <Image
+                      src={component.image.data.attributes.formats.medium.url}
+                      width={
+                        component.image.data.attributes.formats.medium.width
+                      }
+                      height={
+                        component.image.data.attributes.formats.medium.height
+                      }
+                      sizes="100vw"
+                      alt={component.alternative_text || ''}
+                    />
+                    {component.caption ? (
+                      <figcaption className={styles.figcaption}>
+                        {component.caption}
+                      </figcaption>
+                    ) : null}
+                  </figure>
+                </div>
+              );
+            }
+          })}
+          <div className={styles.greenBackground} />
+          <div className={styles.purpleBackground} />
+        </div>
+      ) : null}
     </div>
   );
 };
@@ -71,7 +114,7 @@ export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?${
       isInPreviewMode ? 'publicationState=preview&' : ''
-    }filters[slug][$eq]=${slug}`
+    }filters[slug][$eq]=${slug}&populate[content_new][populate]=*`
   );
   const ideaData: IdeaDataBySlug = await res.json();
 
