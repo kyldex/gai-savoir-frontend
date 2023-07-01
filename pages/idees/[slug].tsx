@@ -35,56 +35,55 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
         {idea.attributes.author}, le {formatDate(idea.attributes.published)}
       </div>
 
-      {idea.attributes.content ? (
-        <div className={styles.contentContainer}>
-          <div className={styles.content}>
+      <div className={styles.contentContainer}>
+        {idea.attributes.content ? (
+          <div className={styles.component}>
             <ReactMarkdown>{idea.attributes.content}</ReactMarkdown>
           </div>
-          <div className={styles.greenBackground} />
-          <div className={styles.purpleBackground} />
-        </div>
-      ) : null}
+        ) : null}
 
-      {idea.attributes.content_new &&
-      idea.attributes.content_new.length !== 0 ? (
-        <div className={styles.contentContainer}>
-          {idea.attributes.content_new.map((component, index) => {
-            if (component.__component === 'content.text') {
-              return (
-                <div className={`${styles.component}`} key={index}>
-                  <ReactMarkdown>{component.text}</ReactMarkdown>
-                </div>
-              );
-            }
-            if (component.__component === 'content.image') {
-              return (
-                <div className={styles.component} key={index}>
-                  <figure>
-                    <Image
-                      src={component.image.data.attributes.formats.medium.url}
-                      width={
-                        component.image.data.attributes.formats.medium.width
-                      }
-                      height={
-                        component.image.data.attributes.formats.medium.height
-                      }
-                      sizes="100vw"
-                      alt={component.alternative_text || ''}
-                    />
-                    {component.caption ? (
-                      <figcaption className={styles.figcaption}>
-                        {component.caption}
-                      </figcaption>
-                    ) : null}
-                  </figure>
-                </div>
-              );
-            }
-          })}
-          <div className={styles.greenBackground} />
-          <div className={styles.purpleBackground} />
-        </div>
-      ) : null}
+        {idea.attributes.content_components &&
+        idea.attributes.content_components.length !== 0 ? (
+          <>
+            {idea.attributes.content_components.map((component, index) => {
+              if (component.__component === 'content.text') {
+                return (
+                  <div className={styles.component} key={index}>
+                    <ReactMarkdown>{component.text}</ReactMarkdown>
+                  </div>
+                );
+              }
+              if (component.__component === 'content.image') {
+                return (
+                  <div className={styles.component} key={index}>
+                    <figure>
+                      <Image
+                        src={component.image.data.attributes.formats.medium.url}
+                        width={
+                          component.image.data.attributes.formats.medium.width
+                        }
+                        height={
+                          component.image.data.attributes.formats.medium.height
+                        }
+                        sizes="100vw"
+                        alt={component.alternative_text || ''}
+                      />
+                      {component.caption ? (
+                        <figcaption className={styles.figcaption}>
+                          {component.caption}
+                        </figcaption>
+                      ) : null}
+                    </figure>
+                  </div>
+                );
+              }
+            })}
+          </>
+        ) : null}
+
+        <div className={styles.greenBackground} />
+        <div className={styles.purpleBackground} />
+      </div>
     </div>
   );
 };
@@ -115,7 +114,7 @@ export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?${
       isInPreviewMode ? 'publicationState=preview&' : ''
-    }filters[slug][$eq]=${slug}&populate[content_new][populate]=*`
+    }filters[slug][$eq]=${slug}&populate[content_components][populate]=*`
   );
   const ideaData: IdeaDataBySlug = await res.json();
 
