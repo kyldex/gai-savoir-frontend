@@ -2,10 +2,6 @@
 @import '../../styles//mixins';
 
 .container {
-  // Override Swiper Navigation custom properties
-  --swiper-navigation-size: 32px;
-  --swiper-navigation-sides-offset: 0;
-  --swiper-navigation-color: #{$color-yellow};
   max-width: 1000px;
   margin: 0 auto;
 
@@ -62,6 +58,10 @@
   }
 
   .carouselContainer {
+    // Override Swiper Navigation custom properties
+    --swiper-navigation-size: 32px;
+    --swiper-navigation-sides-offset: 0;
+    --swiper-navigation-color: #{$color-yellow};
     margin-top: 32px;
   }
 }
