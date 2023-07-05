@@ -4,41 +4,52 @@ type TextComponent = {
   text: string;
 };
 
+type ImageData = {
+  id: number;
+  attributes: {
+    formats: {
+      small: {
+        url: string;
+        width: number;
+        height: number;
+      };
+      medium: {
+        url: string;
+        width: number;
+        height: number;
+      };
+      large: {
+        url: string;
+        width: number;
+        height: number;
+      };
+      thumbnail: {
+        url: string;
+        width: number;
+        height: number;
+      };
+    };
+    hash: string;
+    url: string;
+  };
+};
+
 type ImageComponent = {
   id: number;
   __component: 'content.image';
   image: {
-    data: {
-      id: number;
-      attributes: {
-        formats: {
-          small: {
-            url: string;
-            width: number;
-            height: number;
-          };
-          medium: {
-            url: string;
-            width: number;
-            height: number;
-          };
-          large: {
-            url: string;
-            width: number;
-            height: number;
-          };
-          thumbnail: {
-            url: string;
-            width: number;
-            height: number;
-          };
-        };
-        url: string;
-      };
-    };
+    data: ImageData;
   };
   caption?: string;
   alternative_text?: string;
+};
+
+type CarouselComponent = {
+  id: number;
+  __component: 'content.carousel';
+  images: {
+    data: ImageData[];
+  };
 };
 
 type Idea = {
@@ -47,7 +58,9 @@ type Idea = {
     title: string;
     published: string;
     content: string | null;
-    content_components: (TextComponent | ImageComponent)[] | null;
+    content_components:
+      | (TextComponent | ImageComponent | CarouselComponent)[]
+      | null;
     excerpt: string;
     author: string;
     slug: string;

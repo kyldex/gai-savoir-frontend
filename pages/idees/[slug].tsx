@@ -2,6 +2,8 @@ import { NextPage, GetStaticProps, GetStaticPaths } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation, Pagination } from 'swiper';
 
 import styles from './[slug].module.scss';
 
@@ -53,6 +55,7 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
                   </div>
                 );
               }
+
               if (component.__component === 'content.image') {
                 return (
                   <div className={styles.component} key={index}>
@@ -74,6 +77,31 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
                         </figcaption>
                       ) : null}
                     </figure>
+                  </div>
+                );
+              }
+
+              if (component.__component === 'content.carousel') {
+                return (
+                  <div className={styles.component} key={index}>
+                    <Swiper
+                      navigation
+                      pagination
+                      modules={[Navigation, Pagination]}
+                    >
+                      {component.images.data.map((image) => (
+                        <SwiperSlide key={image.attributes.hash}>
+                          <Image
+                            src={image.attributes.formats.medium.url}
+                            width={image.attributes.formats.medium.width}
+                            height={image.attributes.formats.medium.height}
+                            className={styles.carouselImage}
+                            sizes="100vw"
+                            alt=""
+                          />
+                        </SwiperSlide>
+                      ))}
+                    </Swiper>
                   </div>
                 );
               }
