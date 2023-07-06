@@ -50,7 +50,17 @@ const contributorsData: ContributorsData = [
     firstName: 'Antoine',
     lastName: 'Jochyms',
     description: 'Il est le co-fondateur de la plateforme Open Politics.',
-    imageUrl: 'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686690190/antoine-jochyms-crop_xi34dj.jpg'
+    imageUrl:
+      'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1686690190/antoine-jochyms-crop_xi34dj.jpg'
+  },
+  {
+    id: 7,
+    firstName: 'Michaël',
+    lastName: 'Calais',
+    description:
+      "Administrateur, consultant et spécialiste du développement territorial, il a écrit plusieurs articles de valorisation des territoires, dont le tour des forts du Grand Paris et celui d'Île-de-France.",
+    imageUrl:
+      'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1688682774/michael-calais-portrait_diw0ay.jpg'
   }
 ];
 

@@ -12,7 +12,7 @@ import whiteStar from '../../assets/img/home/star_white.svg';
 import contributorsData from '../../data/contributors';
 
 const ContributeursPage: NextPage = () => {
-  const currentLetters = ['A', 'J', 'L', 'R', 'W'];
+  const currentLetters = ['A', 'C', 'J', 'L', 'R', 'W'];
 
   const filterByLastName = (letter: string) => {
     const filteredContributors = contributorsData.filter((contributor) => {
