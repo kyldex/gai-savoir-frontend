@@ -1,8 +1,8 @@
 # Gai Savoir Strapi Front-End
 
-Gai Savoir website front-end, made with Next.js.
-About : https://www.gai-savoir.fr/apropos
-Back-end : https://github.com/kyldex/gai-savoir-strapi-api
+Gai Savoir website front-end, made with Next.js.  
+About : https://www.gai-savoir.fr/apropos  
+Back-end : https://github.com/kyldex/gai-savoir-strapi-api  
 
 ## Dev
 
