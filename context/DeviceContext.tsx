@@ -1,3 +1,5 @@
+'use client';
+
 import { createContext, FC, ReactNode, useContext } from 'react';
 import useMediaQuery from '../utils/hooks/useMediaQuery';
 import breakpoints from '../utils/breakpoints';
