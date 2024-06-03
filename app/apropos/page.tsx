@@ -1,8 +1,7 @@
-import type { NextPage } from 'next';
-import Head from 'next/head';
+import type { Metadata, NextPage } from 'next';
 import Image from 'next/image';
 
-import styles from './index.module.scss';
+import styles from './styles.module.scss';
 
 import HomePageLink from '../../components/common/HomePageLink';
 import Contributor from '../../components/common/Contributor';
@@ -10,15 +9,14 @@ import Contributor from '../../components/common/Contributor';
 import megaphoneTexture from '../../assets/img/a-propos/megaphone-texture.svg';
 import logo from '../../assets/img/gai_savoir_logo.svg';
 
+export const metadata: Metadata = {
+  title: 'À propos',
+  description: 'À propos du Gai Savoir'
+}
+
 const Apropos: NextPage = () => {
   return (
     <div className={styles.container}>
-      <Head>
-        <title>À propos</title>
-        <meta name="description" content="À propos du Gai Savoir" />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
       <div className={styles.homePageLinkContainer}>
         <HomePageLink />
       </div>

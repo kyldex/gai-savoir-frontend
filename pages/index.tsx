@@ -14,20 +14,13 @@ import type { AudiovisualProductionsData } from '../types/AudiovisualProductions
 import type Idea from '../types/Idea';
 import type { IdeasData } from '../types/IdeasData';
 
-import dotOrange from '../assets/img/dot_orange.svg';
-import clock from '../assets/img/home/clock.svg';
-import sunglasses from '../assets/img/home/sunglasses.svg';
-import dotBurgundy from '../assets/img/home/dot_burgundy.svg';
 import pencil from '../assets/img/home/pencil.svg';
 import exclamation from '../assets/img/home/exclamation.svg';
-import faces from '../assets/img/home/faces.svg';
-import bird from '../assets/img/home/bird.svg';
-import coffeemaker from '../assets/img/home/coffeemaker.svg';
 
-interface Props {
+type Props = {
   audiovisualProductions: AudiovisualProduction[];
   ideas: Idea[];
-}
+};
 
 const Home: NextPage<Props> = ({ audiovisualProductions, ideas }) => {
   const hasMounted = useHasMounted();
