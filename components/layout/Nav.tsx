@@ -15,9 +15,9 @@ import MobileMenuBar from '../menu/MobileMenuBar';
 
 import useHasMounted from '../../utils/hooks/useHasMounted';
 
-interface Props {
+type Props = {
   setHeaderHeight: Dispatch<SetStateAction<number>>;
-}
+};
 
 const Nav: FC<Props> = ({ setHeaderHeight }) => {
   const hasMounted = useHasMounted();
@@ -38,9 +38,9 @@ const Nav: FC<Props> = ({ setHeaderHeight }) => {
   // Client only
   return (
     <header className={styles.header} ref={headerRef}>
-      <nav role="navigation" aria-label="Menu principal">
+      {/* <nav role="navigation" aria-label="Menu principal"> */}
         {isDesktop ? <DesktopMenu /> : <MobileMenuBar />}
-      </nav>
+      {/* </nav> */}
     </header>
   );
 };
