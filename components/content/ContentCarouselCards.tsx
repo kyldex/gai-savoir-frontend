@@ -8,46 +8,46 @@ import styles from './ContentCarouselCards.module.scss';
 import ItemCard from '../common/ItemCard';
 
 import breakpoints from '../../utils/breakpoints';
+import { CATEGORIES } from '../../utils/constants';
 import type Idea from '../../types/Idea';
 import type AudiovisualProduction from '../../types/AudiovisualProduction';
 import type { Event } from '../../data/eventType';
 
-interface Props {
+const getInfo = (type: 'events' | 'audiovisual' | 'ideas') => {
+  let title = '';
+  let allPostsURL = '/';
+  let categorySlugPart = '';
+
+  switch (type) {
+    case 'events':
+      title = CATEGORIES.EVENTS.toUpperCase();
+      allPostsURL = '/evenements';
+      categorySlugPart = 'evenements';
+      break;
+    case 'audiovisual':
+      title = CATEGORIES.AUDIOVISUAL_PRODUCTION.toUpperCase();
+      allPostsURL = '/production-audiovisuelle';
+      categorySlugPart = 'production-audiovisuelle';
+      break;
+    case 'ideas':
+      title = CATEGORIES.ARTICLES.toUpperCase();
+      allPostsURL = '/articles';
+      categorySlugPart = 'articles';
+      break;
+    default:
+      console.error('unknown type for carousel cards');
+  }
+
+  return { title, allPostsURL, categorySlugPart };
+};
+
+type Props = {
   type: 'events' | 'audiovisual' | 'ideas';
   cardsData: Idea[] | AudiovisualProduction[] | Event[];
-}
+};
 
 const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
-  const getInfo = () => {
-    let title = '';
-    let allPostsURL = '/';
-    let cssSlide = '';
-    let categorySlugPart = '';
-
-    switch (type) {
-      case 'events':
-        title = 'ÉVÈNEMENTS';
-        allPostsURL = '/evenements';
-        categorySlugPart = 'evenements';
-        break;
-      case 'audiovisual':
-        title = 'PRODUCTION AUDIOVISUELLE';
-        allPostsURL = '/production-audiovisuelle';
-        categorySlugPart = 'production-audiovisuelle';
-        break;
-      case 'ideas':
-        title = 'IDÉES';
-        allPostsURL = '/idees';
-        categorySlugPart = 'idees';
-        break;
-      default:
-        console.error('unknown type for carousel cards');
-    }
-
-    return { title, allPostsURL, cssSlide, categorySlugPart };
-  };
-
-  const { title, allPostsURL, categorySlugPart } = getInfo();
+  const { title, allPostsURL, categorySlugPart } = getInfo(type);
 
   return (
     <section className={styles.container}>
@@ -82,19 +82,28 @@ const ContentCarouselCards: FC<Props> = ({ type, cardsData }) => {
             }
           }}
         >
-          {cardsData.map((item) => (
-            <SwiperSlide key={item.id}>
-              <ItemCard
-                type={type}
-                title={item.attributes.title}
-                excerpt={item.attributes.excerpt}
-                categorySlugPart={categorySlugPart}
-                slug={item.attributes.slug}
-                card_image={item.attributes.card_image}
-                isInsideCarousel
-              />
-            </SwiperSlide>
-          ))}
+          {cardsData.map((item) => {
+            // TODO : type guards
+            const subcategorySlug =
+              item.attributes.subcategory?.data.attributes.slug;
+            return (
+              <SwiperSlide key={item.id}>
+                <ItemCard
+                  type={type}
+                  title={item.attributes.title}
+                  excerpt={item.attributes.excerpt}
+                  categorySlugPart={
+                    subcategorySlug
+                      ? `${categorySlugPart}/${subcategorySlug}`
+                      : categorySlugPart
+                  }
+                  slug={item.attributes.slug}
+                  card_image={item.attributes.card_image}
+                  isInsideCarousel
+                />
+              </SwiperSlide>
+            );
+          })}
         </Swiper>
       </div>
     </section>
