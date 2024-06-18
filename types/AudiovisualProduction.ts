@@ -1,3 +1,5 @@
+import { SUBCATEGORY_DATA } from './shared';
+
 type AudiovisualProduction = {
   id: string;
   attributes: {
@@ -15,6 +17,7 @@ type AudiovisualProduction = {
     video_url: string;
     content: string;
     slug: string;
+    subcategory?: SUBCATEGORY_DATA | null;
   };
 };
 

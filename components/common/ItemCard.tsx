@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 import styles from './ItemCard.module.scss';
 
-interface Props {
+type Props = {
   type: 'events' | 'audiovisual' | 'ideas';
   title: string;
   excerpt: string;
@@ -18,7 +18,7 @@ interface Props {
     } | null;
   };
   isInsideCarousel?: boolean;
-}
+};
 
 const ItemCard: FC<Props> = ({
   type,

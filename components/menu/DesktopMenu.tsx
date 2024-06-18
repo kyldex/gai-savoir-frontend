@@ -6,6 +6,8 @@ import { CaretDownIcon } from '@radix-ui/react-icons';
 
 import styles from './DesktopMenu.module.scss';
 
+import { CATEGORIES, SUBCATEGORIES } from '../../utils/constants';
+
 type LinkProps = {
   href: string;
   children: ReactNode;
@@ -28,33 +30,35 @@ const DesktopMenu: FC = () => {
     <NavigationMenu.Root className={styles.navigationMenuRoot}>
       <NavigationMenu.List className={styles.navigationMenuList}>
         <NavigationMenu.Item className={styles.navigationMenuItem}>
-          <Link href="/evenements">ÉVÈNEMENTS</Link>
+          <Link href="/evenements">{CATEGORIES.EVENTS.toUpperCase()}</Link>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item className={styles.navigationMenuItem}>
           <NavigationMenu.Trigger className={styles.navigationMenuTrigger}>
-            ARTICLES
+            {CATEGORIES.ARTICLES.toUpperCase()}
             <CaretDownIcon className={styles.caretDown} aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className={styles.navigationMenuContent}>
             <ul className={`${styles.contentList} ${styles.articles}`}>
               <li>
-                <Link href="/evenements">Actualités</Link>
+                <Link href="/articles/actualites">{SUBCATEGORIES.NEWS}</Link>
               </li>
               <li>
-                <Link href="/evenements">Idées</Link>
+                <Link href="/articles/idees">{SUBCATEGORIES.IDEAS}</Link>
               </li>
               <li>
-                <Link href="/evenements">Sommes-nous tous fous ?</Link>
+                <Link href="/articles/sommes-nous-tous-fous">
+                  {SUBCATEGORIES.CRAZY}
+                </Link>
               </li>
               <li>
-                <Link href="/evenements">Numérique</Link>
+                <Link href="/articles/numerique">{SUBCATEGORIES.DIGITAL}</Link>
               </li>
               <li>
-                <Link href="/evenements">Culture</Link>
+                <Link href="/articles/culture">{SUBCATEGORIES.CULTURE}</Link>
               </li>
               <li>
-                <Link href="/evenements">Société</Link>
+                <Link href="/articles/societe">{SUBCATEGORIES.SOCIETY}</Link>
               </li>
             </ul>
           </NavigationMenu.Content>
@@ -62,21 +66,21 @@ const DesktopMenu: FC = () => {
 
         <NavigationMenu.Item className={styles.navigationMenuItem}>
           <NavigationMenu.Trigger className={styles.navigationMenuTrigger}>
-            PRODUCTION AUDIOVISUELLE
+            {CATEGORIES.AUDIOVISUAL_PRODUCTION.toUpperCase()}
             <CaretDownIcon className={styles.caretDown} aria-hidden />
           </NavigationMenu.Trigger>
           <NavigationMenu.Content className={styles.navigationMenuContent}>
-            <ul
-              className={`${styles.contentList} ${styles.audiovisual}`}
-            >
+            <ul className={`${styles.contentList} ${styles.audiovisual}`}>
               <li>
-                <Link href="/evenements">Portraits de Français</Link>
+                <Link href="/evenements">{SUBCATEGORIES.FRENCH_PORTRAITS}</Link>
               </li>
               <li>
-                <Link href="/evenements">Interviews</Link>
+                <Link href="/evenements">{SUBCATEGORIES.INTERVIEWS}</Link>
               </li>
               <li>
-                <Link href="/evenements">Contributions externes</Link>
+                <Link href="/evenements">
+                  {SUBCATEGORIES.EXTERNAL_CONTRIBUTIONS}
+                </Link>
               </li>
             </ul>
           </NavigationMenu.Content>

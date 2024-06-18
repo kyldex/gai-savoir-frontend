@@ -1,3 +1,5 @@
+import { SUBCATEGORY_DATA } from './shared';
+
 type TextComponent = {
   id: number;
   __component: 'content.text';
@@ -71,6 +73,7 @@ type Idea = {
         };
       } | null;
     };
+    subcategory?: SUBCATEGORY_DATA | null;
   };
 };
 

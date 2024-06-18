@@ -7,23 +7,23 @@ import { Navigation, Pagination } from 'swiper';
 
 import styles from './[slug].module.scss';
 
-import HomePageLink from '../../components/common/HomePageLink';
+import HomePageLink from '../../../components/common/HomePageLink';
 
-import Idea from '../../types/Idea';
-import { IdeasData, IdeaDataBySlug } from '../../types/IdeasData';
-import formatDate from '../../utils/date';
+import Idea from '../../../types/Idea';
+import { IdeasData, IdeaDataBySlug } from '../../../types/IdeasData';
+import formatDate from '../../../utils/date';
 
-interface Props {
-  idea: Idea;
+type Props = {
+  article: Idea;
   preview: boolean;
-}
+};
 
-const Idea: NextPage<Props> = ({ idea, preview }) => {
+const Article: NextPage<Props> = ({ article, preview }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{idea.attributes.title}</title>
-        <meta name="description" content={idea.attributes.excerpt} />
+        <title>{article.attributes.title}</title>
+        <meta name="description" content={article.attributes.excerpt} />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
@@ -31,23 +31,23 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
 
       <HomePageLink />
 
-      <h1 className={styles.title}>{idea.attributes.title}</h1>
+      <h1 className={styles.title}>{article.attributes.title}</h1>
 
       <div className={styles.authorInfo}>
-        {idea.attributes.author}, le {formatDate(idea.attributes.published)}
+        {article.attributes.author}, le {formatDate(article.attributes.published)}
       </div>
 
       <div className={styles.contentContainer}>
-        {idea.attributes.content ? (
+        {article.attributes.content ? (
           <div className={styles.component}>
-            <ReactMarkdown>{idea.attributes.content}</ReactMarkdown>
+            <ReactMarkdown>{article.attributes.content}</ReactMarkdown>
           </div>
         ) : null}
 
-        {idea.attributes.content_components &&
-        idea.attributes.content_components.length !== 0 ? (
+        {article.attributes.content_components &&
+        article.attributes.content_components.length !== 0 ? (
           <>
-            {idea.attributes.content_components.map((component, index) => {
+            {article.attributes.content_components.map((component, index) => {
               if (component.__component === 'content.text') {
                 return (
                   <div className={styles.component} key={index}>
@@ -117,12 +117,14 @@ const Idea: NextPage<Props> = ({ idea, preview }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas`);
-  const ideas: IdeasData = await res.json();
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?filters[$and][0][subcategory][name][$eq]=Idées`
+  );
+  const articles: IdeasData = await res.json();
 
-  // Get the paths we want to pre-render based on ideas.
-  const paths = ideas.data.map((idea) => ({
-    params: { slug: idea.attributes.slug }
+  // Get the paths we want to pre-render based on articles.
+  const paths = articles.data.map((article) => ({
+    params: { slug: article.attributes.slug }
   }));
 
   // We'll pre-render only these paths at build time.
@@ -133,7 +135,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
   const slug = params?.slug;
   if (!slug) {
-    throw new Error('Idea not found');
+    throw new Error('Article not found');
   }
 
   // getStaticProps will be called at request time if
@@ -144,10 +146,10 @@ export const getStaticProps: GetStaticProps = async ({ params, preview }) => {
       isInPreviewMode ? 'publicationState=preview&' : ''
     }filters[slug][$eq]=${slug}&populate[content_components][populate]=*`
   );
-  const ideaData: IdeaDataBySlug = await res.json();
+  const articleData: IdeaDataBySlug = await res.json();
 
-  // Pass idea data to the page via props.
-  return { props: { idea: ideaData.data[0], preview: isInPreviewMode } };
+  // Pass article data to the page via props.
+  return { props: { article: articleData.data[0], preview: isInPreviewMode } };
 };
 
-export default Idea;
+export default Article;

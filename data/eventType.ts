@@ -19,7 +19,9 @@ export type Event = {
       lastName: string;
       description: string;
       imageUrl?: string;
-    }[]
+    }[],
+    // TODO: prefer type guards
+    subcategory?: null;
   };
 };
 
