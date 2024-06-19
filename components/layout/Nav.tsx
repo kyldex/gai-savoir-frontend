@@ -38,9 +38,13 @@ const Nav: FC<Props> = ({ setHeaderHeight }) => {
   // Client only
   return (
     <header className={styles.header} ref={headerRef}>
-      {/* <nav role="navigation" aria-label="Menu principal"> */}
-        {isDesktop ? <DesktopMenu /> : <MobileMenuBar />}
-      {/* </nav> */}
+      {isDesktop ? (
+        <DesktopMenu />
+      ) : (
+        <nav role="navigation" aria-label="Menu principal">
+          <MobileMenuBar />
+        </nav>
+      )}
     </header>
   );
 };

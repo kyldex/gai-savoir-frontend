@@ -72,13 +72,17 @@ const DesktopMenu: FC = () => {
           <NavigationMenu.Content className={styles.navigationMenuContent}>
             <ul className={`${styles.contentList} ${styles.audiovisual}`}>
               <li>
-                <Link href="/evenements">{SUBCATEGORIES.FRENCH_PORTRAITS}</Link>
+                <Link href="/production-audiovisuelle/portraits-de-francais">
+                  {SUBCATEGORIES.FRENCH_PORTRAITS}
+                </Link>
               </li>
               <li>
-                <Link href="/evenements">{SUBCATEGORIES.INTERVIEWS}</Link>
+                <Link href="/production-audiovisuelle/interviews">
+                  {SUBCATEGORIES.INTERVIEWS}
+                </Link>
               </li>
               <li>
-                <Link href="/evenements">
+                <Link href="/production-audiovisuelle/contributions-externes">
                   {SUBCATEGORIES.EXTERNAL_CONTRIBUTIONS}
                 </Link>
               </li>
