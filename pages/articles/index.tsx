@@ -18,7 +18,7 @@ const Articles: NextPage<Props> = ({ articles }) => {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Articles</title>
+        <title>{CATEGORIES.ARTICLES}</title>
         <meta name="description" content="Tous les articles du Gai Savoir" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

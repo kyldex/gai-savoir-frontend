@@ -4,19 +4,19 @@ import ReactMarkdown from 'react-markdown';
 
 import styles from './[slug].module.scss';
 
-import HomePageLink from '../../components/common/HomePageLink';
+import HomePageLink from '../../../components/common/HomePageLink';
 
-import AudiovisualProduction from '../../types/AudiovisualProduction';
+import AudiovisualProduction from '../../../types/AudiovisualProduction';
 import {
   AudiovisualProductionsData,
   AudiovisualProductionDataBySlug
-} from '../../types/AudiovisualProductionsData';
-import formatDate from '../../utils/date';
+} from '../../../types/AudiovisualProductionsData';
+import formatDate from '../../../utils/date';
 
-interface Props {
+type Props = {
   audiovisualProduction: AudiovisualProduction;
   preview: boolean;
-}
+};
 
 const Audiovisual: NextPage<Props> = ({ audiovisualProduction, preview }) => {
   return (
@@ -67,8 +67,8 @@ export const getStaticPaths: GetStaticPaths = async () => {
   );
   const audiovisualProductions: AudiovisualProductionsData = await res.json();
 
-  const paths = audiovisualProductions.data.map((idea) => ({
-    params: { slug: idea.attributes.slug }
+  const paths = audiovisualProductions.data.map((audiovisualProduction) => ({
+    params: { slug: audiovisualProduction.attributes.slug }
   }));
 
   // We'll pre-render only these paths at build time.
