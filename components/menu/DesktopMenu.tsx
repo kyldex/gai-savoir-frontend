@@ -1,36 +1,21 @@
-import { FC, ReactNode } from 'react';
-import { usePathname } from 'next/navigation';
-import NextLink from 'next/link';
+import { FC } from 'react';
 import * as NavigationMenu from '@radix-ui/react-navigation-menu';
 import { CaretDownIcon } from '@radix-ui/react-icons';
 
 import styles from './DesktopMenu.module.scss';
 
+import MenuLink from './common/MenuLink';
+
 import { CATEGORIES, SUBCATEGORIES } from '../../utils/constants';
-
-type LinkProps = {
-  href: string;
-  children: ReactNode;
-};
-const Link: FC<LinkProps> = ({ href, children }) => {
-  const pathname = usePathname();
-  const isActive = href === pathname;
-
-  return (
-    <NavigationMenu.Link asChild active={isActive}>
-      <NextLink href={href} className={styles.navigationMenuLink}>
-        {children}
-      </NextLink>
-    </NavigationMenu.Link>
-  );
-};
 
 const DesktopMenu: FC = () => {
   return (
     <NavigationMenu.Root className={styles.navigationMenuRoot}>
       <NavigationMenu.List className={styles.navigationMenuList}>
         <NavigationMenu.Item className={styles.navigationMenuItem}>
-          <Link href="/evenements">{CATEGORIES.EVENTS.toUpperCase()}</Link>
+          <MenuLink href="/evenements" className={styles.mainMenuLink}>
+            {CATEGORIES.EVENTS.toUpperCase()}
+          </MenuLink>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item className={styles.navigationMenuItem}>
@@ -41,24 +26,34 @@ const DesktopMenu: FC = () => {
           <NavigationMenu.Content className={styles.navigationMenuContent}>
             <ul className={`${styles.contentList} ${styles.articles}`}>
               <li>
-                <Link href="/articles/actualites">{SUBCATEGORIES.NEWS}</Link>
+                <MenuLink href="/articles/actualites">
+                  {SUBCATEGORIES.NEWS}
+                </MenuLink>
               </li>
               <li>
-                <Link href="/articles/idees">{SUBCATEGORIES.IDEAS}</Link>
+                <MenuLink href="/articles/idees">
+                  {SUBCATEGORIES.IDEAS}
+                </MenuLink>
               </li>
               <li>
-                <Link href="/articles/sommes-nous-tous-fous">
+                <MenuLink href="/articles/sommes-nous-tous-fous">
                   {SUBCATEGORIES.CRAZY}
-                </Link>
+                </MenuLink>
               </li>
               <li>
-                <Link href="/articles/numerique">{SUBCATEGORIES.DIGITAL}</Link>
+                <MenuLink href="/articles/numerique">
+                  {SUBCATEGORIES.DIGITAL}
+                </MenuLink>
               </li>
               <li>
-                <Link href="/articles/culture">{SUBCATEGORIES.CULTURE}</Link>
+                <MenuLink href="/articles/culture">
+                  {SUBCATEGORIES.CULTURE}
+                </MenuLink>
               </li>
               <li>
-                <Link href="/articles/societe">{SUBCATEGORIES.SOCIETY}</Link>
+                <MenuLink href="/articles/societe">
+                  {SUBCATEGORIES.SOCIETY}
+                </MenuLink>
               </li>
             </ul>
           </NavigationMenu.Content>
@@ -72,36 +67,43 @@ const DesktopMenu: FC = () => {
           <NavigationMenu.Content className={styles.navigationMenuContent}>
             <ul className={`${styles.contentList} ${styles.audiovisual}`}>
               <li>
-                <Link href="/production-audiovisuelle/portraits-de-francais">
+                <MenuLink href="/production-audiovisuelle/portraits-de-francais">
                   {SUBCATEGORIES.FRENCH_PORTRAITS}
-                </Link>
+                </MenuLink>
               </li>
               <li>
-                <Link href="/production-audiovisuelle/interviews">
+                <MenuLink href="/production-audiovisuelle/interviews">
                   {SUBCATEGORIES.INTERVIEWS}
-                </Link>
+                </MenuLink>
               </li>
               <li>
-                <Link href="/production-audiovisuelle/contributions-externes">
+                <MenuLink href="/production-audiovisuelle/contributions-externes">
                   {SUBCATEGORIES.EXTERNAL_CONTRIBUTIONS}
-                </Link>
+                </MenuLink>
               </li>
             </ul>
           </NavigationMenu.Content>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item className={styles.navigationMenuItem}>
-          <Link href="/contributeurs">CONTRIBUTEURS</Link>
+          <MenuLink href="/contributeurs" className={styles.mainMenuLink}>
+            CONTRIBUTEURS
+          </MenuLink>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item className={styles.navigationMenuItem}>
-          <Link href="/observatoire-des-perceptions">
+          <MenuLink
+            href="/observatoire-des-perceptions"
+            className={styles.mainMenuLink}
+          >
             OBSERVATOIRE DES PERCEPTIONS
-          </Link>
+          </MenuLink>
         </NavigationMenu.Item>
 
         <NavigationMenu.Item className={styles.navigationMenuItem}>
-          <Link href="/apropos">À PROPOS</Link>
+          <MenuLink href="/apropos" className={styles.mainMenuLink}>
+            À PROPOS
+          </MenuLink>
         </NavigationMenu.Item>
       </NavigationMenu.List>
     </NavigationMenu.Root>

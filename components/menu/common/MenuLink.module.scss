@@ -1,0 +1,10 @@
+@import '../../../styles/variables';
+
+.menuLink {
+  font-size: 1rem;
+  color: #fff;
+  &:hover,
+  :active {
+    color: $color-purple;
+  }
+}
