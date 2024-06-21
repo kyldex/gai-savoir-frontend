@@ -4,7 +4,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 110; // above mobile menu bar
+  z-index: 3; // above mobile menu bar
   width: 100%;
   height: 100vh;
   padding: 1.5rem 2rem 0;
@@ -17,15 +17,89 @@
     right: 40px;
   }
 
-  .mobileMenu {
-    padding: 0;
-    list-style: none;
+  .navigationMenuRoot {
+    .navigationMenuList {
+      padding: 0;
+      list-style: none;
+    }
 
-    li {
+    .navigationMenuItem {
       margin-top: 64px;
-      font-size: 1.2rem;
       &:first-child {
         margin-top: 48px;
+      }
+
+      .mainMenuLink {
+        font-size: 1.2rem;
+      }
+    }
+
+    .navigationMenuTrigger {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2px;
+      font-size: 1.2rem;
+      text-wrap: nowrap;
+      color: #fff;
+      cursor: pointer;
+    }
+
+    .caretDown {
+      position: relative;
+      color: var(--violet-10);
+      top: 1px;
+      transition: transform 250ms ease;
+    }
+    [data-state='open'] > .caretDown {
+      transform: rotate(-180deg);
+    }
+
+    .navigationMenuContent {
+      .contentList {
+        padding: 1.125rem 0.875rem;
+        list-style: none;
+        &.articles {
+          width: 95%;
+        }
+        &.audiovisual {
+          width: 66%;
+        }
+
+        li {
+          margin-top: 8px;
+          margin-left: 8px;
+          font-style: italic;
+          &:first-child {
+            margin-top: 0;
+          }
+        }
+      }
+    }
+    .navigationMenuContent[data-state='open'] {
+      animation: scaleIn 200ms ease;
+    }
+    .navigationMenuContent[data-state='closed'] {
+      animation: scaleOut 200ms ease;
+    }
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: rotateX(-30deg) scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1);
+      }
+    }
+    @keyframes scaleOut {
+      from {
+        opacity: 1;
+        transform: rotateX(0deg) scale(1);
+      }
+      to {
+        opacity: 0;
+        transform: rotateX(-10deg) scale(0.95);
       }
     }
   }

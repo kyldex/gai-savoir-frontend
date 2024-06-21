@@ -21,15 +21,9 @@
     &:first-child {
       margin-left: 0;
     }
-  }
 
-  .navigationMenuLink {
-    font-size: 1rem;
-    text-wrap: nowrap;
-    color: #fff;
-    &:hover,
-    :active {
-      color: $color-purple;
+    .mainMenuLink {
+      text-wrap: nowrap;
     }
   }
 
