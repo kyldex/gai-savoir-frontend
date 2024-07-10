@@ -1,4 +1,4 @@
-export type SUBCATEGORY_DATA = {
+export type SubcategoryData = {
   data: {
     id: number;
     attributes: {

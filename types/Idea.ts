@@ -1,4 +1,4 @@
-import { SUBCATEGORY_DATA } from './shared';
+import { SubcategoryData } from './shared';
 
 type TextComponent = {
   id: number;
@@ -73,7 +73,7 @@ type Idea = {
         };
       } | null;
     };
-    subcategory?: SUBCATEGORY_DATA | null;
+    subcategory?: SubcategoryData | null;
   };
 };
 
