@@ -1,3 +1,8 @@
+export const STRAPI_API_ENDPOINTS = {
+  ARTICLES: 'ideas',
+  AUDIOVISUAL_PRODUCTION: 'audiovisual-productions'
+};
+
 export const CATEGORIES = {
   ARTICLES: 'Articles',
   AUDIOVISUAL_PRODUCTION: 'Production Audiovisuelle',
