@@ -80,12 +80,13 @@
 
     p {
       margin-top: 1.5rem;
-      font-size: 1rem;
-      line-height: 1.2;
+      font-size: $font-size-m;
+      line-height: $line-height-m;
       text-align: justify;
       color: #fff;
       @include media-query-sm {
-        font-size: 1.1rem;
+        font-size: $font-size-l;
+        line-height: $line-height-l;
       }
       &:first-child {
         margin-top: 0;
