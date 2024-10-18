@@ -8,6 +8,10 @@ $heading-main: 'AkrobatThin', -apple-system, BlinkMacSystemFont, Segoe UI,
 $heading-bold: 'AkrobatBlack', -apple-system, BlinkMacSystemFont, Segoe UI,
   Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue,
   sans-serif;
+$font-size-m: 1rem;
+$font-size-l: 1.125rem;
+$line-height-m: 1.45;
+$line-height-l: 1.5;
 
 // Colors
 $primary-color-blue: #221760;
@@ -18,7 +22,7 @@ $color-green-2: #7a6d31;
 $color-red: #743150;
 $color-orange: #ff7c54;
 
-// Layout
+// Spacing
 $layout-unit-px: 8px;
 $layout-unit-rem: 0.5rem;
 

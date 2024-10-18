@@ -9,7 +9,7 @@ const MobileIntro = () => {
   return (
     <section>
       <p className={styles.slogan}>
-        VOUS N&apos;ÊTES PAS CHEZ LE PSY, VOUS N&apos;ÊTES PAS CHEZ LE PRÊTRE
+        VOUS N&apos;ÊTES PAS CHEZ LE PSY, VOUS N&apos;ÊTES PAS AU CONFESSIONNAL
         MAIS VOUS AVEZ LA PAROLE QUAND MÊME
       </p>
       <div className={styles.illustationsContainer}>

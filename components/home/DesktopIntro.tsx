@@ -22,12 +22,7 @@ const DesktopIntro = () => {
         </h1>
 
         <div className={styles.sloganContainer}>
-          <Image
-            src={kiosque}
-            width={80}
-            alt=""
-            className={styles.kiosque}
-          />
+          <Image src={kiosque} width={80} alt="" className={styles.kiosque} />
 
           <Image
             src={whiteStar}
@@ -36,8 +31,8 @@ const DesktopIntro = () => {
             alt=""
           />
           <p className={styles.slogan}>
-            VOUS N&apos;ÊTES PAS CHEZ LE PSY, VOUS N&apos;ÊTES PAS CHEZ LE
-            PRÊTRE
+            VOUS N&apos;ÊTES PAS CHEZ LE PSY, VOUS N&apos;ÊTES PAS AU
+            CONFESSIONNAL
             <br />
             MAIS VOUS AVEZ LA PAROLE QUAND MÊME
           </p>
