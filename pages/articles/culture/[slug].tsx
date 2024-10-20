@@ -7,6 +7,7 @@ import { Navigation, Pagination } from 'swiper';
 
 import styles from './[slug].module.scss';
 
+import SocialMediaMetaTags from '../../../components/social-media/SocialMediaMetaTags';
 import HomePageLink from '../../../components/common/HomePageLink';
 
 import Idea from '../../../types/Idea';
@@ -25,6 +26,12 @@ const Article: NextPage<Props> = ({ article, preview }) => {
         <title>{article.attributes.title}</title>
         <meta name="description" content={article.attributes.excerpt} />
         <link rel="icon" href="/favicon.ico" />
+
+        <SocialMediaMetaTags
+          title={article.attributes.title}
+          description={article.attributes.excerpt}
+          url={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/articles/culture/${article.attributes.slug}`}
+        />
       </Head>
 
       {preview && <div className={styles.previewMode}>PREVIEW MODE</div>}

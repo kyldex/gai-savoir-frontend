@@ -4,6 +4,7 @@ import ReactMarkdown from 'react-markdown';
 
 import styles from './[slug].module.scss';
 
+import SocialMediaMetaTags from '../../../components/social-media/SocialMediaMetaTags';
 import HomePageLink from '../../../components/common/HomePageLink';
 
 import AudiovisualProduction from '../../../types/AudiovisualProduction';
@@ -28,6 +29,12 @@ const Audiovisual: NextPage<Props> = ({ audiovisualProduction, preview }) => {
           content={audiovisualProduction.attributes.excerpt}
         />
         <link rel="icon" href="/favicon.ico" />
+
+        <SocialMediaMetaTags
+          title={audiovisualProduction.attributes.title}
+          description={audiovisualProduction.attributes.excerpt}
+          url={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/production-audiovisuelle/contributions-externes/${audiovisualProduction.attributes.slug}`}
+        />
       </Head>
 
       {preview && <div className={styles.previewMode}>PREVIEW MODE</div>}

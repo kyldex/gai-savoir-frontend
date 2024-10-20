@@ -7,6 +7,7 @@ import { Navigation, Pagination } from 'swiper';
 
 import styles from './[slug].module.scss';
 
+import SocialMediaMetaTags from '../../../components/social-media/SocialMediaMetaTags';
 import HomePageLink from '../../../components/common/HomePageLink';
 
 import Idea from '../../../types/Idea';
@@ -25,6 +26,12 @@ const Article: NextPage<Props> = ({ article, preview }) => {
         <title>{article.attributes.title}</title>
         <meta name="description" content={article.attributes.excerpt} />
         <link rel="icon" href="/favicon.ico" />
+
+        <SocialMediaMetaTags
+          title={article.attributes.title}
+          description={article.attributes.excerpt}
+          url={`${process.env.NEXT_PUBLIC_WEBSITE_URL}/articles/actualites/${article.attributes.slug}`}
+        />
       </Head>
 
       {preview && <div className={styles.previewMode}>PREVIEW MODE</div>}
@@ -34,7 +41,8 @@ const Article: NextPage<Props> = ({ article, preview }) => {
       <h1 className={styles.title}>{article.attributes.title}</h1>
 
       <div className={styles.authorInfo}>
-        {article.attributes.author}, le {formatDate(article.attributes.published)}
+        {article.attributes.author}, le{' '}
+        {formatDate(article.attributes.published)}
       </div>
 
       <div className={styles.contentContainer}>
@@ -117,7 +125,9 @@ const Article: NextPage<Props> = ({ article, preview }) => {
 };
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const res = await fetch(`${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?filters[$and][0][subcategory][name][$eq]=Actualités`);
+  const res = await fetch(
+    `${process.env.NEXT_PUBLIC_STRAPI_API_URL}/ideas?filters[$and][0][subcategory][name][$eq]=Actualités`
+  );
   const articles: IdeasData = await res.json();
 
   // Get the paths we want to pre-render based on articles.
