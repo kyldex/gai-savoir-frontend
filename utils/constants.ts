@@ -20,3 +20,17 @@ export const SUBCATEGORIES = {
   NEWS: 'Actualités',
   SOCIETY: 'Société'
 };
+
+export const FORMATTED_SUBCATEGORY_NAME = {
+  CRAZY: 'sommes-nous-tous-fous',
+  CULTURE: 'culture',
+  DIGITAL: 'numerique',
+  EXTERNAL_CONTRIBUTIONS: 'contributions-externes',
+  FRENCH_PORTRAITS: 'portraits-de-francais',
+  IDEAS: 'idees',
+  INTERVIEWS: 'interviews',
+  NEWS: 'actualites',
+  SOCIETY: 'Societe'
+} as const;
+
+export type FormattedSubcategoryName = typeof FORMATTED_SUBCATEGORY_NAME[keyof typeof FORMATTED_SUBCATEGORY_NAME];
