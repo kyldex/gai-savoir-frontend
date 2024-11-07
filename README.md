@@ -1,4 +1,4 @@
-# Gai Savoir Strapi Front-End
+# Gai Savoir Front-End
 
 Gai Savoir website front-end, made with Next.js.  
 Gai Savoir website : https://www.gai-savoir.fr  
