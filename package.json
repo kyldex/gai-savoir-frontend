@@ -2,6 +2,10 @@
   "name": "gai-savoir",
   "version": "0.6.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=10.0.0"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +17,7 @@
     "@radix-ui/react-dialog": "1.0.5",
     "@radix-ui/react-icons": "1.3.0",
     "@radix-ui/react-navigation-menu": "1.1.4",
-    "next": "13.5.6",
+    "next": "13.5.11",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "7.39.6",
