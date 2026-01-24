@@ -40,7 +40,7 @@ const Home: NextPage<Props> = ({ audiovisualProductions, ideas }) => {
       {hasMounted ? <Intro /> : null}
 
       <div style={{ marginTop: '56px' }}>
-        <ContentCarouselCards type="events" cardsData={eventsData} />
+        <ContentCarouselCards type="ideas" cardsData={ideas} />
       </div>
 
       <div className={styles.audiovisualContainer}>
@@ -64,7 +64,7 @@ const Home: NextPage<Props> = ({ audiovisualProductions, ideas }) => {
         </div>
       </div>
 
-      <ContentCarouselCards type="ideas" cardsData={ideas} />
+      <ContentCarouselCards type="events" cardsData={eventsData} />
     </div>
   );
 };
