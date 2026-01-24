@@ -61,6 +61,24 @@ const contributorsData: ContributorsData = [
       "Administrateur, consultant et spécialiste du développement territorial, il a écrit plusieurs articles de valorisation des territoires, dont le tour des forts du Grand Paris et celui d'Île-de-France.",
     imageUrl:
       'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1688682774/michael-calais-portrait_diw0ay.jpg'
+  },
+  {
+    id: 8,
+    firstName: 'Hela',
+    lastName: 'Daboussi',
+    description:
+      "Hela Daboussi est Responsable Achats durables aux ministères Sociaux. Elle a dirigé le projet de la Maison de l'autisme. Elle a également cofondé la Maison des Âmes, association de lutte contre les violences faites aux femmes et aux enfants. En 2020, elle s'est présentée à la Mairie du 18ème arrondissement de Paris.",
+    imageUrl:
+      'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1769290557/hela-daboussi-crop_mimnjw.jpg'
+  },
+  {
+    id: 9,
+    firstName: 'Brice',
+    lastName: 'Soccol',
+    description:
+      "Brice Soccol, politologue et essayiste, co-auteur de L'écharpe et les Tempêtes avec Frédéric Dabi, éditions de l'Aube.",
+    imageUrl:
+      'https://res.cloudinary.com/dhj1ij2pz/image/upload/v1769291104/brice-soccol-crop_rvt8bw.jpg'
   }
 ];
 
