@@ -1,10 +1,10 @@
+'use client';
+
 import { FC } from 'react';
-import Head from 'next/head';
 import ReactMarkdown from 'react-markdown';
 
 import styles from './AudiovisualProduction.module.scss';
 
-import SocialMediaMetaTags from '../../components/social-media/SocialMediaMetaTags';
 import HomePageLink from '../../components/common/HomePageLink';
 
 import type { default as AudiovisualProductionType } from '../../types/AudiovisualProduction';
@@ -22,25 +22,8 @@ const AudiovisualProduction: FC<Props> = ({
   preview,
   formattedSubcategoryName
 }) => {
-  const pageUrl = `${process.env.NEXT_PUBLIC_WEBSITE_URL}/production-audiovisuelle/${formattedSubcategoryName}/${audiovisualProduction.attributes.slug}`;
-
   return (
     <div className={styles.container}>
-      <Head>
-        <title>{audiovisualProduction.attributes.title}</title>
-        <meta
-          name="description"
-          content={audiovisualProduction.attributes.excerpt}
-        />
-        <link rel="icon" href="/favicon.ico" />
-
-        <SocialMediaMetaTags
-          title={audiovisualProduction.attributes.title}
-          description={audiovisualProduction.attributes.excerpt}
-          url={pageUrl}
-        />
-      </Head>
-
       {preview && <div className={styles.previewMode}>PREVIEW MODE</div>}
 
       <HomePageLink />

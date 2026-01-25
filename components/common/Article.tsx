@@ -1,5 +1,6 @@
+'use client';
+
 import { FC } from 'react';
-import Head from 'next/head';
 import Image from 'next/image';
 import ReactMarkdown from 'react-markdown';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,7 +8,6 @@ import { Navigation, Pagination } from 'swiper';
 
 import styles from './Article.module.scss';
 
-import SocialMediaMetaTags from '../../components/social-media/SocialMediaMetaTags';
 import HomePageLink from '../../components/common/HomePageLink';
 
 import type Idea from '../../types/Idea';
@@ -21,22 +21,8 @@ type Props = {
 };
 
 const Article: FC<Props> = ({ article, preview, formattedSubcategoryName }) => {
-  const articleUrl = `${process.env.NEXT_PUBLIC_WEBSITE_URL}/articles/${formattedSubcategoryName}/${article.attributes.slug}`;
-
   return (
     <div className={styles.container}>
-      <Head>
-        <title>{article.attributes.title}</title>
-        <meta name="description" content={article.attributes.excerpt} />
-        <link rel="icon" href="/favicon.ico" />
-
-        <SocialMediaMetaTags
-          title={article.attributes.title}
-          description={article.attributes.excerpt}
-          url={articleUrl}
-        />
-      </Head>
-
       {preview && <div className={styles.previewMode}>PREVIEW MODE</div>}
 
       <HomePageLink />
